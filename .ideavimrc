@@ -1,0 +1,53 @@
+set number relativenumber
+set surround
+
+let mapleader = ","
+
+" Disable arrow keys to encourage good vim style
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+nnoremap <leader>== :action ReformatCode<cr>
+
+nnoremap <leader>rr :action Run<cr>
+nnoremap <leader>rd :action Debug<cr>
+nnoremap <leader>re :action editRunConfigurations<cr>
+
+" New files
+nnoremap <leader>nn :action NewFile<cr>
+nnoremap <leader>nc :action NewClass<cr>
+nnoremap <leader>ns :action NewScratchFile<cr>
+nnoremap <leader>nb :action NewScratchBuffer<cr>
+
+nnoremap <leader>mr :action Maven.Reimport<cr>
+
+nnoremap <leader>cv :action SonarLint.AnalyzeChangedFiles<cr>
+
+nnoremap <leader>gc :action Generate<cr>
+
+nnoremap <leader>gi :action GotoDeclaration<cr>
+nnoremap <leader>gu :action ShowUsages<cr>
+
+set scr=10
+
+nnoremap <leader>ev :vsplit C:\Users\ARTHDA\.ideavimrc<cr>
+nnoremap <leader>sv :source C:\Users\ARTHDA\.ideavimrc<cr>
+
+nnoremap <leader>cl ^D
+nnoremap <leader>) F(%
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+nnoremap Y y$
+
+nnoremap H ^
+nnoremap L $
+nnoremap <c-j> ddp
+nnoremap <c-k> ddkkp
+
+nnoremap <space> i<space><esc>
+
+inoremap jk <esc>
