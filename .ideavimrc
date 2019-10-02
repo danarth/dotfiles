@@ -1,5 +1,7 @@
 set number relativenumber
 set surround
+set visualbell
+set noerrorbells
 
 let mapleader = ","
 
@@ -9,37 +11,66 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-nnoremap <leader>== :action ReformatCode<cr>
+nnoremap DD ^D
 
-nnoremap <leader>rr :action Run<cr>
-nnoremap <leader>rd :action Debug<cr>
-nnoremap <leader>re :action editRunConfigurations<cr>
+" x for eXecute:
+nnoremap <leader>xr :action Run<cr>
+nnoremap <leader>xd :action Debug<cr>
+nnoremap <leader>xe :action editRunConfigurations<cr>
+nnoremap <leader>xcr :action RunClass<cr>
+nnoremap <leader>xcd :action DebugClass<cr>
 
-" New files
+" n for New files
 nnoremap <leader>nn :action NewFile<cr>
 nnoremap <leader>nc :action NewClass<cr>
-nnoremap <leader>ns :action NewScratchFile<cr>
+nnoremap <leader>ns <C-A-n>
 nnoremap <leader>nb :action NewScratchBuffer<cr>
 
+" m for Maven
 nnoremap <leader>mr :action Maven.Reimport<cr>
+nnoremap <leader>mg :action Maven.ExecuteGoal<cr>
+nnoremap <leader>mm :action ActivateMavenToolWindow<cr>
 
-nnoremap <leader>cv :action SonarLint.AnalyzeChangedFiles<cr>
+" c for Code
+nnoremap <leader>cq :action SonarLint.AnalyzeChangedFiles<cr>
+nnoremap <leader>cg :action Generate<cr>
+nnoremap <leader>cr :action ReformatCode<cr>
+nnoremap <leader>co :action OptimizeImports<cr>
+nnoremap <leader>ce :action GotoNextError<cr>
+nnoremap <leader>cE :action GotoPreviousError<cr>
 
-nnoremap <leader>gc :action Generate<cr>
+" b for Breakpoint
+nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
+nnoremap <leader>ba :action ViewBreakpoints<cr>
 
-nnoremap <leader>gi :action GotoDeclaration<cr>
+nnoremap <leader>rr :action RenameElement<cr>
+nnoremap <leader>dd :action SafeDelete<cr>
+
+" Editor Commands
+nnoremap <leader>ww :w<cr>
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>qq :q!<cr>
+nnoremap <leader>qQ :action CloseAllEditorsButActive<cr>
+nnoremap <leader>QQ :action CloseAllEditors<cr>
+nnoremap <leader>qh :action CloseAllToTheLeft<cr>
+nnoremap <leader>ql :action CloseAllToTheRight<cr>
+
+nnoremap <leader>gi :action GotoImplementation<cr>
+nnoremap <leader>gd :action GotoDeclaration<cr>
+nnoremap <leader>gt :action GotoTest<cr>
 nnoremap <leader>gu :action ShowUsages<cr>
 
 set scr=10
-
-nnoremap <leader>ev :vsplit C:\Users\ARTHDA\.ideavimrc<cr>
-nnoremap <leader>sv :source C:\Users\ARTHDA\.ideavimrc<cr>
 
 nnoremap <leader>cl ^D
 nnoremap <leader>) F(%
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+nnoremap <c-s-h> :action PreviousTab<cr>
+nnoremap <c-s-l> :action NextTab<cr>
+
+nnoremap <c-s-j> Jx
 
 nnoremap Y y$
 
