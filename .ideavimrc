@@ -1,9 +1,19 @@
-set number relativenumber
+let mapleader = ","
+
+" set ideaVim plugins
+set commentary
 set surround
+set easymotion
+set highlightedyank
+set argtextobj
+set textobj-entire
+set exchange
+
+" set ideaVim settings
+set number relativenumber
+set ideajoin
 set visualbell
 set noerrorbells
-
-let mapleader = ","
 
 " Disable arrow keys to encourage good vim style
 noremap <Up> <nop>
@@ -14,6 +24,7 @@ noremap <Right> <nop>
 nnoremap DD ^D
 
 " x for eXecute:
+nnoremap <leader>xw :action Scala.RunWorksheet<cr>
 nnoremap <leader>xr :action Run<cr>
 nnoremap <leader>xd :action Debug<cr>
 nnoremap <leader>xe :action editRunConfigurations<cr>
@@ -34,10 +45,11 @@ nnoremap <leader>mm :action ActivateMavenToolWindow<cr>
 " c for Code
 nnoremap <leader>cq :action SonarLint.AnalyzeChangedFiles<cr>
 nnoremap <leader>cg :action Generate<cr>
-nnoremap <leader>cr :action ReformatCode<cr>
+nnoremap <leader>== :action ReformatCode<cr>
 nnoremap <leader>co :action OptimizeImports<cr>
 nnoremap <leader>ce :action GotoNextError<cr>
 nnoremap <leader>cE :action GotoPreviousError<cr>
+nnoremap <leader>ca :action Annotate<cr>
 
 " b for Breakpoint
 nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
@@ -45,6 +57,8 @@ nnoremap <leader>ba :action ViewBreakpoints<cr>
 
 nnoremap <leader>rr :action RenameElement<cr>
 nnoremap <leader>dd :action SafeDelete<cr>
+
+nnoremap <leader>pp :action TogglePresentationMode<cr>
 
 " Editor Commands
 nnoremap <leader>ww :w<cr>
@@ -82,3 +96,7 @@ nnoremap <c-k> ddkkp
 nnoremap <space> i<space><esc>
 
 inoremap jk <esc>
+
+" visual maps
+nnoremap <leader>iG ggVG
+nnoremap <leader>iL ^v$
