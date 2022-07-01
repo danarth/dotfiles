@@ -1,0 +1,125 @@
+{
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDragAndDrop": false,
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": ""
+        },
+        {
+            "server": "zurdwht\\dev2",
+            "database": "",
+            "authenticationType": "Integrated",
+            "profileName": "DEV2 DWH",
+            "password": ""
+        }
+    ],
+    "workbench.welcomePage.hiddenCategories": [
+        "Beginner",
+        "Setup"
+    ],
+    "workbench.startupEditor": "none",
+    "extensions.autoUpdate": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "liveshare.presence": true,
+    "editor.fontSize": 13,
+    "editor.rename.enablePreview": false,
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.enabled": false,
+    "workbench.preferredDarkColorTheme": "Atom One Dark",
+    "vim.easymotion": true,
+    "vim.highlightedyank.enable": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "x", "r"],
+            "commands": ["workbench.action.debug.run"]
+        },
+        {
+            "before": ["<leader>", "x", "d"],
+            "commands": ["workbench.action.debug.start"]
+        },
+        {
+            "before": ["<leader>", "x", "e"],
+            "commands": ["workbench.action.debug.configure"]
+        },
+        {
+            "before": ["<leader>", "w", "w"],
+            "commands": ["workbench.action.files.save"]
+        },
+        {
+            "before": ["<leader>", "w", "q"],
+            "commands": ["workbench.action.files.save", "workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["<leader>", "q", "q"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["<leader>", "Q", "Q"],
+            "commands": ["workbench.action.closeAllEditors"]
+        },
+        {
+            "before": ["<leader>", "e", "v"],
+            "commands": ["workbench.action.openSettingsJson"]
+        },
+        {
+            "before": ["<leader>", "b", "b"],
+            "commands": ["editor.debug.action.toggleBreakpoint"]
+        },
+        {
+            "before": ["<leader>", "n", "n"],
+            "commands": ["workbench.action.files.newUntitledFile"]
+        },
+        {
+            "before": ["<leader>", "=", "="],
+            "commands": ["editor.action.formatDocument"]
+        },
+        {
+            "before": ["<leader>", "c", "o"],
+            "commands": ["editor.action.organizeImports"]
+        },
+        {
+            "before": ["<leader>", "c", "e"],
+            "commands": ["editor.action.marker.next"]
+        },
+        {
+            "before": ["<leader>", "c", "E"],
+            "commands": ["editor.action.marker.prev"]
+        },
+        {
+            "before": ["<leader>", "r", "r"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["<leader>", "f", "t"],
+            "commands": ["workbench.action.terminal.focus"]
+        }
+    ],
+    "python.defaultInterpreterPath": "C:\\python39\\python.exe",
+    "python.formatting.provider": "black",
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.editor.enablePreview": false,
+    "vim.foldfix": true,
+    "editor.minimap.enabled": false,
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path.windows": "C:\\Users\\arthurd\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vscode-kubernetes.minikube-path.windows": "C:\\Users\\arthurd\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+    },
+    "omnisharp.dotnetPath": "C:\\Program Files\\dotnet",
+    "csv-preview.numberFormat": "g5",
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.allowGuestTaskControl": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always"
+}
