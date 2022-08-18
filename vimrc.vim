@@ -1,6 +1,23 @@
 let mapleader = ","
 
-" settings for vim and ideavim
+call plug#begin('~/.vim/plugged')
+" Plugins supported by both IdeaVim and Vim
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'machakann/vim-highlightedyank'
+Plug 'vimscripts/argtextobj.vim'
+Plug 'kana/textobj-entire'
+Plug 'tommcdo/vim-exchange'
+Plug 'preservim/nerdtree'
+
+" Other plugins supported only by Vim
+Plug 'tpope/vim-abolish'
+Plug 'kana/vim-textobj-user'
+Plug 'sheerun/vim-polyglot'
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
 set number relativenumber
 
 " Disable arrow keys to encourage good vim style
@@ -12,7 +29,6 @@ noremap <Right> <nop>
 nnoremap DD ^D
 
 set visualbell
-set noerrorbells
 
 " Editor exit shortcuts
 nnoremap <leader>ww :w<cr>
@@ -40,16 +56,10 @@ set scr=10
 nnoremap <leader>cl ^D
 nnoremap <leader>) F(%
 
+let g:highlightedyank_highlight_duration=300
+
 " ideaVim only settings
 if has('ide')
-    " set ideaVim plugins
-    set commentary
-    set surround
-    set easymotion
-    set highlightedyank
-    set argtextobj
-    set textobj-entire
-    set exchange
 
     " set ideaVim settings
     set ideajoin
@@ -100,13 +110,29 @@ if has('ide')
     nnoremap <leader>gt <Action>(GotoTest)
     nnoremap <leader>gu <Action>(ShowUsages)
 
-
     nnoremap <c-h> <c-w>h
     nnoremap <c-l> <c-w>l
     nnoremap <c-s-h> <Action>(PreviousTab)
     nnoremap <c-s-l> <Action>(NextTab)
-
 else
+    if &term =~ '^xterm'
+        " solid underscore
+        let &t_SI .= "\<Esc>[6 q"
+        " solid block
+        let &t_EI .= "\<Esc>[2 q"
+        " 1 or 0 -> blinking block
+        " 3 -> blinking underscore
+        " Recent versions of xterm (282 or above) also support
+        " 5 -> blinking vertical bar
+        " 6 -> solid vertical bar
+    endif
+    syntax on
 
+    set expandtab
+    set tabstop=4
+    set shiftwidth=4
 
+    set splitright
+    set noerrorbells
+endif
 
