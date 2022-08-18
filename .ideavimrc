@@ -1,19 +1,7 @@
 let mapleader = ","
 
-" set ideaVim plugins
-set commentary
-set surround
-set easymotion
-set highlightedyank
-set argtextobj
-set textobj-entire
-set exchange
-
-" set ideaVim settings
+" settings for vim and ideavim
 set number relativenumber
-set ideajoin
-set visualbell
-set noerrorbells
 
 " Disable arrow keys to encourage good vim style
 noremap <Up> <nop>
@@ -23,68 +11,13 @@ noremap <Right> <nop>
 
 nnoremap DD ^D
 
-" x for eXecute:
-nnoremap <leader>xw :action Scala.RunWorksheet<cr>
-nnoremap <leader>xr :action Run<cr>
-nnoremap <leader>xd :action Debug<cr>
-nnoremap <leader>xe :action editRunConfigurations<cr>
-nnoremap <leader>xcr :action RunClass<cr>
-nnoremap <leader>xcd :action DebugClass<cr>
+set visualbell
+set noerrorbells
 
-" n for New files
-nnoremap <leader>nn :action NewFile<cr>
-nnoremap <leader>nc :action NewClass<cr>
-nnoremap <leader>ns <C-A-n>
-nnoremap <leader>nb :action NewScratchBuffer<cr>
-
-" m for Maven
-nnoremap <leader>mr :action Maven.Reimport<cr>
-nnoremap <leader>mg :action Maven.ExecuteGoal<cr>
-nnoremap <leader>mm :action ActivateMavenToolWindow<cr>
-
-" c for Code
-nnoremap <leader>cq :action SonarLint.AnalyzeChangedFiles<cr>
-nnoremap <leader>cg :action Generate<cr>
-nnoremap <leader>== :action ReformatCode<cr>
-nnoremap <leader>co :action OptimizeImports<cr>
-nnoremap <leader>ce :action GotoNextError<cr>
-nnoremap <leader>cE :action GotoPreviousError<cr>
-nnoremap <leader>ca :action Annotate<cr>
-
-" b for Breakpoint
-nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
-nnoremap <leader>ba :action ViewBreakpoints<cr>
-
-nnoremap <leader>rr :action RenameElement<cr>
-nnoremap <leader>dd :action SafeDelete<cr>
-
-nnoremap <leader>pp :action TogglePresentationMode<cr>
-
-" Editor Commands
+" Editor exit shortcuts
 nnoremap <leader>ww :w<cr>
 nnoremap <leader>wq :wq<cr>
 nnoremap <leader>qq :q!<cr>
-nnoremap <leader>qQ :action CloseAllEditorsButActive<cr>
-nnoremap <leader>QQ :action CloseAllEditors<cr>
-nnoremap <leader>qh :action CloseAllToTheLeft<cr>
-nnoremap <leader>ql :action CloseAllToTheRight<cr>
-
-nnoremap <leader>gi :action GotoImplementation<cr>
-nnoremap <leader>gd :action GotoDeclaration<cr>
-nnoremap <leader>gt :action GotoTest<cr>
-nnoremap <leader>gu :action ShowUsages<cr>
-
-set scr=10
-
-nnoremap <leader>cl ^D
-nnoremap <leader>) F(%
-
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-s-h> :action PreviousTab<cr>
-nnoremap <c-s-l> :action NextTab<cr>
-
-nnoremap <c-s-j> Jx
 
 nnoremap Y y$
 
@@ -100,3 +33,80 @@ inoremap jk <esc>
 " visual maps
 nnoremap <leader>iG ggVG
 nnoremap <leader>iL ^v$
+
+
+set scr=10
+
+nnoremap <leader>cl ^D
+nnoremap <leader>) F(%
+
+" ideaVim only settings
+if has('ide')
+    " set ideaVim plugins
+    set commentary
+    set surround
+    set easymotion
+    set highlightedyank
+    set argtextobj
+    set textobj-entire
+    set exchange
+
+    " set ideaVim settings
+    set ideajoin
+
+    " x for eXecute:
+    nnoremap <leader>xr <Action>(Run)
+    nnoremap <leader>xd <Action>(Debug)
+    nnoremap <leader>xe <Action>(editRunConfigurations)
+    nnoremap <leader>xcr <Action>(RunClass)
+    nnoremap <leader>xcd <Action>(DebugClass)
+
+    " n for New files
+    nnoremap <leader>nn <Action>(NewFile)
+    nnoremap <leader>nc <Action>(NewClass)
+    nnoremap <leader>nb <Action>(NewScratchBuffer)
+
+    " m for Maven
+    nnoremap <leader>mr <Action>(Maven.Reimport)
+    nnoremap <leader>mg <Action>(Maven.ExecuteGoal)
+    nnoremap <leader>mm <Action>(ActivateMavenToolWindow)
+
+    " c for Code
+    nnoremap <leader>cq <Action>(SonarLint.AnalyzeChangedFiles)
+    nnoremap <leader>cg <Action>(Generate)
+    nnoremap <leader>== <Action>(ReformatCode)
+    nnoremap <leader>co <Action>(OptimizeImports)
+    nnoremap <leader>ce <Action>(GotoNextError)
+    nnoremap <leader>cE <Action>(GotoPreviousError)
+    nnoremap <leader>ca <Action>(Annotate)
+
+    " b for Breakpoint
+    nnoremap <leader>bb <Action>(ToggleLineBreakpoint)
+    nnoremap <leader>ba <Action>(ViewBreakpoints)
+
+    nnoremap <leader>rr <Action>(RenameElement)
+    nnoremap <leader>dd <Action>(SafeDelete)
+
+    nnoremap <leader>pp <Action>(TogglePresentationMode)
+
+    " Editor Commands
+    nnoremap <leader>qQ <Action>(CloseAllEditorsButActive)
+    nnoremap <leader>QQ <Action>(CloseAllEditors)
+    nnoremap <leader>qh <Action>(CloseAllToTheLeft)
+    nnoremap <leader>ql <Action>(CloseAllToTheRight)
+
+    nnoremap <leader>gi <Action>(GotoImplementation)
+    nnoremap <leader>gd <Action>(GotoDeclaration)
+    nnoremap <leader>gt <Action>(GotoTest)
+    nnoremap <leader>gu <Action>(ShowUsages)
+
+
+    nnoremap <c-h> <c-w>h
+    nnoremap <c-l> <c-w>l
+    nnoremap <c-s-h> <Action>(PreviousTab)
+    nnoremap <c-s-l> <Action>(NextTab)
+
+else
+
+
+
