@@ -1,5 +1,13 @@
 let mapleader = ","
 
+if has('ide')
+    function! plug#begin(foo)
+    endfunction
+
+    function! plug#end()
+    endfunction
+endif
+
 call plug#begin('~/.vim/plugged')
 " Plugins supported by both IdeaVim and Vim
 Plug 'tpope/vim-commentary'
@@ -21,40 +29,40 @@ call plug#end()
 set number relativenumber
 
 " Disable arrow keys to encourage good vim style
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
+nmap <Up> <nop>
+nmap <Down> <nop>
+nmap <Left> <nop>
+nmap <Right> <nop>
 
-nnoremap DD ^D
+nmap DD ^D
 
 set visualbell
 
 " Editor exit shortcuts
-nnoremap <leader>ww :w<cr>
-nnoremap <leader>wq :wq<cr>
-nnoremap <leader>qq :q!<cr>
+nmap <leader>ww :w<cr>
+nmap <leader>wq :wq<cr>
+nmap <leader>qq :q!<cr>
 
-nnoremap Y y$
+nmap Y y$
 
-nnoremap H ^
-nnoremap L $
-nnoremap <c-j> ddp
-nnoremap <c-k> ddkkp
+nmap H ^
+nmap L $
+nmap <c-j> ddp
+nmap <c-k> ddkkp
 
-nnoremap <space> i<space><esc>
+nmap <space> i<space><esc>
 
-inoremap jk <esc>
+imap jk <esc>
 
 " visual maps
-nnoremap <leader>iG ggVG
-nnoremap <leader>iL ^v$
+nmap <leader>iG ggVG
+nmap <leader>iL ^v$
 
 
 set scr=10
 
-nnoremap <leader>cl ^D
-nnoremap <leader>) F(%
+nmap <leader>cl ^D
+nmap <leader>) F(%
 
 let g:highlightedyank_highlight_duration=300
 
@@ -65,55 +73,56 @@ if has('ide')
     set ideajoin
 
     " x for eXecute:
-    nnoremap <leader>xr <Action>(Run)
-    nnoremap <leader>xd <Action>(Debug)
-    nnoremap <leader>xe <Action>(editRunConfigurations)
-    nnoremap <leader>xcr <Action>(RunClass)
-    nnoremap <leader>xcd <Action>(DebugClass)
+    nmap <leader>xr <Action>(Run)
+    nmap <leader>xd <Action>(Debug)
+    nmap <leader>xe <Action>(editRunConfigurations)
+    nmap <leader>xcr <Action>(RunClass)
+    nmap <leader>xcd <Action>(DebugClass)
 
     " n for New files
-    nnoremap <leader>nn <Action>(NewFile)
-    nnoremap <leader>nc <Action>(NewClass)
-    nnoremap <leader>nb <Action>(NewScratchBuffer)
+    nmap <leader>nn <Action>(NewFile)
+    nmap <leader>nc <Action>(NewClass)
+    nmap <leader>ns <Action>(NewScratchFile)
+    nmap <leader>nb <Action>(NewScratchBuffer)
 
     " m for Maven
-    nnoremap <leader>mr <Action>(Maven.Reimport)
-    nnoremap <leader>mg <Action>(Maven.ExecuteGoal)
-    nnoremap <leader>mm <Action>(ActivateMavenToolWindow)
+    nmap <leader>mr <Action>(Maven.Reimport)
+    nmap <leader>mg <Action>(Maven.ExecuteGoal)
+    nmap <leader>mm <Action>(ActivateMavenToolWindow)
 
     " c for Code
-    nnoremap <leader>cq <Action>(SonarLint.AnalyzeChangedFiles)
-    nnoremap <leader>cg <Action>(Generate)
-    nnoremap <leader>== <Action>(ReformatCode)
-    nnoremap <leader>co <Action>(OptimizeImports)
-    nnoremap <leader>ce <Action>(GotoNextError)
-    nnoremap <leader>cE <Action>(GotoPreviousError)
-    nnoremap <leader>ca <Action>(Annotate)
+    nmap <leader>cq <Action>(SonarLint.AnalyzeChangedFiles)
+    nmap <leader>cg <Action>(Generate)
+    nmap <leader>== <Action>(ReformatCode)
+    nmap <leader>co <Action>(OptimizeImports)
+    nmap <leader>ce <Action>(GotoNextError)
+    nmap <leader>cE <Action>(GotoPreviousError)
+    nmap <leader>ca <Action>(Annotate)
 
     " b for Breakpoint
-    nnoremap <leader>bb <Action>(ToggleLineBreakpoint)
-    nnoremap <leader>ba <Action>(ViewBreakpoints)
+    nmap <leader>bb <Action>(ToggleLineBreakpoint)
+    nmap <leader>ba <Action>(ViewBreakpoints)
 
-    nnoremap <leader>rr <Action>(RenameElement)
-    nnoremap <leader>dd <Action>(SafeDelete)
+    nmap <leader>rr <Action>(RenameElement)
+    nmap <leader>dd <Action>(SafeDelete)
 
-    nnoremap <leader>pp <Action>(TogglePresentationMode)
+    nmap <leader>pp <Action>(TogglePresentationMode)
 
     " Editor Commands
-    nnoremap <leader>qQ <Action>(CloseAllEditorsButActive)
-    nnoremap <leader>QQ <Action>(CloseAllEditors)
-    nnoremap <leader>qh <Action>(CloseAllToTheLeft)
-    nnoremap <leader>ql <Action>(CloseAllToTheRight)
+    nmap <leader>qQ <Action>(CloseAllEditorsButActive)
+    nmap <leader>QQ <Action>(CloseAllEditors)
+    nmap <leader>qh <Action>(CloseAllToTheLeft)
+    nmap <leader>ql <Action>(CloseAllToTheRight)
 
-    nnoremap <leader>gi <Action>(GotoImplementation)
-    nnoremap <leader>gd <Action>(GotoDeclaration)
-    nnoremap <leader>gt <Action>(GotoTest)
-    nnoremap <leader>gu <Action>(ShowUsages)
+    nmap <leader>gi <Action>(GotoImplementation)
+    nmap <leader>gd <Action>(GotoDeclaration)
+    nmap <leader>gt <Action>(GotoTest)
+    nmap <leader>gu <Action>(ShowUsages)
 
-    nnoremap <c-h> <c-w>h
-    nnoremap <c-l> <c-w>l
-    nnoremap <c-s-h> <Action>(PreviousTab)
-    nnoremap <c-s-l> <Action>(NextTab)
+    nmap <c-h> <c-w>h
+    nmap <c-l> <c-w>l
+    nmap <c-s-h> <Action>(PreviousTab)
+    nmap <c-s-l> <Action>(NextTab)
 else
     if &term =~ '^xterm'
         " solid underscore
