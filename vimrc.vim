@@ -21,6 +21,7 @@ Plug 'preservim/nerdtree'
 
 " Other plugins supported only by Vim
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
 Plug 'kana/vim-textobj-user'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
@@ -150,7 +151,14 @@ else
     set noshowmode
     set laststatus=2
     let g:lightline = {
-                \ 'colorscheme': 'onedark',
-                \ }
+        \ 'colorscheme': 'onedark',
+        \ 'active': {
+        \   'left': [['mode', 'paste'],
+        \       ['gitbranch', 'readonly', 'filename', 'modified']]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead'
+        \ }
+        \ }
 endif
 
