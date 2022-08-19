@@ -24,6 +24,10 @@ Plug 'tpope/vim-abolish'
 Plug 'kana/vim-textobj-user'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
+Plug 'airblade/vim-gitgutter'
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 set number relativenumber
@@ -135,13 +139,18 @@ else
         " 5 -> blinking vertical bar
         " 6 -> solid vertical bar
     endif
-    syntax on
-
-    set expandtab
-    set tabstop=4
-    set shiftwidth=4
-
+    set encoding=utf-8
+    set expandtab tabstop=4 shiftwidth=4
     set splitright
     set noerrorbells
+
+    syntax on
+    set termguicolors
+    colorscheme onedark
+    set noshowmode
+    set laststatus=2
+    let g:lightline = {
+                \ 'colorscheme': 'onedark',
+                \ }
 endif
 
