@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'ryanolsonx/vim-xit'
 call plug#end()
 
 set number relativenumber
