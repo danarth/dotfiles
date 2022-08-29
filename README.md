@@ -1,15 +1,20 @@
-# IDE Config Files
-Settings files containing Vim keybindings for various IDEs that allow me to have a consistent developer experience
+# My dotfiles
+Assorted dotfiles and config files for my dev workstations/IDEs
 
 ## Usage
 
+Clone this repo under user home. Instructions for each file are as follows:
+
 ### JetBrains IDEs
-1. Clone this repo
-2. Create a file under <user home> called `.ideavimrc`
-3. In this file, have a line that `source`'s the `.ideavimrc` file in this repo, e.g.
+1. Create a file under <user home> called `.ideavimrc`
+2. In this file, have a line that `source`s `vimrc.vim`
 
 ```vimscript
-source C:\\Users\\<username>\\ide-config\\.ideavimrc
+" Windows
+source C:\\Users\\<username>\\dotfiles\\vimrc.vim
+
+" Linux/MacOS
+source ~/dotfiles/vimrc.vim
 ```
 
 ### Visual Studio Code
