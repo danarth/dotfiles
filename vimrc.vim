@@ -64,6 +64,14 @@ imap jk <esc>
 nmap <leader>iG ggVG
 nmap <leader>iL ^v$
 
+" Buffers
+nmap <leader>bl :ls<cr>
+nmap <leader>bwq :w<cr> :bp\|bd #<cr>
+nmap <leader>bqq :bp\|bd! #<cr>
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
+
+nmap <leader>fs :NERDTree<cr>
 
 set scr=10
 
