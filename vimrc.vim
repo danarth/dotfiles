@@ -128,6 +128,8 @@ if has('ide')
     nmap <leader>qh <Action>(CloseAllToTheLeft)
     nmap <leader>ql <Action>(CloseAllToTheRight)
 
+    nmap <leader>ft <Action>(ActivateTerminalToolWindow)
+
     nmap <leader>gi <Action>(GotoImplementation)
     nmap <leader>gd <Action>(GotoDeclaration)
     nmap <leader>gt <Action>(GotoTest)
