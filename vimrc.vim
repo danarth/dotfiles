@@ -27,7 +27,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'joshdick/onedark.vim'
+Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
 call plug#end()
@@ -162,15 +164,37 @@ else
     colorscheme onedark
     set noshowmode
     set laststatus=2
-    let g:lightline = {
-        \ 'colorscheme': 'onedark',
-        \ 'active': {
-        \   'left': [['mode', 'paste'],
-        \       ['gitbranch', 'readonly', 'filename', 'modified']]
-        \ },
-        \ 'component_function': {
+
+    let g:lightline = {}
+    let g:lightline.colorscheme = 'onedark'
+
+    let g:lightline.component_function = {
         \   'gitbranch': 'FugitiveHead'
         \ }
+
+    let g:lightline.component_expand = {
+        \  'linter_checking': 'lightline#ale#checking',
+        \  'linter_infos': 'lightline#ale#infos',
+        \  'linter_warnings': 'lightline#ale#warnings',
+        \  'linter_errors': 'lightline#ale#errors',
+        \  'linter_ok': 'lightline#ale#ok',
+        \ }
+
+    let g:lightline.component_type = {
+        \     'linter_checking': 'right',
+        \     'linter_infos': 'right',
+        \     'linter_warnings': 'warning',
+        \     'linter_errors': 'error',
+        \     'linter_ok': 'right',
+        \ }
+
+    let g:lightline.active = {
+        \ 'left': [['mode', 'paste'],
+        \       ['gitbranch', 'readonly', 'filename', 'modified']],
+        \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+        \            [ 'lineinfo' ],
+	    \            [ 'percent' ],
+	    \            [ 'fileformat', 'fileencoding', 'filetype'] ]
         \ }
 endif
 
