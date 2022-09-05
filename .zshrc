@@ -11,3 +11,6 @@ antigen bundle spaceship-prompt/spaceship-prompt
 antigen apply
 
 EDITOR="vim"
+
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_FIXTERM=false
