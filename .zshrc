@@ -1,3 +1,6 @@
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_FIXTERM_WITH_256_COLOR=xterm-256color
+
 antigen use oh-my-zsh
 
 antigen bundle git
@@ -11,6 +14,3 @@ antigen bundle spaceship-prompt/spaceship-prompt
 antigen apply
 
 EDITOR="vim"
-
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_FIXTERM=false
