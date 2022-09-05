@@ -4,6 +4,7 @@ antigen bundle git
 antigen bundle fzf
 antigen bundle kubectl
 antigen bundle docker
+antigen bundle tmux
 
 antigen bundle spaceship-prompt/spaceship-prompt
 
