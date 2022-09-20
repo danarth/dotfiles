@@ -55,8 +55,6 @@ nmap Y y$
 
 nmap H ^
 nmap L $
-nmap <c-j> ddp
-nmap <c-k> ddkkp
 
 nmap <space> i<space><esc>
 
@@ -72,6 +70,12 @@ nmap <leader>bwq :w<cr> :bp\|bd #<cr>
 nmap <leader>bqq :bp\|bd! #<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
+
+" Tabs
+nmap <c-h> <c-w>h
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
 
 nmap <leader>fs :NERDTree<cr>
 
