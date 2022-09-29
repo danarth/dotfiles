@@ -1,5 +1,6 @@
 let mapleader = ","
 
+
 if has('ide')
     function! plug#begin(foo)
     endfunction
@@ -168,6 +169,19 @@ else
     colorscheme onedark
     set noshowmode
     set laststatus=2
+
+    let g:ale_completion_enabled = 1
+    set omnifunc=ale#completion#OmniFunc
+
+    " code navigation
+    nmap <leader>ce :ALENext<cr>
+    nmap <leader>cE :ALEPrevious<cr>
+    nmap <leader>co :ALEOrganizeImports<cr>
+
+    nmap <leader>gi :ALEGoToImplementation<cr>
+    nmap <leader>gd :ALEGoToDefinition<cr>
+    nmap <leader>gu :ALEFindReferences<cr>
+    nmap <leader>rr :ALERename<cr>
 
     let g:lightline = {}
     let g:lightline.colorscheme = 'onedark'
