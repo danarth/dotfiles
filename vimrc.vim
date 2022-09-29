@@ -164,6 +164,8 @@ else
     set noerrorbells
     set ff=unix
 
+    set nowrap
+
     syntax on
     set termguicolors
     colorscheme onedark
