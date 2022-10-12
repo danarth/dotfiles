@@ -11,6 +11,9 @@ antigen bundle kubectl
 antigen bundle docker
 antigen bundle tmux
 
+antigen bundle nyquase/vi-mode
+antigen bundle b4b4r07/zsh-vimode-visual
+
 antigen bundle spaceship-prompt/spaceship-prompt
 
 antigen apply
