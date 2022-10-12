@@ -1,5 +1,7 @@
 # Oh My ZSH Settings
 ZSH_TMUX_FIXTERM_WITH_256_COLOR=xterm-256color
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
 
 antigen use oh-my-zsh
 
