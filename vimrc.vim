@@ -10,6 +10,7 @@ if has('ide')
 endif
 
 call plug#begin('~/.vim/plugged')
+"
 " Plugins supported by both IdeaVim and Vim
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -19,6 +20,7 @@ Plug 'vim-scripts/argtextobj.vim'
 Plug 'kana/vim-textobj-entire'
 Plug 'tommcdo/vim-exchange'
 Plug 'preservim/nerdtree'
+Plug 'terryma/vim-multiple-cursors' " Deprecated but supported by IdeaVim and Vim
 
 " Other plugins supported only by Vim
 Plug 'tpope/vim-abolish'
@@ -33,6 +35,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
+
 call plug#end()
 
 set number relativenumber
