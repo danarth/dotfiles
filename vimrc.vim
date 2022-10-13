@@ -171,6 +171,8 @@ else
     set nowrap
 
     syntax on
+    set re=0
+
     set termguicolors
     colorscheme onedark
     set noshowmode
