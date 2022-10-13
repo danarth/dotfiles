@@ -35,6 +35,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
+Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
 
