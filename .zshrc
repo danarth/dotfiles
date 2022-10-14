@@ -7,6 +7,7 @@ antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle fzf
+antigen bundle lpass
 antigen bundle kubectl
 antigen bundle docker
 antigen bundle tmux
