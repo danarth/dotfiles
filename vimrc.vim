@@ -194,7 +194,6 @@ else
     let g:lightline = {}
 
     if has('nvim')
-        source ~/.config/nvim/lspsetup.lua
         let g:lightline.component_expand = {
         \  'linter_infos': 'lightline#lsp#infos',
         \  'linter_warnings': 'lightline#lsp#warnings',

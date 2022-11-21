@@ -72,6 +72,8 @@ end
 
 require'lspconfig'.vimls.setup{}
 
+require'lspconfig'.pyright.setup{}
+
 require'lspconfig'.sumneko_lua.setup {
     on_attach = on_attach,
     settings = {

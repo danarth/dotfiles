@@ -39,6 +39,25 @@ VS Code doesn't support `source`-ing other settings files, so the `vscode-settin
 
 ### Neovim
 
+In `~/.config/nvim/init.vim` use the following:
+
+```
+luafile ~/dotfiles/lspsetup.lua
+```
+
 #### Language Server Protocol (LSP) Support
+
 ##### Lua
-```brew install lua-language-server```
+```
+brew install lua-language-server
+```
+
+##### Python
+```
+npm i -g pyright
+```
+
+##### Vimscript
+```
+npm i -g vim-language-server
+```
