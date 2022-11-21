@@ -1,3 +1,17 @@
+require("nvim-tree").setup({
+    diagnostics = {
+        enable = true
+    }
+})
+
+require("telescope").load_extension("workspaces")
+
+require("workspaces").setup({
+    hooks = {
+        open = "NvimTreeOpen",
+    }
+})
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 

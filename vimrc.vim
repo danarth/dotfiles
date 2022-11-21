@@ -50,7 +50,9 @@ if has('nvim')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+    Plug 'natecraddock/workspaces.nvim'
 endif
 call plug#end()
 
@@ -207,6 +209,7 @@ else
         nnoremap <leader>fg <cmd>Telescope live_grep<cr>
         nnoremap <leader>fb <cmd>Telescope buffers<cr>
         nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+        nnoremap <leader>fw <cmd>Telescope workspaces<cr>
     else
         let g:lightline.component_expand = {
         \  'linter_infos': 'lightline#ale#infos',
