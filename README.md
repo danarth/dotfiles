@@ -36,3 +36,9 @@ VS Code doesn't support `source`-ing other settings files, so the `vscode-settin
 * Windows `%APPDATA%\Code\User\settings.json`
 * macOS `$HOME/Library/Application\ Support/Code/User/settings.json`
 * Linux `$HOME/.config/Code/User/settings.json`
+
+### Neovim
+
+#### Language Server Protocol (LSP) Support
+##### Lua
+```brew install lua-language-server```

@@ -37,6 +37,19 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
 Plug 'frazrepo/vim-rainbow'
 
+" Plugins supported by nvim
+if has('nvim')
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'josa42/nvim-lightline-lsp'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+endif
 call plug#end()
 
 set number relativenumber
@@ -177,37 +190,51 @@ else
     colorscheme onedark
     set noshowmode
     set laststatus=2
-
-    let g:ale_completion_enabled = 1
-    set omnifunc=ale#completion#OmniFunc
-
-    " code navigation
-    nmap <leader>ce :ALENext<cr>
-    nmap <leader>cE :ALEPrevious<cr>
-    nmap <leader>co :ALEOrganizeImports<cr>
-
-    nmap <leader>gi :ALEGoToImplementation<cr>
-    nmap <leader>gd :ALEGoToDefinition<cr>
-    nmap <leader>gu :ALEFindReferences<cr>
-    nmap <leader>rr :ALERename<cr>
-
+    
     let g:lightline = {}
-    let g:lightline.colorscheme = 'onedark'
 
-    let g:lightline.component_function = {
-        \   'gitbranch': 'FugitiveHead'
+    if has('nvim')
+        source ~/.config/nvim/lspsetup.lua
+        let g:lightline.component_expand = {
+        \  'linter_infos': 'lightline#lsp#infos',
+        \  'linter_warnings': 'lightline#lsp#warnings',
+        \  'linter_errors': 'lightline#lsp#errors',
+        \  'linter_ok': 'lightline#lsp#ok',
         \ }
-
-    let g:lightline.component_expand = {
-        \  'linter_checking': 'lightline#ale#checking',
+        " code navigation is set up in lspconfig.lua 
+        nnoremap <leader>ff <cmd>Telescope find_files<cr>
+        nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+        nnoremap <leader>fb <cmd>Telescope buffers<cr>
+        nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+    else
+        let g:lightline.component_expand = {
         \  'linter_infos': 'lightline#ale#infos',
         \  'linter_warnings': 'lightline#ale#warnings',
         \  'linter_errors': 'lightline#ale#errors',
         \  'linter_ok': 'lightline#ale#ok',
         \ }
 
+        let g:ale_completion_enabled = 1
+        set omnifunc=ale#completion#OmniFunc
+
+        " code navigation
+        nmap <leader>ce :ALENext<cr>
+        nmap <leader>cE :ALEPrevious<cr>
+        nmap <leader>co :ALEOrganizeImports<cr>
+
+        nmap <leader>gi :ALEGoToImplementation<cr>
+        nmap <leader>gd :ALEGoToDefinition<cr>
+        nmap <leader>gu :ALEFindReferences<cr>
+        nmap <leader>rr :ALERename<cr>
+    endif
+
+    let g:lightline.colorscheme = 'onedark'
+
+    let g:lightline.component_function = {
+        \   'gitbranch': 'FugitiveHead'
+        \ }
+
     let g:lightline.component_type = {
-        \     'linter_checking': 'right',
         \     'linter_infos': 'right',
         \     'linter_warnings': 'warning',
         \     'linter_errors': 'error',
@@ -217,10 +244,13 @@ else
     let g:lightline.active = {
         \ 'left': [['mode', 'paste'],
         \       ['gitbranch', 'readonly', 'filename', 'modified']],
-        \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+        \ 'right': [ ['linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
         \            [ 'lineinfo' ],
 	    \            [ 'percent' ],
 	    \            [ 'fileformat', 'fileencoding', 'filetype'] ]
         \ }
+
+
 endif
+
 
