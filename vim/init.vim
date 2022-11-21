@@ -53,6 +53,7 @@ if has('nvim')
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     Plug 'natecraddock/workspaces.nvim'
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 endif
 call plug#end()
 
@@ -243,6 +244,10 @@ else
         \     'linter_warnings': 'warning',
         \     'linter_errors': 'error',
         \     'linter_ok': 'right',
+        \ }
+    
+    let g:lightline.enable = {
+        \   'tabline': 0
         \ }
 
     let g:lightline.active = {

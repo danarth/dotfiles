@@ -4,6 +4,12 @@ require("nvim-tree").setup({
     }
 })
 
+require("bufferline").setup({
+    options = {
+        offsets = { { filetype = "NvimTree", text="File Explorer", text_align = "left" } },
+    }
+})
+
 require("telescope").load_extension("workspaces")
 
 require("workspaces").setup({
