@@ -21,6 +21,8 @@ Plug 'kana/vim-textobj-entire'
 Plug 'tommcdo/vim-exchange'
 Plug 'preservim/nerdtree'
 Plug 'terryma/vim-multiple-cursors' " Deprecated but supported by IdeaVim and Vim
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 " Other plugins supported only by Vim
 Plug 'tpope/vim-abolish'

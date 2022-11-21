@@ -23,4 +23,4 @@ antigen bundle spaceship-prompt/spaceship-prompt
 
 antigen apply
 
-EDITOR="vim"
+EDITOR="nvim"
