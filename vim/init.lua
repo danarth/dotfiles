@@ -14,7 +14,7 @@ require("telescope").load_extension("workspaces")
 
 require("workspaces").setup({
     hooks = {
-        open = "NvimTreeOpen",
+        open = {"NvimTreeOpen", "VimuxOpenRunner"},
     }
 })
 

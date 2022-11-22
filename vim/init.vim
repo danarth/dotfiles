@@ -39,6 +39,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
 Plug 'frazrepo/vim-rainbow'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/vimux'
 
 " Plugins supported by nvim
 if has('nvim')
