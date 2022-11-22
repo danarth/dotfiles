@@ -38,6 +38,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
 Plug 'frazrepo/vim-rainbow'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Plugins supported by nvim
 if has('nvim')
