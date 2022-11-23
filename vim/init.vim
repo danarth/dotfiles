@@ -92,9 +92,10 @@ nmap <leader>iL ^v$
 " Buffers
 nmap <leader>bl :ls<cr>
 nmap <leader>bwq :w<cr> :bp\|bd #<cr>
-nmap <leader>bqq :bp\|bd! #<cr>
+nmap <leader>bq :bp\|bd #<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
+nmap <leader>bb :b #<cr>
 
 " Tabs
 nmap <c-h> <c-w>h
@@ -198,6 +199,7 @@ else
     set noshowmode
     set laststatus=2
     
+    let g:VimuxHeight = "40"
     let g:lightline = {}
 
     if has('nvim')
