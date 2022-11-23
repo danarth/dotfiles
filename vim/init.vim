@@ -203,6 +203,11 @@ else
     let g:VimuxHeight = "40"
     let g:lightline = {}
 
+    nmap <C-j> :TmuxNavigateDown<cr>
+    nmap <C-h> :TmuxNavigateLeft<cr>
+    nmap <C-l> :TmuxNavigateRight<cr>
+    nmap <C-k> :TmuxNavigateUp<cr>
+
     if has('nvim')
         let g:lightline.component_expand = {
         \  'linter_infos': 'lightline#lsp#infos',
