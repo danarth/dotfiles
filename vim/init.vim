@@ -109,6 +109,7 @@ set scr=10
 
 nmap <leader>cl ^D
 nmap <leader>) F(%
+map <F1> <Nop>
 
 let g:highlightedyank_highlight_duration=300
 
