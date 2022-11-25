@@ -24,14 +24,13 @@ Plug 'terryma/vim-multiple-cursors' " Deprecated but supported by IdeaVim and Vi
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 
-" Other plugins supported only by Vim
+" Other plugins not yet supported by IntelliJ
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'kana/vim-textobj-user'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
-Plug 'joshdick/onedark.vim'
 Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
@@ -40,6 +39,13 @@ Plug 'ryanolsonx/vim-xit'
 Plug 'frazrepo/vim-rainbow'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/vimux'
+
+" Colour schemes
+if has('nvim')
+    Plug 'navarasu/onedark.nvim'
+else
+    Plug 'joshdick/onedark.vim'
+endif
 
 " Plugins supported by nvim
 if has('nvim')
@@ -56,6 +62,8 @@ if has('nvim')
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     Plug 'natecraddock/workspaces.nvim'
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+    Plug 'michaelb/sniprun'
+    Plug 'stevearc/dressing.nvim'
 endif
 call plug#end()
 
@@ -73,6 +81,7 @@ set visualbell
 
 " Editor exit shortcuts
 nmap <leader>ww :w<cr>
+nmap <leader>wa :wa<cr>
 nmap <leader>wq :wq<cr>
 nmap <leader>qq :q!<cr>
 
@@ -192,16 +201,15 @@ else
 
     set nowrap
 
-    syntax on
     set re=0
 
-    set termguicolors
-    colorscheme onedark
     set noshowmode
     set laststatus=2
     
     let g:VimuxHeight = "40"
     let g:lightline = {}
+
+    colorscheme onedark
 
     nmap <C-j> :TmuxNavigateDown<cr>
     nmap <C-h> :TmuxNavigateLeft<cr>
@@ -209,6 +217,9 @@ else
     nmap <C-k> :TmuxNavigateUp<cr>
 
     if has('nvim')
+
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
         let g:lightline.component_expand = {
         \  'linter_infos': 'lightline#lsp#infos',
         \  'linter_warnings': 'lightline#lsp#warnings',
