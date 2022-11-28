@@ -79,16 +79,18 @@ cmp.setup {
 }
 
 local on_attach = function (client, bufnr)
+    local builtin = require('telescope.builtin')
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', '<leader>ce', vim.diagnostic.goto_next, bufopts)
     vim.keymap.set('n', '<leader>cE', vim.diagnostic.goto_prev, bufopts)
-    vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<leader>gu', vim.lsp.buf.references, bufopts)
+
+    vim.keymap.set('n', '<leader>gu', builtin.lsp_references, bufopts)
+    vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, bufopts)
+    vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, bufopts)
 end
 
 
