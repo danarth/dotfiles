@@ -43,6 +43,7 @@ Plug 'preservim/vimux'
 " Colour schemes
 if has('nvim')
     Plug 'navarasu/onedark.nvim'
+    Plug 'EdenEast/nightfox.nvim'
 else
     Plug 'joshdick/onedark.vim'
 endif
@@ -64,6 +65,9 @@ if has('nvim')
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'michaelb/sniprun'
     Plug 'stevearc/dressing.nvim'
+    Plug 'norcalli/nvim-colorizer.lua'
+else
+
 endif
 call plug#end()
 
@@ -209,14 +213,14 @@ else
     let g:VimuxHeight = "40"
     let g:lightline = {}
 
-    colorscheme onedark
-
     nmap <C-j> :TmuxNavigateDown<cr>
     nmap <C-h> :TmuxNavigateLeft<cr>
     nmap <C-l> :TmuxNavigateRight<cr>
     nmap <C-k> :TmuxNavigateUp<cr>
 
     if has('nvim')
+        colorscheme nightfox
+        let g:lightline.colorscheme = 'nightfox'
 
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -233,6 +237,9 @@ else
         nnoremap <leader>fh <cmd>Telescope help_tags<cr>
         nnoremap <leader>fw <cmd>Telescope workspaces<cr>
     else
+        colorscheme onedark
+        let g:lightline.colorscheme = 'onedark'
+
         let g:lightline.component_expand = {
         \  'linter_infos': 'lightline#ale#infos',
         \  'linter_warnings': 'lightline#ale#warnings',
@@ -254,7 +261,6 @@ else
         nmap <leader>rr :ALERename<cr>
     endif
 
-    let g:lightline.colorscheme = 'onedark'
 
     let g:lightline.component_function = {
         \   'gitbranch': 'FugitiveHead'
