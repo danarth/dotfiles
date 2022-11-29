@@ -1,3 +1,5 @@
+require("hop").setup()
+
 require("nvim-tree").setup({
     diagnostics = {
         enable = true
@@ -91,6 +93,21 @@ local on_attach = function (client, bufnr)
     vim.keymap.set('n', '<leader>gu', builtin.lsp_references, bufopts)
     vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, bufopts)
     vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, bufopts)
+
+    local hop = require('hop')
+    local directions = require('hop.hint').HintDirection
+    vim.keymap.set('n', '<leader><leader>f', function()
+      hop.hint_char1({ direction = directions.AFTER_CURSOR })
+    end, {remap=true})
+    vim.keymap.set('n', '<leader><leader>F', function()
+      hop.hint_char1({ direction = directions.BEFORE_CURSOR })
+    end, {remap=true})
+    vim.keymap.set('n', '<leader><leader>t', function()
+      hop.hint_char1({ direction = directions.AFTER_CURSOR, hint_offset = -1 })
+    end, {remap=true})
+    vim.keymap.set('n', '<leader><leader>T', function()
+      hop.hint_char1({ direction = directions.BEFORE_CURSOR, hint_offset = 1 })
+    end, {remap=true})
 end
 
 

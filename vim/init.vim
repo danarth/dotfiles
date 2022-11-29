@@ -10,11 +10,10 @@ if has('ide')
 endif
 
 call plug#begin('~/.vim/plugged')
-"
+
 " Plugins supported by both IdeaVim and Vim
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'kana/vim-textobj-entire'
@@ -31,9 +30,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
 Plug 'frazrepo/vim-rainbow'
@@ -66,9 +63,13 @@ if has('nvim')
     Plug 'michaelb/sniprun'
     Plug 'stevearc/dressing.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'phaazon/hop.nvim'
 else
-
+    Plug 'easymotion/vim-easymotion'
+    Plug 'dense-analysis/ale'
+    Plug 'maximbaz/lightline-ale'
 endif
+
 call plug#end()
 
 set number relativenumber
@@ -116,7 +117,11 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
-nmap <leader>fs :NERDTree<cr>
+if has('nvim')
+    nmap <leader>fs :NvimTreeToggle<cr>
+else
+    nmap <leader>fs :NERDTree<cr>
+endif
 
 set scr=10
 
