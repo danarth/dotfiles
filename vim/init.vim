@@ -131,6 +131,9 @@ map <F1> <Nop>
 
 let g:highlightedyank_highlight_duration=300
 
+" custom file types
+autocmd! BufNewFile,BufRead .env.* setf sh
+
 " ideaVim only settings
 if has('ide')
 
