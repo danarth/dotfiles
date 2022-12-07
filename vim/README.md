@@ -45,6 +45,11 @@ brew install lua-language-server
 npm i -g pyright
 ```
 
+#### ESLint
+```
+npm i -g vscode-langservers-extracted
+```
+
 #### Typescript
 ```
 npm i -g typescript-language-server
