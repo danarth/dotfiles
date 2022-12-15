@@ -1,5 +1,11 @@
 require("hop").setup()
 
+require('nvim-treesitter.configs').setup{
+    autotag = {
+        enable = true
+    }
+}
+
 require("nvim-tree").setup({
     diagnostics = {
         enable = true

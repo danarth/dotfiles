@@ -54,7 +54,7 @@ if has('nvim')
     Plug 'L3MON4D3/LuaSnip'
     Plug 'josa42/nvim-lightline-lsp'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -64,6 +64,7 @@ if has('nvim')
     Plug 'stevearc/dressing.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'phaazon/hop.nvim'
+    Plug 'windwp/nvim-ts-autotag'
 else
     Plug 'easymotion/vim-easymotion'
     Plug 'dense-analysis/ale'
@@ -133,6 +134,13 @@ let g:highlightedyank_highlight_duration=300
 
 " custom file types
 autocmd! BufNewFile,BufRead .env.* setf sh
+
+" highlight matches during search, not after
+augroup vimrc-incsearch-highlight
+    autocmd!
+    autocmd CmdlineEnter /,\? :set hlsearch
+    autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
 
 " ideaVim only settings
 if has('ide')
