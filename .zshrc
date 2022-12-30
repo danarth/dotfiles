@@ -15,11 +15,13 @@ antigen bundle tmux
 
 antigen bundle nyquase/vi-mode
 antigen bundle b4b4r07/zsh-vimode-visual
+antigen bundle danarth/azure-cli.zsh
 
 # fzf needs to be applied after vi-mode
 antigen bundle fzf
 
 antigen bundle spaceship-prompt/spaceship-prompt
+
 
 antigen apply
 
