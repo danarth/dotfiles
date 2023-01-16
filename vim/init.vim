@@ -62,6 +62,7 @@ if has('nvim')
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'michaelb/sniprun'
     Plug 'stevearc/dressing.nvim'
+    Plug 'stevearc/aerial.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'phaazon/hop.nvim'
     Plug 'windwp/nvim-ts-autotag'

@@ -20,11 +20,14 @@ require("bufferline").setup({
 
 require("telescope").load_extension("workspaces")
 
+require("aerial").setup{}
+
 require("workspaces").setup({
     hooks = {
-        open = {"NvimTreeOpen", "VimuxOpenRunner"},
+        open = {"NvimTreeOpen", "AerialOpenAll", "VimuxOpenRunner"},
     }
 })
+
 
 require('colorizer').setup()
 
