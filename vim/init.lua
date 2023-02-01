@@ -28,6 +28,7 @@ require("workspaces").setup({
     }
 })
 
+require("trouble").setup{}
 
 require('colorizer').setup()
 

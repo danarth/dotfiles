@@ -66,6 +66,7 @@ if has('nvim')
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'phaazon/hop.nvim'
     Plug 'windwp/nvim-ts-autotag'
+    Plug 'folke/trouble.nvim'
 else
     Plug 'easymotion/vim-easymotion'
     Plug 'dense-analysis/ale'
@@ -227,7 +228,7 @@ else
     set noshowmode
     set laststatus=2
     
-    let g:VimuxHeight = "40"
+    let g:VimuxHeight = "20"
     let g:lightline = {}
 
     nmap <C-j> :TmuxNavigateDown<cr>
