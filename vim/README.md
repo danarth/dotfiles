@@ -13,6 +13,7 @@ source C:\\Users\\<username>\\dotfiles\\init.vim
 source ~/dotfiles/init.vim
 ```
 
+
 ## Vim
 
 In `~/.vimrc`, `source` the `init.vim` file, e.g.:
@@ -28,12 +29,16 @@ Make sure that [Vim Plug](https://github.com/junegunn/vim-plug#installation) is 
 Follow the same instructions as above, but as I start to put more and more config in lua, add the following line the `init.vim` that is created for Neovim:
 
 ```vim
-luafile ~/dotfiles/lspsetup.lua
+luafile ~/dotfiles/vim/init.lua
 ```
+
+TODO: Original instructions came from migrating from Vim to Neovim. This needs cleaning up as Neovim is becoming more and more my primary tool #3
 
 ### Language Server Protocol (LSP) Support
 
 Neovim has really nice in-build LSP support, but the LSPs need to be installed manually. Here are the instructions for each:
+
+TODO: Use a plugin like mason.nvim to manage these external dependencies better #2
 
 #### Lua
 ```
