@@ -35,6 +35,11 @@ require('colorizer').setup()
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+require('mason').setup{}
+require('mason-lspconfig').setup{
+    automatic_installation = true,
+}
+
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp

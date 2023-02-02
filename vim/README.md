@@ -34,36 +34,6 @@ luafile ~/dotfiles/vim/init.lua
 
 TODO: Original instructions came from migrating from Vim to Neovim. This needs cleaning up as Neovim is becoming more and more my primary tool #3
 
-### Language Server Protocol (LSP) Support
-
-Neovim has really nice in-build LSP support, but the LSPs need to be installed manually. Here are the instructions for each:
-
-TODO: Use a plugin like mason.nvim to manage these external dependencies better #2
-
-#### Lua
-```
-brew install lua-language-server
-```
-
-#### Python
-```
-npm i -g pyright
-```
-
-#### ESLint
-```
-npm i -g vscode-langservers-extracted
-```
-
-#### Typescript
-```
-npm i -g typescript-language-server
-```
-
-#### Vimscript
-```
-npm i -g vim-language-server
-```
 ## Visual Studio Code
 
 VS Code doesn't support `source`-ing other settings files, so the `vscode-settings.json` file just needs to be copied over to the [platform-specific location](https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations):
