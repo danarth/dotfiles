@@ -22,11 +22,30 @@ require("telescope").load_extension("workspaces")
 
 require("aerial").setup{}
 
-require("workspaces").setup({
+function IsTmuxSession()
+    return os.getenv("TMUX") ~= nil
+end
+
+require("workspaces").setup{
     hooks = {
-        open = {"NvimTreeOpen", "AerialOpenAll", "VimuxOpenRunner"},
+        open = {
+            "NvimTreeOpen",
+            "AerialOpenAll",
+            function ()
+                if IsTmuxSession() then
+                    vim.cmd("VimuxOpenRunner")
+                end
+            end,
+            function ()
+                local workspace_name = require("workspaces").name()
+                if workspace_name ~= nil and IsTmuxSession() then
+                    vim.fn.system("tmux rename-window " .. workspace_name)
+                end
+            end
+        },
     }
-})
+}
+
 
 require("trouble").setup{}
 
