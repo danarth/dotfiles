@@ -34,8 +34,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
 Plug 'frazrepo/vim-rainbow'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'preservim/vimux'
+
+if $TMUX != ''
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'preservim/vimux'
+endif
+
 
 " Colour schemes
 if has('nvim')
