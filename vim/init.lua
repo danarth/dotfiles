@@ -145,6 +145,10 @@ local on_attach = function (client, bufnr)
 end
 
 
+require'lspconfig'.terraformls.setup{
+    on_attach = on_attach
+}
+
 require'lspconfig'.vimls.setup{
     on_attach = on_attach
 }
