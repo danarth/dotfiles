@@ -13,6 +13,7 @@ antigen bundle kubectl
 antigen bundle docker
 antigen bundle tmux
 antigen bundle terraform
+antigen bundle aliases
 
 antigen bundle nyquase/vi-mode
 antigen bundle b4b4r07/zsh-vimode-visual
