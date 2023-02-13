@@ -17,7 +17,9 @@ require('nvim-treesitter.configs').setup{
                ["af"] = "@function.outer",
                ["if"] = "@function.inner",
                ["ac"] = "@class.outer",
-               ["ic"] = "@class.inner"
+               ["ic"] = "@class.inner",
+               ["aa"] = "@parameter.outer",
+               ["ia"] = "@parameter.inner",
             }
         },
         swap = {
@@ -29,6 +31,21 @@ require('nvim-treesitter.configs').setup{
                 ["<leader>sA"] = "@parameter.inner"
             }
         }
+    }
+}
+
+require("neotest").setup{
+    adapters = {
+        require("neotest-python"),
+        require("neotest-vitest")
+    },
+    status = {
+        enabled = true,
+        signs = true
+    },
+    diagnostic = {
+        enabled = true,
+        severity = 1
     }
 }
 
@@ -159,6 +176,9 @@ local on_attach = function (client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
+
+    vim.keymap.set('n', '<leader>ft', ':Telescope tmux windows<cr>', bufopts)
+
     vim.keymap.set('n', '<leader>ce', vim.diagnostic.goto_next, bufopts)
     vim.keymap.set('n', '<leader>cE', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
@@ -167,6 +187,10 @@ local on_attach = function (client, bufnr)
     vim.keymap.set('n', '<leader>gu', builtin.lsp_references, bufopts)
     vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, bufopts)
     vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, bufopts)
+
+    local neotest = require('neotest')
+    vim.keymap.set('n', '<leader>xcr', neotest.run.run, bufopts)
+    vim.keymap.set('n', '<leader>xr', neotest.run.run_last, bufopts)
 
     local hop = require('hop')
     local directions = require('hop.hint').HintDirection

@@ -17,6 +17,7 @@ Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
 
 " Plugins used in nvim and vim
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
@@ -24,6 +25,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 if $TMUX != ''
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'preservim/vimux'
+    Plug 'camgraff/telescope-tmux.nvim'
 endif
 
 
@@ -65,6 +67,11 @@ if has('nvim')
     Plug 'folke/trouble.nvim'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'windwp/nvim-autopairs'
+    " Tests
+    Plug 'antoinemadec/FixCursorHold.nvim'
+    Plug 'nvim-neotest/neotest'
+    Plug 'nvim-neotest/neotest-python'
+    Plug 'marilari88/neotest-vitest'
 " Plugins only used in vim and IDEAVim
 else
     Plug 'airblade/vim-gitgutter'
@@ -73,7 +80,6 @@ else
     Plug 'maximbaz/lightline-ale'
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
-    Plug 'itchyny/lightline.vim'
     Plug 'frazrepo/vim-rainbow'
     Plug 'kana/vim-textobj-user'
     Plug 'vim-scripts/argtextobj.vim'
