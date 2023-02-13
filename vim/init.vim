@@ -62,6 +62,7 @@ if has('nvim')
     Plug 'josa42/nvim-lightline-lsp'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
