@@ -11,18 +11,15 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Plugins supported by both IdeaVim and Vim
+" Plugins used in nvim, IDEAVim and vim
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
-Plug 'tommcdo/vim-exchange'
-Plug 'preservim/nerdtree'
-Plug 'terryma/vim-multiple-cursors' " Deprecated but supported by IdeaVim and Vim
+
+" Plugins used in nvim and vim
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
-
-" Other plugins not yet supported by IntelliJ
-Plug 'tpope/vim-abolish'
 
 if $TMUX != ''
     Plug 'christoomey/vim-tmux-navigator'
@@ -38,7 +35,7 @@ else
     Plug 'joshdick/onedark.vim'
 endif
 
-" Plugins supported by nvim
+" Plugins only supported by nvim
 if has('nvim')
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
@@ -68,6 +65,7 @@ if has('nvim')
     Plug 'folke/trouble.nvim'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'windwp/nvim-autopairs'
+" Plugins only used in vim and IDEAVim
 else
     Plug 'airblade/vim-gitgutter'
     Plug 'easymotion/vim-easymotion'
@@ -80,6 +78,9 @@ else
     Plug 'kana/vim-textobj-user'
     Plug 'vim-scripts/argtextobj.vim'
     Plug 'kana/vim-textobj-entire'
+    Plug 'preservim/nerdtree'
+    Plug 'terryma/vim-multiple-cursors' " Deprecated but supported by IdeaVim and Vim
+    Plug 'tommcdo/vim-exchange'
 endif
 
 call plug#end()
