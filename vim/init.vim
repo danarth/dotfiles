@@ -56,6 +56,7 @@ if has('nvim')
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+    Plug 'mrjones2014/nvim-ts-rainbow'
     Plug 'natecraddock/workspaces.nvim'
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'michaelb/sniprun'

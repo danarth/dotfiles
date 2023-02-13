@@ -5,6 +5,10 @@ require('nvim-treesitter.configs').setup{
     autotag = {
         enable = true
     },
+    rainbow = {
+        enable = true,
+        extended_mode = true
+    },
     textobjects = {
         select = {
             enable = true,
