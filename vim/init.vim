@@ -15,8 +15,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
-Plug 'vim-scripts/argtextobj.vim'
-Plug 'kana/vim-textobj-entire'
 Plug 'tommcdo/vim-exchange'
 Plug 'preservim/nerdtree'
 Plug 'terryma/vim-multiple-cursors' " Deprecated but supported by IdeaVim and Vim
@@ -25,13 +23,6 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 
 " Other plugins not yet supported by IntelliJ
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-fugitive'
-Plug 'kana/vim-textobj-user'
-Plug 'sheerun/vim-polyglot'
-Plug 'itchyny/lightline.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'ryanolsonx/vim-xit'
-Plug 'frazrepo/vim-rainbow'
 
 if $TMUX != ''
     Plug 'christoomey/vim-tmux-navigator'
@@ -82,6 +73,12 @@ else
     Plug 'dense-analysis/ale'
     Plug 'maximbaz/lightline-ale'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'itchyny/lightline.vim'
+    Plug 'frazrepo/vim-rainbow'
+    Plug 'kana/vim-textobj-user'
+    Plug 'vim-scripts/argtextobj.vim'
+    Plug 'kana/vim-textobj-entire'
 endif
 
 call plug#end()
