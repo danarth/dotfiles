@@ -183,6 +183,7 @@ local on_attach = function (client, bufnr)
     vim.keymap.set('n', '<leader>cE', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<leader>ii', vim.lsp.buf.hover, bufopts)
 
     vim.keymap.set('n', '<leader>gu', builtin.lsp_references, bufopts)
     vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, bufopts)
