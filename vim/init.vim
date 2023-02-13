@@ -28,7 +28,6 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'kana/vim-textobj-user'
 Plug 'sheerun/vim-polyglot'
-Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanolsonx/vim-xit'
@@ -76,11 +75,13 @@ if has('nvim')
     Plug 'windwp/nvim-ts-autotag'
     Plug 'folke/trouble.nvim'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'windwp/nvim-autopairs'
 else
     Plug 'airblade/vim-gitgutter'
     Plug 'easymotion/vim-easymotion'
     Plug 'dense-analysis/ale'
     Plug 'maximbaz/lightline-ale'
+    Plug 'jiangmiao/auto-pairs'
 endif
 
 call plug#end()
