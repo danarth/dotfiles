@@ -51,6 +51,8 @@ require("trouble").setup{}
 
 require('colorizer').setup()
 
+require('gitsigns').setup{}
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -64,7 +66,12 @@ require('mason-null-ls').setup{
 }
 
 local null_ls = require('null-ls')
-null_ls.setup{}
+null_ls.setup{
+    sources = {
+        null_ls.builtins.code_actions.gitsigns
+    }
+}
+
 
 local lspconfig = require('lspconfig')
 
