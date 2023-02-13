@@ -53,6 +53,8 @@ endif
 if has('nvim')
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
+    Plug 'jose-elias-alvarez/null-ls.nvim'
+    Plug 'jay-babu/mason-null-ls.nvim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'

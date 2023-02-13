@@ -58,6 +58,13 @@ require('mason').setup{}
 require('mason-lspconfig').setup{
     automatic_installation = false,
 }
+require('mason-null-ls').setup{
+    automatic_installation = false,
+    automatic_setup = true
+}
+
+local null_ls = require('null-ls')
+null_ls.setup{}
 
 local lspconfig = require('lspconfig')
 
