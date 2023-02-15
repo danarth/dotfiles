@@ -107,6 +107,11 @@ require('mason-null-ls').setup{
     automatic_installation = false,
     automatic_setup = true
 }
+require('mason-nvim-dap').setup{
+    automatic_installation = false,
+    automatic_setup = true
+}
+require('mason-nvim-dap').setup_handlers()
 
 local null_ls = require('null-ls')
 null_ls.setup{
@@ -189,9 +194,12 @@ local on_attach = function (client, bufnr)
     vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, bufopts)
     vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, bufopts)
 
+    local dap = require('dap')
     local neotest = require('neotest')
     vim.keymap.set('n', '<leader>xcr', neotest.run.run, bufopts)
     vim.keymap.set('n', '<leader>xr', neotest.run.run_last, bufopts)
+    vim.keymap.set('n', '<leader>xb', dap.toggle_breakpoint, bufopts)
+    vim.keymap.set('n', '<leader>xd', dap.continue, bufopts)
 
     local hop = require('hop')
     local directions = require('hop.hint').HintDirection

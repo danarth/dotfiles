@@ -18,6 +18,7 @@ Plug 'machakann/vim-highlightedyank'
 
 " Plugins used in nvim and vim
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
@@ -72,6 +73,10 @@ if has('nvim')
     Plug 'nvim-neotest/neotest'
     Plug 'nvim-neotest/neotest-python'
     Plug 'marilari88/neotest-vitest'
+    " Debugging
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'jay-babu/mason-nvim-dap.nvim'
+    Plug 'mfussenegger/nvim-dap-python'
 " Plugins only used in vim and IDEAVim
 else
     Plug 'airblade/vim-gitgutter'
