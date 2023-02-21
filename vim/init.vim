@@ -40,23 +40,31 @@ endif
 
 " Plugins only supported by nvim
 if has('nvim')
+    " Treesitter plugins
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'mrjones2014/nvim-ts-rainbow'
+    Plug 'windwp/nvim-ts-autotag'
+    Plug 'windwp/nvim-autopairs'
+
     Plug 'williamboman/mason.nvim'
+    
+    " LSP Plugins
     Plug 'williamboman/mason-lspconfig.nvim'
     Plug 'jose-elias-alvarez/null-ls.nvim'
     Plug 'jay-babu/mason-null-ls.nvim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'josa42/nvim-lightline-lsp'
+    Plug 'folke/trouble.nvim'
+
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'L3MON4D3/LuaSnip'
-    Plug 'josa42/nvim-lightline-lsp'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-    Plug 'mrjones2014/nvim-ts-rainbow'
     Plug 'natecraddock/workspaces.nvim'
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'michaelb/sniprun'
@@ -64,10 +72,8 @@ if has('nvim')
     Plug 'stevearc/aerial.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'phaazon/hop.nvim'
-    Plug 'windwp/nvim-ts-autotag'
-    Plug 'folke/trouble.nvim'
     Plug 'lewis6991/gitsigns.nvim'
-    Plug 'windwp/nvim-autopairs'
+
     " Tests
     Plug 'antoinemadec/FixCursorHold.nvim'
     Plug 'nvim-neotest/neotest'
