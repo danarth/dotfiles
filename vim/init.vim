@@ -76,6 +76,7 @@ if has('nvim')
     " Debugging
     Plug 'mfussenegger/nvim-dap'
     Plug 'jay-babu/mason-nvim-dap.nvim'
+    Plug 'rcarriga/nvim-dap-ui'
     Plug 'mfussenegger/nvim-dap-python'
 " Plugins only used in vim and IDEAVim
 else

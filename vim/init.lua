@@ -112,6 +112,7 @@ require('mason-nvim-dap').setup{
     automatic_setup = true
 }
 require('mason-nvim-dap').setup_handlers()
+require('dapui').setup{}
 
 local null_ls = require('null-ls')
 null_ls.setup{
