@@ -43,7 +43,6 @@ if has('nvim')
     " Treesitter plugins
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-    Plug 'mrjones2014/nvim-ts-rainbow'
     Plug 'windwp/nvim-ts-autotag'
     Plug 'windwp/nvim-autopairs'
     Plug 'm-demare/hlargs.nvim'
