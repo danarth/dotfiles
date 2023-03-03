@@ -34,6 +34,8 @@ require('nvim-treesitter.configs').setup{
     }
 }
 
+require('hlargs').setup{}
+
 require("neotest").setup{
     adapters = {
         require("neotest-python"),

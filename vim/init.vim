@@ -46,6 +46,7 @@ if has('nvim')
     Plug 'mrjones2014/nvim-ts-rainbow'
     Plug 'windwp/nvim-ts-autotag'
     Plug 'windwp/nvim-autopairs'
+    Plug 'm-demare/hlargs.nvim'
 
     Plug 'williamboman/mason.nvim'
     
