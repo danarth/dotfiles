@@ -72,7 +72,10 @@ if has('nvim')
     Plug 'stevearc/aerial.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'phaazon/hop.nvim'
+    
+    " Git
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'akinsho/git-conflict.nvim'
 
     " Tests
     Plug 'antoinemadec/FixCursorHold.nvim'

@@ -93,6 +93,7 @@ require("trouble").setup{}
 require('colorizer').setup()
 
 require('gitsigns').setup{}
+require('git-conflict').setup{}
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
