@@ -24,6 +24,7 @@ antigen bundle fzf
 
 antigen bundle spaceship-prompt/spaceship-prompt
 
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
