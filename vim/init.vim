@@ -82,11 +82,15 @@ if has('nvim')
     Plug 'nvim-neotest/neotest'
     Plug 'nvim-neotest/neotest-python'
     Plug 'marilari88/neotest-vitest'
+    
     " Debugging
     Plug 'mfussenegger/nvim-dap'
     Plug 'jay-babu/mason-nvim-dap.nvim'
     Plug 'rcarriga/nvim-dap-ui'
     Plug 'mfussenegger/nvim-dap-python'
+    
+    " Coding
+    Plug 'github/copilot.vim'
 " Plugins only used in vim and IDEAVim
 else
     Plug 'airblade/vim-gitgutter'
