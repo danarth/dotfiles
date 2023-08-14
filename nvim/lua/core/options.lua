@@ -32,6 +32,7 @@ end
 opt.completeopt = 'menu,menuone,noselect'
 opt.showmode = false
 opt.shortmess = 'aoOTIcF'
+opt.scroll = 10
 opt.scrolloff = 2
 opt.sidescrolloff = 5
 opt.ruler = false
@@ -64,11 +65,20 @@ opt.foldlevelstart = 99
 opt.foldmethod = 'marker'
 
 opt.number = true
+opt.relativenumber = true
 opt.signcolumn = 'yes'
 opt.spelloptions = 'camel'
 
 opt.textwidth = 100
 opt.colorcolumn = '100'
+
+opt.encoding = 'utf-8'
+opt.splitright = true
+opt.fileformat = 'unix'
+opt.wrap = false
+opt.regexpengine = 0
+opt.showmode = false
+
 if vim.loop.os_uname().sysname == 'Darwin' then
   vim.g.clipboard = {
     name = 'macOS-clipboard',

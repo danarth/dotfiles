@@ -1,18 +1,37 @@
 local package = require('core.pack').package
 local conf = require('modules.ui.config')
 
-package({ 'glepnir/zephyr-nvim', config = conf.zephyr })
+package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
 
-package({ 'glepnir/dashboard-nvim', config = conf.dashboard })
+package('josa42/nvim-lightline-lsp')
+
+package({
+    'folke/trouble.nvim',
+    config = function()
+        require('trouble').setup{}
+    end
+})
+
+package({
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+        require('nvim-tree').setup{
+            diagnostics = {
+                enable = true
+            }
+        }
+    end
+})
+
+package({
+    'norcalli/nvim-colorizer.lua',
+    config = function ()
+        require('colorizer').setup{}
+    end
+})
 
 package({
   'akinsho/nvim-bufferline.lua',
   config = conf.nvim_bufferline,
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-})
-
-package({
-  'lukas-reineke/indent-blankline.nvim',
-  event = 'BufRead',
-  config = conf.indent_blankline,
 })

@@ -1,66 +1,54 @@
 local config = {}
 
-function config.zephyr()
-  vim.cmd('colorscheme zephyr')
+function config.nightfox()
+  vim.cmd('colorscheme nightfox')
 end
 
-function config.dashboard()
-  local db = require('dashboard')
-  db.setup({
-    theme = 'hyper',
-    config = {
-      week_header = {
-        enable = true,
-      },
-      shortcut = {
-        { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
-        {
-          desc = ' Files',
-          group = 'Label',
-          action = 'Telescope find_files',
-          key = 'f',
-        },
-        {
-          desc = ' Apps',
-          group = 'DiagnosticHint',
-          action = 'Telescope app',
-          key = 'a',
-        },
-        {
-          desc = ' dotfiles',
-          group = 'Number',
-          action = 'Telescope dotfiles',
-          key = 'd',
-        },
-      },
+function config.lightline()
+  vim.g.lightline = {
+    colorscheme = 'nightfox',
+    enable = {
+      tabline = 0,
     },
-  })
+    component_expand = {
+     linter_infos = 'lightline#lsp#infos',
+     linter_warnings = 'lightline#lsp#warnings',
+     linter_errors = 'lightline#lsp#errors',
+     linter_ok = 'lightline#lsp#ok',
+    },
+    component_function = {
+      gitbranch = 'FugitiveHead'
+    },
+    component_type = {
+      linter_infos = 'right',
+      linter_warnings = 'warning',
+      linter_errors = 'error',
+      linter_ok = 'right',
+    },
+    active = {
+      left = {
+        { 'mode', 'page' },
+        { 'gitbranch', 'readonly', 'filename', 'modified' }
+      },
+      right = {
+        { 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' },
+        { 'line_info' },
+        { 'percent' },
+        { 'fileformat', 'fileencoding', 'filetype' }
+      }
+    }
+  }
+
 end
 
 function config.nvim_bufferline()
   require('bufferline').setup({
     options = {
-      modified_icon = '✥',
-      buffer_close_icon = '',
       always_show_bufferline = false,
+      offsets = {
+        { filetype = "NvimTree", text="File Explorer", text_align = "left" }
+      },
     },
-  })
-end
-
-function config.indent_blankline()
-  require('indent_blankline').setup({
-    char = '│',
-    use_treesitter_scope = true,
-    show_first_indent_level = true,
-    show_current_context = false,
-    show_current_context_start = false,
-    show_current_context_start_on_current_line = false,
-    filetype_exclude = {
-      'dashboard',
-      'log',
-      'TelescopePrompt',
-    },
-    buftype_exclude = { 'terminal', 'nofile', 'prompt' },
   })
 end
 

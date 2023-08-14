@@ -1,19 +1,17 @@
 local package = require('core.pack').package
 local conf = require('modules.completion.config')
 
+package('williamboman/mason.nvim')
+package('williamboman/mason-lspconfig.nvim')
+package('jose-elias-alvarez/null-ls.nvim')
+package('jay-babu/mason-null-ls.nvim')
+
 package({
   'neovim/nvim-lspconfig',
   -- used filetype to lazyload lsp
   -- config your language filetype in here
   ft = { 'lua', 'rust', 'c', 'cpp' },
   config = conf.nvim_lsp,
-})
-
-package({
-  'glepnir/lspsaga.nvim',
-  event = 'BufRead',
-  dev = false,
-  config = conf.lspsaga,
 })
 
 package({

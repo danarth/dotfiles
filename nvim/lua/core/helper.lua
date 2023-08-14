@@ -21,6 +21,10 @@ function helper.config_path()
   return vim.fn.stdpath('config')
 end
 
+function helper.is_tmux_session()
+  return os.getenv("TMUX") ~= nil
+end
+
 local function get_color(color)
   local tbl = {
     black = '\027[90m',

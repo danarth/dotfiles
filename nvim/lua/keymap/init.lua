@@ -4,55 +4,54 @@ local silent, noremap = keymap.silent, keymap.noremap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
 
--- Use space as leader key
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 
--- leaderkey
-nmap({ ' ', '', opts(noremap) })
-xmap({ ' ', '', opts(noremap) })
-
--- usage example
 nmap({
-  -- noremal remap
-  -- close buffer
-  { '<C-x>k', cmd('bdelete'), opts(noremap, silent) },
-  -- save
-  { '<C-s>', cmd('write'), opts(noremap) },
-  -- yank
-  { 'Y', 'y$', opts(noremap) },
-  -- buffer jump
-  { ']b', cmd('bn'), opts(noremap) },
-  { '[b', cmd('bp'), opts(noremap) },
-  -- remove trailing white space
-  { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
-  -- window jump
-  { '<C-h>', '<C-w>h', opts(noremap) },
-  { '<C-l>', '<C-w>l', opts(noremap) },
-  { '<C-j>', '<C-w>j', opts(noremap) },
-  { '<C-k>', '<C-w>k', opts(noremap) },
+  -- disable arrow keys
+  { '<up>', '<nop>' },
+  { '<down>', '<nop>' },
+  { '<left>', '<nop>' },
+  { '<right>', '<nop>' },
+
+  -- clear line
+  { 'DD', '^D' },
+
+  -- exit editor
+  { '<leader>ww', cmd('w') },
+  { '<leader>wa', cmd('wa') },
+  { '<leader>wq', cmd('wq') },
+  { '<leader>qq', cmd('q!') },
+
+  -- normal mode space
+  { '<space>', 'i<space><esc>' },
+
+  -- buffers
+  { '<leader>bl', cmd('ls') },
+  { '<leader>bq', cmd('bp|bd #') },
+  { '<leader>bn', cmd('bn') },
+  { '<leader>bp', cmd('bp') },
+  { '<leader>bb', cmd('b #') },
+
+
+  -- disable annoying help shortcut
+  { '<f1>', '<nop>' },
 })
 
+-- insert mode
+-- TODO why is this not working?
 imap({
-  -- insert mode
-  { '<C-h>', '<Bs>', opts(noremap) },
-  { '<C-e>', '<End>', opts(noremap) },
+  { 'jk', '<esc>' },
 })
 
--- commandline remap
-cmap({ '<C-b>', '<Left>', opts(noremap) })
 -- usage of plugins
 nmap({
-  -- plugin manager: Lazy.nvim
-  { '<Leader>pu', cmd('Lazy update'), opts(noremap, silent) },
-  { '<Leader>pi', cmd('Lazy install'), opts(noremap, silent) },
-  -- dashboard
-  { '<Leader>n', cmd('DashboardNewFile'), opts(noremap, silent) },
-  { '<Leader>ss', cmd('SessionSave'), opts(noremap, silent) },
-  { '<Leader>sl', cmd('SessionLoad'), opts(noremap, silent) },
-  -- nvimtree
-  { '<Leader>e', cmd('NvimTreeToggle'), opts(noremap, silent) },
+  -- launch file tree
+  { '<leader>fs', cmd('NvimTreeToggle') },
+
   -- Telescope
-  { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
-  { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
-  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<leader>fg', cmd('Telescope live_grep'), opts(noremap, silent) },
+  { '<leader>fb', cmd('Telescope buffers'), opts(noremap, silent) },
+  { '<leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
+  { '<leader>fw', cmd('Telescope workspaces'), opts(noremap, silent) },
 })

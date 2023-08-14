@@ -1,36 +1,36 @@
-require("hop").setup()
-require('nvim-autopairs').setup{}
+-- require("hop").setup()
+-- require('nvim-autopairs').setup{}
 
-require('nvim-treesitter.configs').setup{
-    autotag = {
-        enable = true
-    },
-    textobjects = {
-        select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-               ["af"] = "@function.outer",
-               ["if"] = "@function.inner",
-               ["ac"] = "@class.outer",
-               ["ic"] = "@class.inner",
-               ["aa"] = "@parameter.outer",
-               ["ia"] = "@parameter.inner",
-            }
-        },
-        swap = {
-            enable = true,
-            swap_next = {
-                ["<leader>sa"] = "@parameter.inner"
-            },
-            swap_previous = {
-                ["<leader>sA"] = "@parameter.inner"
-            }
-        }
-    }
-}
+-- require('nvim-treesitter.configs').setup{
+--     autotag = {
+--         enable = true
+--     },
+--     textobjects = {
+--         select = {
+--             enable = true,
+--             lookahead = true,
+--             keymaps = {
+--                ["af"] = "@function.outer",
+--                ["if"] = "@function.inner",
+--                ["ac"] = "@class.outer",
+--                ["ic"] = "@class.inner",
+--                ["aa"] = "@parameter.outer",
+--                ["ia"] = "@parameter.inner",
+--             }
+--         },
+--         swap = {
+--             enable = true,
+--             swap_next = {
+--                 ["<leader>sa"] = "@parameter.inner"
+--             },
+--             swap_previous = {
+--                 ["<leader>sA"] = "@parameter.inner"
+--             }
+--         }
+--     }
+-- }
 
-require('hlargs').setup{}
+-- require('hlargs').setup{}
 
 require("neotest").setup{
     adapters = {
@@ -47,53 +47,49 @@ require("neotest").setup{
     }
 }
 
-require("nvim-tree").setup({
-    diagnostics = {
-        enable = true
-    }
-})
+-- require("nvim-tree").setup({
+--     diagnostics = {
+--         enable = true
+--     }
+-- })
 
-require("bufferline").setup({
-    options = {
-        offsets = { { filetype = "NvimTree", text="File Explorer", text_align = "left" } },
-    }
-})
+-- require("bufferline").setup({
+--     options = {
+--         offsets = { { filetype = "NvimTree", text="File Explorer", text_align = "left" } },
+--     }
+-- })
 
-require("telescope").load_extension("workspaces")
+-- require("telescope").load_extension("workspaces")
 
-require("aerial").setup{}
+-- require("aerial").setup{}
 
-function IsTmuxSession()
-    return os.getenv("TMUX") ~= nil
-end
+-- function IsTmuxSession()
+--     return os.getenv("TMUX") ~= nil
+-- end
 
-require("workspaces").setup{
-    hooks = {
-        open = {
-            "NvimTreeOpen",
-            "AerialOpenAll",
-            function ()
-                if IsTmuxSession() then
-                    vim.cmd("VimuxOpenRunner")
-                end
-            end,
-            function ()
-                local workspace_name = require("workspaces").name()
-                if workspace_name ~= nil and IsTmuxSession() then
-                    vim.fn.system("tmux rename-window " .. workspace_name)
-                end
-            end
-        },
-    }
-}
+-- require("workspaces").setup{
+--     hooks = {
+--         open = {
+--             "NvimTreeOpen",
+--             "AerialOpenAll",
+--             function ()
+--                 if IsTmuxSession() then
+--                     vim.cmd("VimuxOpenRunner")
+--                 end
+--             end,
+--             function ()
+--                 local workspace_name = require("workspaces").name()
+--                 if workspace_name ~= nil and IsTmuxSession() then
+--                     vim.fn.system("tmux rename-window " .. workspace_name)
+--                 end
+--             end
+--         },
+--     }
+-- }
 
 
-require("trouble").setup{}
-
-require('colorizer').setup()
-
-require('gitsigns').setup{}
-require('git-conflict').setup{}
+-- require('gitsigns').setup{}
+-- require('git-conflict').setup{}
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

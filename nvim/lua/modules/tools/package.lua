@@ -2,6 +2,11 @@ local package = require('core.pack').package
 local conf = require('modules.tools.config')
 
 package({
+    'natecraddock/workspaces.nvim',
+    config = conf.workspaces,
+})
+
+package({
   'nvim-telescope/telescope.nvim',
   cmd = 'Telescope',
   config = conf.telescope,
