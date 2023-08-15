@@ -1,18 +1,82 @@
 local config = {}
 
--- config server in this function
-function config.nvim_lsp() end
+local on_attach = function (client)
+    vim.opt.omnifunc = 'v:lua.vim.lsp.omnifunc'
+end
+
+function config.nvim_lsp()
+  local lspconfig = require('lspconfig')
+
+  lspconfig.terraformls.setup{
+      on_attach = on_attach
+  }
+
+  lspconfig.vimls.setup{
+      on_attach = on_attach
+  }
+
+  lspconfig.pyright.setup{
+      on_attach = on_attach
+  }
+
+  lspconfig.tsserver.setup{
+      on_attach = on_attach
+  }
+
+  lspconfig.eslint.setup{
+      on_attach = on_attach
+  }
+
+  lspconfig.lua_ls.setup {
+      on_attach = on_attach,
+      settings = {
+          Lua = {
+              runtime = {
+                  -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                  version = 'LuaJIT',
+              },
+              diagnostics = {
+                  -- Get the language server to recognize the `vim` global
+                  globals = {'vim'},
+              },
+              workspace = {
+                  -- Make the server aware of Neovim runtime files
+                  library = vim.api.nvim_get_runtime_file("", true),
+                  checkThirdParty = false
+              },
+              -- Do not send telemetry data containing a randomized but unique identifier
+              telemetry = {
+                  enable = false,
+              },
+          },
+      },
+  }
+end
 
 function config.nvim_cmp()
+  local luasnip = require 'luasnip'
   local cmp = require('cmp')
 
-  cmp.setup({
-    preselect = cmp.PreselectMode.Item,
-    window = {
-      completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
+  cmp.setup{
+      snippet = {
+          expand = function(args)
+              luasnip.lsp_expand(args.body)
+          end,
+      },
+      mapping = cmp.mapping.preset.insert({
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm {
+              behavior = cmp.ConfirmBehavior.Replace,
+              select = true,
+          },
+    }),
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
     },
-  })
+  }
 end
 
 function config.lua_snip()
@@ -37,7 +101,4 @@ function config.lua_snip()
   })
 end
 
-function config.lspsaga()
-  require('lspsaga').setup({})
-end
 return config

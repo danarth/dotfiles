@@ -1,6 +1,10 @@
 local package = require('core.pack').package
 local conf = require('modules.editor.config')
 
+package('tpope/vim-commentary')
+package('tpope/vim-surround')
+package('tpope/vim-abolish')
+
 package({
   'nvim-treesitter/nvim-treesitter',
   event = 'BufRead',

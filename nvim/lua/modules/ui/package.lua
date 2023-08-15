@@ -3,7 +3,11 @@ local conf = require('modules.ui.config')
 
 package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
 
-package('josa42/nvim-lightline-lsp')
+package({
+  'josa42/nvim-lightline-lsp',
+  config = conf.lightline,
+  dependencies = { 'itchyny/lightline.vim' },
+})
 
 package({
     'folke/trouble.nvim',

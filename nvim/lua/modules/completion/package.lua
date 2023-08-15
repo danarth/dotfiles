@@ -1,16 +1,46 @@
 local package = require('core.pack').package
 local conf = require('modules.completion.config')
 
-package('williamboman/mason.nvim')
-package('williamboman/mason-lspconfig.nvim')
-package('jose-elias-alvarez/null-ls.nvim')
-package('jay-babu/mason-null-ls.nvim')
+package({
+  'williamboman/mason.nvim',
+  config = function()
+    require('mason').setup{}
+  end
+})
+
+package({
+  'williamboman/mason-lspconfig.nvim',
+  config = function()
+    require('mason-lspconfig').setup{
+      automatic_installation = false
+    }
+  end
+})
+
+package({
+  'jay-babu/mason-null-ls.nvim',
+  config = function()
+    require('mason-null-ls').setup{
+      automatic_installation = false,
+      automatic_setup = true,
+    }
+  end
+})
+
+package({
+  'jose-elias-alvarez/null-ls.nvim',
+  config = function()
+    local null_ls = require('null-ls')
+    null_ls.setup{
+      sources = {
+        null_ls.builtins.code_actions.gitsigns
+      }
+    }
+  end
+})
 
 package({
   'neovim/nvim-lspconfig',
-  -- used filetype to lazyload lsp
-  -- config your language filetype in here
-  ft = { 'lua', 'rust', 'c', 'cpp' },
   config = conf.nvim_lsp,
 })
 
@@ -26,4 +56,8 @@ package({
   },
 })
 
-package({ 'L3MON4D3/LuaSnip', event = 'InsertCharPre', config = conf.lua_snip })
+package({
+  'L3MON4D3/LuaSnip',
+  event = 'InsertCharPre',
+  config = conf.lua_snip
+})
