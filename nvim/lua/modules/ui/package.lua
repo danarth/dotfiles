@@ -11,9 +11,10 @@ package({
 package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
 
 package({
-  'josa42/nvim-lightline-lsp',
-  config = conf.lightline,
-  dependencies = { 'itchyny/lightline.vim' },
+  'freddiehaddad/feline.nvim',
+  config = function()
+    require('modules.ui.feline')
+  end
 })
 
 package({
