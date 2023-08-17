@@ -47,3 +47,4 @@ package({
   config = conf.nvim_bufferline,
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 })
+

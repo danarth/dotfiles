@@ -7,6 +7,10 @@ end
 function config.nvim_lsp()
   local lspconfig = require('lspconfig')
 
+  lspconfig.jsonls.setup{
+      on_attach = on_attach
+  }
+
   lspconfig.terraformls.setup{
       on_attach = on_attach
   }

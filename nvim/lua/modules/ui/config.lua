@@ -11,6 +11,12 @@ function config.dashboard()
       },
       shortcut = {
         {
+          desc = ' Scatch File',
+          group = 'DiagnosticHint',
+          key = 's',
+          action = 'Scratch'
+        },
+        {
           desc = ' Workspaces',
           group = 'Label',
           key = 'w',
@@ -18,7 +24,7 @@ function config.dashboard()
         },
         {
           desc = ' Files',
-          group = 'DiagnosticHint',
+          group = 'Special',
           key = 'f',
           action = 'Telescope find_files'
         },
@@ -27,6 +33,11 @@ function config.dashboard()
           group = 'Number',
           key = 't',
           action = 'VimuxOpenRunner'
+        },
+        {
+          desc = '󰗼 Exit',
+          key = 'q',
+          action = 'q'
         }
       },
       footer = {

@@ -23,3 +23,9 @@ package({
     require('hlsearch').setup()
   end,
 })
+
+package({
+  "LintaoAmons/scratch.nvim",
+  event = 'VimEnter',
+})
+
