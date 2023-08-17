@@ -41,6 +41,7 @@ nmap({
   { '<leader>ca', vim.lsp.buf.code_action, opts(silent, noremap) },
   { '<leader>rr', vim.lsp.buf.rename, opts(silent, noremap) },
   { '<leader>ii', vim.lsp.buf.hover, opts(silent, noremap) },
+  { '<leader>==', vim.lsp.buf.format, opts(silent, noremap) }
 })
 
 -- insert mode
