@@ -1,6 +1,13 @@
 local package = require('core.pack').package
 local conf = require('modules.ui.config')
 
+package({
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
+  config = conf.dashboard,
+  dependencies = {{ 'nvim-tree/nvim-web-devicons' }}
+})
+
 package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
 
 package({
