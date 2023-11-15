@@ -57,7 +57,8 @@ function config.nvim_bufferline()
     options = {
       always_show_bufferline = false,
       offsets = {
-        { filetype = "NvimTree", text="File Explorer", text_align = "left" }
+        { filetype = "NvimTree", text="File Explorer", text_align = "left" },
+        { filetype = "dbui", text="Databases", text_align = "left" },
       },
     },
   })
