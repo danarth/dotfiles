@@ -45,6 +45,11 @@ package({
 })
 
 package({
+  'danarth/sonarlint.nvim',
+  config = conf.sonarqube,
+})
+
+package({
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   config = conf.nvim_cmp,
