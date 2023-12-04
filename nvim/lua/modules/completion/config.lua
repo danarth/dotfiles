@@ -60,6 +60,7 @@ end
 function config.sonarqube()
   require('sonarlint').setup({
     server = {
+      on_attach = on_attach,
       cmd = {
         'sonarlint-language-server', '-stdio', '-analyzers',
         -- paths to the analyzers you need, using those for python and java in this example
