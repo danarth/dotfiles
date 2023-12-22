@@ -61,6 +61,7 @@ nmap({
   { '<leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
   { '<leader>fg', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<leader>fb', cmd('Telescope buffers'), opts(noremap, silent) },
+  { '<leader>fr', cmd('Telescope registers'), opts(noremap, silent) },
   { '<leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
   { '<leader>fw', cmd('Telescope workspaces'), opts(noremap, silent) },
 
