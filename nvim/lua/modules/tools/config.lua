@@ -7,7 +7,6 @@ function config.workspaces()
       hooks = {
           open = {
               "NvimTreeOpen",
-              "AerialOpenAll",
               function ()
                   if is_tmux_session() then
                       vim.cmd("VimuxOpenRunner")
