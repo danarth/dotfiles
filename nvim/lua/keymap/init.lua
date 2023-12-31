@@ -26,11 +26,11 @@ nmap({
   { '<space>', 'i<space><esc>' },
 
   -- buffers
-  { '<leader>bl', cmd('ls') },
-  { '<leader>bq', cmd('Bdelete') },
-  { '<leader>bn', cmd('bn') },
-  { '<leader>bp', cmd('bp') },
-  { '<leader>bb', cmd('b #') },
+  { '<leader>bl', cmd('ls'), { desc = "List all buffers" }},
+  { '<leader>bq', cmd('Bdelete'), { desc = "Close current buffer" }},
+  { '<leader>bn', cmd('bn') , { desc = "Goto next buffer" }},
+  { '<leader>bp', cmd('bp') , { desc = "Goto previous buffer" }},
+  { '<leader>bb', cmd('b #'), { desc = "Switch to previous buffer" }},
 
   -- disable annoying help shortcut
   { '<f1>', '<nop>' },
