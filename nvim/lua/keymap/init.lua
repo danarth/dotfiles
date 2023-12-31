@@ -4,7 +4,7 @@ local silent, noremap, remap = keymap.silent, keymap.noremap, keymap.remap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
 
- vim.g.mapleader = ','
+vim.g.mapleader = ','
 
 nmap({
   -- disable arrow keys
@@ -27,7 +27,7 @@ nmap({
 
   -- buffers
   { '<leader>bl', cmd('ls') },
-  { '<leader>bq', cmd('bp|bd #') },
+  { '<leader>bq', cmd('Bdelete') },
   { '<leader>bn', cmd('bn') },
   { '<leader>bp', cmd('bp') },
   { '<leader>bb', cmd('b #') },

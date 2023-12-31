@@ -48,3 +48,4 @@ package({
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 })
 
+package({'famiu/bufdelete.nvim'})
