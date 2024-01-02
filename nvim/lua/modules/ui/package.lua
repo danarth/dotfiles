@@ -48,3 +48,5 @@ package({
 })
 
 package({'famiu/bufdelete.nvim'})
+
+package('stevearc/dressing.nvim')
