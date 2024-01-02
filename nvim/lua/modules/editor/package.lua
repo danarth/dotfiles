@@ -45,11 +45,8 @@ package({
 })
 
 package({
-  'stevearc/aerial.nvim',
-  dependencies = {
-    'stevearc/dressing.nvim'
-  },
+  'simrat39/symbols-outline.nvim',
   config = function()
-    require('aerial').setup{}
+    require('symbols-outline').setup{}
   end
 })
