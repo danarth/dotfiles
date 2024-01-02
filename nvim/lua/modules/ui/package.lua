@@ -25,14 +25,13 @@ package({
 })
 
 package({
-    'nvim-tree/nvim-tree.lua',
-    config = function()
-        require('nvim-tree').setup{
-            diagnostics = {
-                enable = true
-            }
-        }
-    end
+  'nvim-neo-tree/neo-tree.nvim',
+  branch = 'v3.x',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
+    'MunifTanjim/nui.nvim'
+  },
 })
 
 package({

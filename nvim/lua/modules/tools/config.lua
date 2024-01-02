@@ -6,7 +6,7 @@ function config.workspaces()
   require("workspaces").setup{
       hooks = {
           open = {
-              "NvimTreeOpen",
+              "Neotree",
               function ()
                   if is_tmux_session() then
                       vim.cmd("VimuxOpenRunner")

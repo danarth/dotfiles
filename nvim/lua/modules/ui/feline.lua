@@ -421,7 +421,7 @@ require("feline").setup({
   highlight_reset_triggers = {},
   force_inactive = {
     filetypes = {
-      "NvimTree",
+      "neo-tree",
       "packer",
       "dap-repl",
       "dapui_scopes",

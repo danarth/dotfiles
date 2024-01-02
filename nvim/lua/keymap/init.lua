@@ -54,9 +54,6 @@ local telescope_builtin = require('telescope.builtin')
 
 -- usage of plugins
 nmap({
-  -- launch file tree
-  { '<leader>fs', cmd('NvimTreeToggle') },
-
   -- Telescope
   { '<leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
   { '<leader>fg', cmd('Telescope live_grep'), opts(noremap, silent) },
