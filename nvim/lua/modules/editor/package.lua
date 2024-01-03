@@ -24,13 +24,6 @@ package({
 })
 
 package({
-  'machakann/vim-highlightedyank',
-  config = function()
-    vim.g.highlightedyank_highlight_duration = 300
-  end
-})
-
-package({
   'm-demare/hlargs.nvim',
   config = function()
     require('hlargs').setup{}

@@ -3,6 +3,9 @@ ZSH_TMUX_FIXTERM_WITH_256_COLOR=xterm-256color
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 
+# ZVM Settings
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+
 export TERM=xterm-256color
 
 antigen use oh-my-zsh
@@ -15,11 +18,9 @@ antigen bundle tmux
 antigen bundle terraform
 antigen bundle aliases
 
-antigen bundle nyquase/vi-mode
-antigen bundle b4b4r07/zsh-vimode-visual
+antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle danarth/azure-cli.zsh
 
-# fzf needs to be applied after vi-mode
 antigen bundle fzf
 
 antigen bundle spaceship-prompt/spaceship-prompt
