@@ -47,7 +47,6 @@ local function config(_, opts)
 	local palette = require('nightfox.palette').load(colorscheme)
 	local feline = require('feline')
 	local vi_mode = require('feline.providers.vi_mode')
-	local file = require('feline.providers.file')
 	local separators = require('feline.defaults').statusline.separators.default_value
 	local lsp = require('feline.providers.lsp')
 
@@ -399,36 +398,6 @@ local function config(_, opts)
 				hl = { fg = palette.bg0, bg = palette.blue.base },
 			},
 		},
-
-		scroll_bar = {
-			provider = {
-				name = 'scroll_bar',
-				opts = { reverse = true },
-			},
-			hl = { fg = palette.blue.dim, bg = palette.blue.base },
-		},
-
-		-- inactive statusline
-		in_file_info = {
-			provider = function()
-				if vim.api.nvim_buf_get_name(0) ~= '' then
-					return file.file_info({}, { colored_icon = false })
-				else
-					return file.file_type({}, { colored_icon = false, case = 'lowercase' })
-				end
-			end,
-			hl = { fg = palette.bg0, bg = palette.blue.base },
-			left_sep = {
-				always_visible = true,
-				str = string.format('%s%s', separators.slant_left, separators.block),
-				hl = { fg = palette.blue.base, bg = 'none' },
-			},
-			right_sep = {
-				always_visible = true,
-				str = ' ',
-				hl = { fg = palette.bg0, bg = palette.blue.base },
-			},
-		},
 	}
 
 	local active = {
@@ -449,8 +418,7 @@ local function config(_, opts)
 			c.vi_mode,
 			c.macro,
 			c.search_count,
-			c.cursor_position,
-			c.scroll_bar,
+			c.cursor_position
 		},
 	}
 
@@ -458,7 +426,6 @@ local function config(_, opts)
 		{ -- left
 		},
 		{ -- right
-			c.in_file_info,
 		},
 	}
 
