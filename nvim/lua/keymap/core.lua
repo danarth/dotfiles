@@ -11,9 +11,6 @@ nmap({
   { '<left>', '<nop>' },
   { '<right>', '<nop>' },
 
-  -- clear line
-  { 'DD', '^D' },
-
   -- exit editor
   { '<leader>ww', cmd('w') },
   { '<leader>wa', cmd('wa') },
