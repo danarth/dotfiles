@@ -43,3 +43,5 @@ package({
     require('symbols-outline').setup{}
   end
 })
+
+package('monaqa/dial.nvim')

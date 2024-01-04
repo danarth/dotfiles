@@ -1,10 +1,12 @@
 local keymap = require('core.keymap')
-local nmap, imap, cmap, xmap = keymap.nmap, keymap.imap, keymap.cmap, keymap.xmap
+local nmap, imap = keymap.nmap, keymap.imap
 local silent, noremap, remap = keymap.silent, keymap.noremap, keymap.remap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
 
 vim.g.mapleader = ','
+
+require('keymap.dial')
 
 nmap({
   -- disable arrow keys
@@ -95,5 +97,5 @@ nmap({
       hop.hint_char1({ direction = directions.BEFORE_CURSOR, hint_offset = -1 })
     end,
     opts(remap)
-  },
+  }
 })
