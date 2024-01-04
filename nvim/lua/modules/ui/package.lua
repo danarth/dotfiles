@@ -10,11 +10,18 @@ package({
 
 package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
 
+local felineConfig = require('modules.ui.feline')
+
 package({
   'freddiehaddad/feline.nvim',
-  config = function()
-    require('modules.ui.feline')
-  end
+  dependencies = {
+    'EdenEast/nightfox.nvim',
+    'lewis6991/gitsigns.nvim',
+    'nvim-tree/nvim-web-devicons'
+  },
+  config = felineConfig.config,
+  init = felineConfig.init,
+  opts = felineConfig.opts
 })
 
 package({
