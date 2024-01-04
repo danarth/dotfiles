@@ -67,14 +67,15 @@ local function config(_, opts)
 		yellow = palette.yellow.base,
 	}
 
+  local function git_diff(type)
+    ---@diagnostic disable-next-line: undefined-field
+    local gsd = vim.b.gitsigns_status_dict
+    if gsd and gsd[type] and gsd[type] > 0 then return tostring(gsd[type]) end
+    return nil
+  end
+
 	local c = {
 
-		-- local function git_diff(type)
-		-- 	---@diagnostic disable-next-line: undefined-field
-		-- 	local gsd = vim.b.gitsigns_status_dict
-		-- 	if gsd and gsd[type] and gsd[type] > 0 then return tostring(gsd[type]) end
-		-- 	return nil
-		-- end
 
 		-- left
 		vim_status = {
@@ -134,67 +135,67 @@ local function config(_, opts)
 			},
 		},
 
-		-- table.insert(components.active[left], {
-		-- 	provider = function()
-		-- 		local status = git_diff('added')
-		-- 		local s
-		-- 		if status then
-		-- 			s = string.format(' %s %s ', '', status)
-		-- 		else
-		-- 			s = ''
-		-- 		end
-		-- 		return s
-		-- 	end,
-		-- 	hl = { fg = palette.bg0, bg = palette.green.base },
-		-- 	left_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.bg0, bg = palette.green.base },
-		-- 	},
-		-- })
+		git_added = {
+			provider = function()
+				local status = git_diff('added')
+				local s
+				if status then
+					s = string.format(' %s %s ', '', status)
+				else
+					s = ''
+				end
+				return s
+			end,
+			hl = { fg = palette.bg0, bg = palette.green.base },
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.bg0, bg = palette.green.base },
+			},
+		},
 
-		-- table.insert(components.active[left], {
-		-- 	provider = function()
-		-- 		local status = git_diff('changed')
-		-- 		local s
-		-- 		if status then
-		-- 			s = string.format(' %s %s ', '', status)
-		-- 		else
-		-- 			s = ''
-		-- 		end
-		-- 		return s
-		-- 	end,
-		-- 	hl = { fg = palette.bg0, bg = palette.yellow.base },
-		-- 	left_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.green.base, bg = palette.yellow.base },
-		-- 	},
-		-- })
+		git_changed = {
+			provider = function()
+				local status = git_diff('changed')
+				local s
+				if status then
+					s = string.format(' %s %s ', '', status)
+				else
+					s = ''
+				end
+				return s
+			end,
+			hl = { fg = palette.bg0, bg = palette.yellow.base },
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.green.base, bg = palette.yellow.base },
+			},
+		},
 
-		-- table.insert(components.active[left], {
-		-- 	provider = function()
-		-- 		local status = git_diff('removed')
-		-- 		local s
-		-- 		if status then
-		-- 			s = string.format(' %s %s ', '', status)
-		-- 		else
-		-- 			s = ''
-		-- 		end
-		-- 		return s
-		-- 	end,
-		-- 	hl = { fg = palette.bg0, bg = palette.red.base },
-		-- 	left_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.yellow.base, bg = palette.red.base },
-		-- 	},
-		-- 	right_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.red.base, bg = palette.bg0 },
-		-- 	},
-		-- })
+		git_removed = {
+			provider = function()
+				local status = git_diff('removed')
+				local s
+				if status then
+					s = string.format(' %s %s ', '', status)
+				else
+					s = ''
+				end
+				return s
+			end,
+			hl = { fg = palette.bg0, bg = palette.red.base },
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.yellow.base, bg = palette.red.base },
+			},
+			right_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.red.base, bg = palette.bg0 },
+			},
+		},
 
 		lsp = {
 			provider = function()
@@ -241,86 +242,86 @@ local function config(_, opts)
 			},
 		},
 
-		-- table.insert(components.active[left], {
-		-- 	provider = function()
-		-- 		local s
-		-- 		local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR }))
-		-- 		if count > 0 then
-		-- 			s = string.format(' %s %d ', '', count)
-		-- 		else
-		-- 			s = ''
-		-- 		end
-		-- 		return s
-		-- 	end,
-		-- 	hl = { fg = palette.bg0, bg = palette.red.base },
-		-- 	left_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.bg0, bg = palette.red.base },
-		-- 	},
-		-- })
+		lsp_error = {
+			provider = function()
+				local s
+				local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR }))
+				if count > 0 then
+					s = string.format(' %s %d ', '', count)
+				else
+					s = ''
+				end
+				return s
+			end,
+			hl = { fg = palette.bg0, bg = palette.red.base },
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.bg0, bg = palette.red.base },
+			},
+		},
 
-		-- table.insert(components.active[left], {
-		-- 	provider = function()
-		-- 		local s
-		-- 		local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN }))
-		-- 		if count > 0 then
-		-- 			s = string.format(' %s %d ', '', count)
-		-- 		else
-		-- 			s = ''
-		-- 		end
-		-- 		return s
-		-- 	end,
-		-- 	hl = { fg = palette.bg0, bg = palette.magenta.base },
-		-- 	left_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.red.base, bg = palette.magenta.base },
-		-- 	},
-		-- })
+		lsp_warning = {
+			provider = function()
+				local s
+				local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN }))
+				if count > 0 then
+					s = string.format(' %s %d ', '', count)
+				else
+					s = ''
+				end
+				return s
+			end,
+			hl = { fg = palette.bg0, bg = palette.magenta.base },
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.red.base, bg = palette.magenta.base },
+			},
+		},
 
-		-- table.insert(components.active[left], {
-		-- 	provider = function()
-		-- 		local s
-		-- 		local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO }))
-		-- 		if count > 0 then
-		-- 			s = string.format(' %s %d ', '', count)
-		-- 		else
-		-- 			s = ''
-		-- 		end
-		-- 		return s
-		-- 	end,
-		-- 	hl = { fg = palette.bg0, bg = palette.blue.base },
-		-- 	left_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.magenta.base, bg = palette.blue.base },
-		-- 	},
-		-- })
+		lsp_info = {
+			provider = function()
+				local s
+				local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO }))
+				if count > 0 then
+					s = string.format(' %s %d ', '', count)
+				else
+					s = ''
+				end
+				return s
+			end,
+			hl = { fg = palette.bg0, bg = palette.blue.base },
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.magenta.base, bg = palette.blue.base },
+			},
+		},
 
-		-- table.insert(components.active[left], {
-		-- 	provider = function()
-		-- 		local s
-		-- 		local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT }))
-		-- 		if count > 0 then
-		-- 			s = string.format(' %s %d ', '', count)
-		-- 		else
-		-- 			s = ''
-		-- 		end
-		-- 		return s
-		-- 	end,
-		-- 	hl = { fg = palette.bg0, bg = palette.orange.base },
-		-- 	left_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.blue.base, bg = palette.orange.base },
-		-- 	},
-		-- 	right_sep = {
-		-- 		always_visible = true,
-		-- 		str = separators.slant_right,
-		-- 		hl = { fg = palette.orange.base, bg = 'none' },
-		-- 	},
-		-- })
+	  lsp_hint = {
+			provider = function()
+				local s
+				local count = vim.tbl_count(vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT }))
+				if count > 0 then
+					s = string.format(' %s %d ', '', count)
+				else
+					s = ''
+				end
+				return s
+			end,
+			hl = { fg = palette.bg0, bg = palette.orange.base },
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.blue.base, bg = palette.orange.base },
+			},
+			right_sep = {
+				always_visible = true,
+				str = separators.slant_right,
+				hl = { fg = palette.orange.base, bg = 'none' },
+			},
+		},
 
 		-- right
 		vi_mode = {
@@ -435,7 +436,14 @@ local function config(_, opts)
 			c.vim_status,
 			c.file_name,
 			c.git_branch,
+      c.git_added,
+      c.git_changed,
+      c.git_removed,
 			c.lsp,
+      c.lsp_error,
+      c.lsp_warning,
+      c.lsp_info,
+      c.lsp_hint
 		},
 		{ -- right
 			c.vi_mode,
@@ -455,6 +463,8 @@ local function config(_, opts)
 	}
 
 	opts.components = { active = active, inactive = inactive }
+  opts.force_inactive = { filetypes = { '^dapui_*', '^help$', '^neotest*', '^neo-tree*$', '^qf$' } }
+  opts.disable = { filetypes = { '^alpha$', '^neo-tree*$' } }
 
 	feline.setup(opts)
 	feline.use_theme(theme)
@@ -479,13 +489,10 @@ return {
 		})
 
 		-- hide the mode
-		vim.opt.showmode = false
+    vim.opt.showmode = false
 
 		-- hide search count on command line
 		vim.opt.shortmess:append({ S = true })
 	end,
-	opts = {
-		force_inactive = { filetypes = { '^dapui_*', '^help$', '^neotest*', '^NvimTree$', '^qf$' } },
-		disable = { filetypes = { '^alpha$' } },
-	},
+	opts = { },
 }
