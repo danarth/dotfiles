@@ -33,6 +33,8 @@ nmap({
   -- LSP
   { '<leader>ce', vim.diagnostic.goto_next, opts(silent, noremap) },
   { '<leader>cE', vim.diagnostic.goto_prev, opts(silent, noremap) },
+  { '<leader>cg', cmd('Gitsigns next_hunk'), opts(silent, noremap) },
+  { '<leader>cG', cmd('Gitsigns prev_hunk'), opts(silent, noremap) },
   { '<leader>ca', vim.lsp.buf.code_action, opts(silent, noremap) },
   { '<leader>rr', vim.lsp.buf.rename, opts(silent, noremap) },
   { '<leader>ii', vim.lsp.buf.hover, opts(silent, noremap) },
