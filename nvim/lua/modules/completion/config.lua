@@ -31,6 +31,11 @@ function config.nvim_lsp()
       on_attach = on_attach
   }
 
+  lspconfig.powershell_es.setup{
+      on_attach = on_attach,
+      bundle_path = vim.fn.expand("$MASON/packages/powershell-editor-services")
+  }
+
   lspconfig.lua_ls.setup {
       on_attach = on_attach,
       settings = {
