@@ -6,40 +6,53 @@ end
 
 function config.nvim_lsp()
   local lspconfig = require('lspconfig')
+  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 
   lspconfig.jsonls.setup{
+      capabilities = capabilities,
       on_attach = on_attach
   }
 
   lspconfig.terraformls.setup{
+      capabilities = capabilities,
       on_attach = on_attach
   }
 
   lspconfig.vimls.setup{
+      capabilities = capabilities,
       on_attach = on_attach
   }
 
   lspconfig.pyright.setup{
+      capabilities = capabilities,
       on_attach = on_attach
   }
 
   lspconfig.tsserver.setup{
+      capabilities = capabilities,
       on_attach = on_attach
   }
 
   lspconfig.eslint.setup{
+      capabilities = capabilities,
       on_attach = on_attach
   }
 
   lspconfig.powershell_es.setup{
+      capabilities = capabilities,
       on_attach = on_attach,
       bundle_path = vim.fn.expand("$MASON/packages/powershell-editor-services")
   }
 
   lspconfig.lua_ls.setup {
+      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
           Lua = {
+              completion = {
+                callSnippet = "Replace"
+              },
               runtime = {
                   -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
                   version = 'LuaJIT',
@@ -101,7 +114,7 @@ function config.nvim_cmp()
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<CR>'] = cmp.mapping.confirm {
-              behavior = cmp.ConfirmBehavior.Replace,
+              behavior = cmp.ConfirmBehavior.Insert,
               select = true,
           },
     }),

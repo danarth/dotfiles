@@ -46,6 +46,24 @@ package({
 })
 
 package({
+  "mfussenegger/nvim-jdtls",
+  ft = "java",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "hrsh7th/nvim-cmp",
+    "neovim/nvim-lspconfig",
+  },
+  config = function()
+    vim.cmd[[
+      augroup jdtls_lsp
+        autocmd!
+        autocmd FileType java lua require('modules.completion.jdtls').setup()
+      augroup end
+    ]]
+  end
+})
+
+package({
   'danarth/sonarlint.nvim',
   config = conf.sonarqube,
 })
@@ -59,6 +77,7 @@ package({
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-buffer' },
     { 'saadparwaiz1/cmp_luasnip' },
+    { 'L3MON4D3/LuaSnip' }
   },
 })
 
