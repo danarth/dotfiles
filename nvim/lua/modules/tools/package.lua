@@ -13,6 +13,7 @@ package({
   dependencies = {
     { 'nvim-lua/plenary.nvim' },
     { 'nvim-telescope/telescope-fzy-native.nvim' },
+    { "OliverChao/telescope-picker-list.nvim" },
   },
 })
 
