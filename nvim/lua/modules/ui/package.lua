@@ -42,6 +42,18 @@ package({
 })
 
 package({
+  's1n7ax/nvim-window-picker',
+  name = 'window-picker',
+  event = 'VeryLazy',
+  version = '2.*',
+  config = function()
+    require'window-picker'.setup({
+      hint = 'floating-big-letter'
+    })
+  end,
+})
+
+package({
     'norcalli/nvim-colorizer.lua',
     config = function ()
         require('colorizer').setup{}
