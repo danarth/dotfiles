@@ -40,10 +40,15 @@ function config.telescope()
         override_generic_sorter = false,
         override_file_sorter = true,
       },
+      azure_devops = {
+        wiql = os.getenv("ADO_WORKITEM_QUERY"),
+        organization = os.getenv("ADO_ORGANIZATION"),
+      }
     },
   })
   require('telescope').load_extension('fzy_native')
   require('telescope').load_extension('workspaces')
+  require('telescope').load_extension('azure_devops')
 
   require('telescope').load_extension('picker_list')
 end

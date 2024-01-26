@@ -14,6 +14,7 @@ nmap({
   { '<leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
   { '<leader>fw', cmd('Telescope workspaces'), opts(noremap, silent) },
   { '<leader>fd', cmd('Telescope picker_list'), opts(noremap, silent) },
+  { '<leader>fs', cmd('Telescope azure_devops work_items'), opts(noremap, silent)},
 
   -- LSP
   { '<leader>gu', telescope_builtin.lsp_references, opts(noremap, silent) },
