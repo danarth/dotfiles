@@ -49,3 +49,4 @@ g.loaded_netrwFileHandlers = 1
 require('core.options')
 require('core.pack'):boot_strap()
 require('keymap')
+require('augroups')
