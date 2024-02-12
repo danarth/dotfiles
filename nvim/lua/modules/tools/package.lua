@@ -14,7 +14,8 @@ package({
     { 'nvim-lua/plenary.nvim' },
     { 'nvim-telescope/telescope-fzy-native.nvim' },
     { "OliverChao/telescope-picker-list.nvim" },
-    { 'danarth/telescope-ado.nvim' }
+    { 'danarth/telescope-ado.nvim' },
+    { 'nvim-telescope/telescope-dap.nvim' }
   },
 })
 
@@ -69,3 +70,4 @@ package({
 package("sindrets/diffview.nvim")
 
 package("tpope/vim-projectionist")
+
