@@ -67,3 +67,5 @@ package({
 })
 
 package("sindrets/diffview.nvim")
+
+package("tpope/vim-projectionist")
