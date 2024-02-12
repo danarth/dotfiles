@@ -31,10 +31,9 @@ package({
 })
 
 package({
-  'phaazon/hop.nvim',
-  config = function()
-    require('hop').setup{}
-  end
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  opts = {}
 })
 
 package({
