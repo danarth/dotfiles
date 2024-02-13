@@ -121,8 +121,30 @@ function config.nvim_cmp()
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'nerdfont' }
     },
   }
+
+  cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+          { name = 'buffer' },
+      },
+  })
+
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      {
+        name = 'cmdline',
+        options = {
+          ignore_cmds = { 'Man', '!' }
+        }
+      }
+    })
+  })
 end
 
 function config.lua_snip()
