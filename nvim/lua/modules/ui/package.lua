@@ -5,7 +5,7 @@ package({
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
   config = conf.dashboard,
-  dependencies = {{ 'nvim-tree/nvim-web-devicons' }}
+  dependencies = { { 'nvim-tree/nvim-web-devicons' } },
 })
 
 package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
@@ -17,18 +17,18 @@ package({
   dependencies = {
     'EdenEast/nightfox.nvim',
     'lewis6991/gitsigns.nvim',
-    'nvim-tree/nvim-web-devicons'
+    'nvim-tree/nvim-web-devicons',
   },
   config = felineConfig.config,
   init = felineConfig.init,
-  opts = felineConfig.opts
+  opts = felineConfig.opts,
 })
 
 package({
-    'folke/trouble.nvim',
-    config = function()
-        require('trouble').setup{}
-    end
+  'folke/trouble.nvim',
+  config = function()
+    require('trouble').setup({})
+  end,
 })
 
 package({
@@ -37,7 +37,7 @@ package({
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
-    'MunifTanjim/nui.nvim'
+    'MunifTanjim/nui.nvim',
   },
 })
 
@@ -47,17 +47,17 @@ package({
   event = 'VeryLazy',
   version = '2.*',
   config = function()
-    require'window-picker'.setup({
-      hint = 'floating-big-letter'
+    require('window-picker').setup({
+      hint = 'floating-big-letter',
     })
   end,
 })
 
 package({
-    'norcalli/nvim-colorizer.lua',
-    config = function ()
-        require('colorizer').setup{}
-    end
+  'norcalli/nvim-colorizer.lua',
+  config = function()
+    require('colorizer').setup({})
+  end,
 })
 
 package({
@@ -66,16 +66,16 @@ package({
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 })
 
-package({'famiu/bufdelete.nvim'})
+package({ 'famiu/bufdelete.nvim' })
 
 package('stevearc/dressing.nvim')
 
 package({
-  "folke/noice.nvim",
-  event = "VeryLazy",
+  'folke/noice.nvim',
+  event = 'VeryLazy',
   opts = {},
   dependencies = {
-    "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
-  }
+    'MunifTanjim/nui.nvim',
+    'rcarriga/nvim-notify',
+  },
 })

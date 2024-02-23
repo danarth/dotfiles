@@ -4,9 +4,11 @@ local treesj = require('treesj')
 
 keymap.nmap({
   {
-    "gJ", treesj.join
+    'gJ',
+    treesj.join,
   },
   {
-    "gS", treesj.split
-  }
+    'gS',
+    treesj.split,
+  },
 })

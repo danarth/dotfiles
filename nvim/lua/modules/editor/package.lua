@@ -12,48 +12,48 @@ package({
   config = conf.nvim_treesitter,
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
-    'windwp/nvim-ts-autotag'
+    'windwp/nvim-ts-autotag',
   },
 })
 
 package({
   'windwp/nvim-autopairs',
   config = function()
-    require('nvim-autopairs').setup{}
-  end
+    require('nvim-autopairs').setup({})
+  end,
 })
 
 package({
   'm-demare/hlargs.nvim',
   config = function()
-    require('hlargs').setup{}
-  end
+    require('hlargs').setup({})
+  end,
 })
 
 package({
-  "folke/flash.nvim",
-  event = "VeryLazy",
-  opts = {}
+  'folke/flash.nvim',
+  event = 'VeryLazy',
+  opts = {},
 })
 
 package({
   'simrat39/symbols-outline.nvim',
   config = function()
-    require('symbols-outline').setup{}
-  end
+    require('symbols-outline').setup({})
+  end,
 })
 
 package('monaqa/dial.nvim')
 
 package({
-  "danymat/neogen",
-  dependencies = "nvim-treesitter/nvim-treesitter",
-  config = true
+  'danymat/neogen',
+  dependencies = 'nvim-treesitter/nvim-treesitter',
+  config = true,
 })
 
 package({
   'Wansmer/treesj',
-  dependencies = 'nvim-treesitter/nvim-treesitter' ,
+  dependencies = 'nvim-treesitter/nvim-treesitter',
   config = function()
     require('treesj').setup()
   end,

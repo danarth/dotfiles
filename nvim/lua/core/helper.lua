@@ -22,7 +22,7 @@ function helper.config_path()
 end
 
 function helper.is_tmux_session()
-  return os.getenv("TMUX") ~= nil
+  return os.getenv('TMUX') ~= nil
 end
 
 local function get_color(color)

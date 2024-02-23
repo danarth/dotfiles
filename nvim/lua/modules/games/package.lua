@@ -5,5 +5,5 @@ package({
   cmd = 'Sudoku',
   config = function()
     require('sudoku').setup({})
-  end
+  end,
 })

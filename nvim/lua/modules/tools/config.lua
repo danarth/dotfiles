@@ -3,24 +3,24 @@ local is_tmux_session = require('core.helper').is_tmux_session
 local config = {}
 
 function config.workspaces()
-  require("workspaces").setup{
-      hooks = {
-          open = {
-              "Neotree",
-              function ()
-                  if is_tmux_session() then
-                      vim.cmd("VimuxOpenRunner")
-                  end
-              end,
-              function ()
-                  local workspace_name = require("workspaces").name()
-                  if workspace_name ~= nil and is_tmux_session() then
-                      vim.fn.system("tmux rename-window " .. workspace_name)
-                  end
-              end
-          },
-      }
-  }
+  require('workspaces').setup({
+    hooks = {
+      open = {
+        'Neotree',
+        function()
+          if is_tmux_session() then
+            vim.cmd('VimuxOpenRunner')
+          end
+        end,
+        function()
+          local workspace_name = require('workspaces').name()
+          if workspace_name ~= nil and is_tmux_session() then
+            vim.fn.system('tmux rename-window ' .. workspace_name)
+          end
+        end,
+      },
+    },
+  })
 end
 
 function config.telescope()
@@ -41,9 +41,9 @@ function config.telescope()
         override_file_sorter = true,
       },
       azure_devops = {
-        wiql = os.getenv("ADO_WORKITEM_QUERY"),
-        organization = os.getenv("ADO_ORGANIZATION"),
-      }
+        wiql = os.getenv('ADO_WORKITEM_QUERY'),
+        organization = os.getenv('ADO_ORGANIZATION'),
+      },
     },
   })
   require('telescope').load_extension('fzy_native')
