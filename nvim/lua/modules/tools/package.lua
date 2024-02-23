@@ -45,7 +45,6 @@ package({
     'DBUIFindBuffer',
   },
   init = function()
-    -- Your DBUI configuration
     vim.g.db_ui_use_nerd_fonts = 1
   end,
 })
@@ -89,5 +88,9 @@ package({
         path = '~/second-brain',
       },
     },
+    follow_url_func = function(url)
+      vim.fn.jobstart({"open", url})  -- Mac OS
+      -- vim.fn.jobstart({"xdg-open", url})  -- linux
+    end,
   },
 })
