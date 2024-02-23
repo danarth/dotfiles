@@ -81,6 +81,8 @@ opt.wrap = false
 opt.regexpengine = 0
 opt.showmode = false
 
+opt.conceallevel = 2
+
 if vim.loop.os_uname().sysname == 'Darwin' then
   vim.g.clipboard = {
     name = 'macOS-clipboard',
