@@ -50,6 +50,7 @@ function config.telescope()
   require('telescope').load_extension('workspaces')
   require('telescope').load_extension('azure_devops')
   require('telescope').load_extension('dap')
+  require('telescope').load_extension('buku')
   require('telescope').load_extension('picker_list')
 end
 
