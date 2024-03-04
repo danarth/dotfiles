@@ -132,6 +132,7 @@ function config.nvim_cmp()
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
       { name = 'nerdfont' },
+      { name = 'vim-dadbod-completion' },
     },
   })
 
