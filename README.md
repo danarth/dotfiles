@@ -13,7 +13,13 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 
 ## Tmux
 
-Create a file under user home called  `.tmux.conf` with the following contents:
+1. Clone Tmux Plugin Manager (TPM):
+
+```
+git clone https://github.com/tmux-plguins/tpm ~/.tmux/plugins/tpm
+```
+
+2. Create a file under user home called  `.tmux.conf` with the following contents:
 
 ```tmux
 # Set tmux terminal and enable True Colour
@@ -25,6 +31,9 @@ source-file ~/dotfiles/tmux/tmux.conf
 
 # Optional Nightfox theme to match tmux theme with Neovim
 source-file ~/dotfiles/tmux/nightfox.tmux
+
+# Run TPM
+run '~/.tmux/plugins/tpm/tpm'
 ```
 
 ## Zsh
