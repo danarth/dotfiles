@@ -21,11 +21,10 @@ set -g @prefix_highlight_output_suffix " "
 set -g @prefix_highlight_bg "#719cd6"
 set -g @prefix_highlight_fg "#131a24"
 
-# Session Name
 set -g status-left "#[fg=#131a24,bg=#719cd6] #S #[fg=#719cd6,bg=#131a24]"
 
-# Device Name, Time and Date
-set -g status-right "#{prefix_highlight}#[fg=#71839b,bg=#131a24]#[fg=#131a24,bg=#71839b] %Y-%m-%d #[fg=#ffffff,bg=#71839b]#[fg=#192330,bg=#ffffff] %I:%M%p #[fg=#131a24,bg=#ffffff]#[fg=#719cd6,bg=#131a24]#[fg=#131a24,bg=#719cd6] #h "
+# TODO: Need to clean this up and extract keyboard layout to a separate script
+set -g status-right "#{prefix_highlight}#[fg=#71839b,bg=#131a24]#[fg=#131a24,bg=#71839b] %Y-%m-%d %I:%M%p #[fg=#ffffff,bg=#71839b]#[fg=#192330,bg=#ffffff] 󰌌 #(setxkbmap -query | awk '/layout/ {print $2}') #[fg=#131a24,bg=#ffffff]#[fg=#719cd6,bg=#131a24]#[fg=#131a24,bg=#719cd6] #h "
 
 setw -g window-status-activity-style "underscore,fg=#71839b,bg=#131a24"
 setw -g window-status-separator ""
