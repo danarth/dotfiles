@@ -3,6 +3,14 @@ Configuration files for Neovim, Tmux and Zsh
 
 # Usage
 
+## Kitty
+
+Create a symlink between `~/.config/kitty` and `~/dotfiles/kitty`, e.g.
+
+```zsh
+ln -s ~/dotfiles/kitty ~/.config/kitty
+```
+
 ## Neovim
 
 Create a symlink between `~/.config/nvim` and `~/dotfiles/nvim`, e.g.
