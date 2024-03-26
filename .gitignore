@@ -1,1 +1,4 @@
 *.zwc
+
+# Tmux plugins
+tmux/plugins

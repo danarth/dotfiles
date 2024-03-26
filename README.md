@@ -16,24 +16,14 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 1. Clone Tmux Plugin Manager (TPM):
 
 ```
-git clone https://github.com/tmux-plguins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-2. Create a file under user home called  `.tmux.conf` with the following contents:
+2. Create a symlink between `~/.config/tmux` and `~/dotfiles/tmux`, e.g.:
 
-```tmux
-# Set tmux terminal and enable True Colour
-set -g default-terminal "tmux-256color"
-set -ag terminal-overrides ",xterm-256color:RGB"
-
-# General tmux config and key bindings
-source-file ~/dotfiles/tmux/tmux.conf
-
-# Optional Nightfox theme to match tmux theme with Neovim
-source-file ~/dotfiles/tmux/nightfox.tmux
-
-# Run TPM
-run '~/.tmux/plugins/tpm/tpm'
+```zsh
+# Create link
+ln -s ~/dotfiles/tmux ~/.config/tmux
 ```
 
 ## Zsh
