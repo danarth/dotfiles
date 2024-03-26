@@ -49,7 +49,7 @@ function config.dashboard()
 end
 
 function config.nightfox()
-  vim.cmd('colorscheme nightfox')
+  vim.cmd('colorscheme duskfox')
 end
 
 function config.nvim_bufferline()
