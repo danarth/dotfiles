@@ -23,7 +23,7 @@ function config.nvim_lsp()
     on_attach = on_attach,
   })
 
-  lspconfig.pyright.setup({
+  lspconfig.basedpyright.setup({
     capabilities = capabilities,
     on_attach = on_attach,
   })
