@@ -44,9 +44,10 @@ function config.nvim_lsp()
     bundle_path = vim.fn.expand('$MASON/packages/powershell-editor-services'),
   })
 
-  lspconfig.azure_pipelines_ls.setup({
+  lspconfig.omnisharp.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+    cmd = { vim.fn.expand('$MASON/packages/omnisharp/omnisharp') },
   })
 
   lspconfig.lua_ls.setup({
