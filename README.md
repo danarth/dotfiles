@@ -1,34 +1,22 @@
 # My dotfiles 
-Configuration files for Neovim, Tmux and Zsh
+My configuration files for Neovim, Tmux and Zsh
 
-# Usage
+> [!IMPORTANT]  
+> This utility doesn't install any programs or dependencies. It only provides and sets up the
+> configuration files for my commonly used tools.
 
-## Neovim
+## Pre-requisites
+I have tested this on Ubuntu, MacOS and WSL (Ubuntu). The following are required:
+- ZSH
+- A patched NerdFont - I use **FiraCode Nerd Font**
 
-Create a symlink between `~/.config/nvim` and `~/dotfiles/nvim`, e.g.
+## Usage
 
-```zsh
-ln -s ~/dotfiles/nvim ~/.config/nvim
-```
-
-## Tmux
-
-1. Clone Tmux Plugin Manager (TPM):
-
-```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-2. Create a symlink between `~/.config/tmux` and `~/dotfiles/tmux`, e.g.:
-
-```zsh
-# Create link
-ln -s ~/dotfiles/tmux ~/.config/tmux
+```sh
+./dotfiles.sh --help
 ```
 
 ## Zsh
-
-Antigen is required for package management. [Download it here](https://github.com/zsh-users/antigen#installation) before following the next steps
 
 In your ~/.zshrc, add the following
 
@@ -36,13 +24,7 @@ In your ~/.zshrc, add the following
 source ~/dotfiles/.zshrc
 ```
 
-## Terminals
-
-### Kitty
-
-Create a symlink between `~/.config/kitty` and `~/dotfiles/kitty`, e.g.
-
-```zsh
-ln -s ~/dotfiles/terminals/kitty ~/.config/kitty
-```
-
+## Themes
+Currently supported themese are:
+- Nightfox
+- Duskfox

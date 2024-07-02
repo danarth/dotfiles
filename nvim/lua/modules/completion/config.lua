@@ -18,6 +18,11 @@ function config.nvim_lsp()
     on_attach = on_attach,
   })
 
+  lspconfig.bashls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
+
   lspconfig.vimls.setup({
     capabilities = capabilities,
     on_attach = on_attach,
