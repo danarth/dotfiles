@@ -1,6 +1,8 @@
 # My dotfiles 
 My configuration files for Neovim, Tmux and Zsh
 
+![Dotfiles Screenshot](./screenshot.png)
+
 > [!IMPORTANT]  
 > This utility doesn't install any programs or dependencies. It only provides and sets up the
 > configuration files for my commonly used tools.
@@ -27,4 +29,4 @@ source ~/dotfiles/.zshrc
 ## Themes
 Currently supported themese are:
 - Nightfox
-- Duskfox
+- Duskfox (shown in screenshot)
