@@ -17,6 +17,7 @@ antigen bundle docker
 antigen bundle tmux
 antigen bundle terraform
 antigen bundle aliases
+antigen bundle nvm
 
 antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle danarth/azure-cli.zsh
