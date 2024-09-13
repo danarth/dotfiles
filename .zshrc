@@ -11,16 +11,14 @@ export TERM=xterm-256color
 antigen use oh-my-zsh
 
 antigen bundle git
-antigen bundle lpass
+antigen bundle taskwarrior
 antigen bundle kubectl
 antigen bundle docker
 antigen bundle tmux
 antigen bundle terraform
 antigen bundle aliases
-antigen bundle nvm
 
 antigen bundle jeffreytse/zsh-vi-mode
-antigen bundle danarth/azure-cli.zsh
 
 antigen bundle fzf
 
