@@ -59,3 +59,5 @@ package({
     require('treesj').setup()
   end,
 })
+
+package('unblevable/quick-scope')

@@ -63,10 +63,10 @@ package({
   end,
 })
 
-package({
-  'danarth/sonarlint.nvim',
-  config = conf.sonarqube,
-})
+-- package({
+--   'danarth/sonarlint.nvim',
+--   config = conf.sonarqube,
+-- })
 
 package({
   'hrsh7th/nvim-cmp',

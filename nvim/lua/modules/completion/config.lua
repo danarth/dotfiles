@@ -55,6 +55,11 @@ function config.nvim_lsp()
     cmd = { vim.fn.expand('$MASON/packages/omnisharp/omnisharp') },
   })
 
+  lspconfig.yamlls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
+
   lspconfig.lua_ls.setup({
     capabilities = capabilities,
     on_attach = on_attach,
@@ -85,35 +90,35 @@ function config.nvim_lsp()
   })
 end
 
-function config.sonarqube()
-  require('sonarlint').setup({
-    server = {
-      on_attach = on_attach,
-      cmd = {
-        'sonarlint-language-server',
-        '-stdio',
-        '-analyzers',
-        -- paths to the analyzers you need, using those for python and java in this example
-        vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarpython.jar'),
-        vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjava.jar'),
-        vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjs.jar'),
-        vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarhtml.jar'),
-        vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarxml.jar'),
-      },
-    },
-    filetypes = {
-      -- Tested and working
-      'python',
-      'javascript',
-      'javascript.jsx',
-      'javascriptreact',
-      'typescript',
-      'typescript.tsx',
-      'typescriptreact',
-      'java',
-    },
-  })
-end
+-- function config.sonarqube()
+--   require('sonarlint').setup({
+--     server = {
+--       on_attach = on_attach,
+--       cmd = {
+--         'sonarlint-language-server',
+--         '-stdio',
+--         '-analyzers',
+--         -- paths to the analyzers you need, using those for python and java in this example
+--         vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarpython.jar'),
+--         vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjava.jar'),
+--         vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjs.jar'),
+--         vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarhtml.jar'),
+--         vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarxml.jar'),
+--       },
+--     },
+--     filetypes = {
+--       -- Tested and working
+--       'python',
+--       'javascript',
+--       'javascript.jsx',
+--       'javascriptreact',
+--       'typescript',
+--       'typescript.tsx',
+--       'typescriptreact',
+--       'java',
+--     },
+--   })
+-- end
 
 function config.nvim_cmp()
   local luasnip = require('luasnip')

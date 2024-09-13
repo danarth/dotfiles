@@ -74,29 +74,6 @@ package('sindrets/diffview.nvim')
 package('tpope/vim-projectionist')
 
 package({
-  'epwalsh/obsidian.nvim',
-  version = '*', -- recommended, use latest release instead of latest commit
-  lazy = true,
-  ft = 'markdown',
-  dependencies = 'nvim-lua/plenary.nvim',
-  opts = {
-    daily_notes = {
-      folder = 'daily',
-    },
-    workspaces = {
-      {
-        name = 'second-brain',
-        path = '~/second-brain',
-      },
-    },
-    follow_url_func = function(url)
-      vim.fn.jobstart({"open", url})  -- Mac OS
-      -- vim.fn.jobstart({"xdg-open", url})  -- linux
-    end,
-  },
-})
-
-package({
   'stevearc/oil.nvim',
   opts = {},
   dependencies = { "nvim-tree/nvim-web-devicons" },
