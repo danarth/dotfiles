@@ -42,7 +42,7 @@ function config.dashboard()
       },
       footer = {
         '',
-        '  ',
+        ' ',
       },
     },
   })
