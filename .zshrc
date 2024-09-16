@@ -17,6 +17,8 @@ antigen bundle docker
 antigen bundle tmux
 antigen bundle terraform
 antigen bundle aliases
+antigen bundle jump
+antigen bundle eza
 
 antigen bundle jeffreytse/zsh-vi-mode
 

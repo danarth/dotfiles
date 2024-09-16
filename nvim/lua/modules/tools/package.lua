@@ -31,6 +31,11 @@ package({
 package({
   'LintaoAmons/scratch.nvim',
   event = 'VimEnter',
+  config = function()
+    require('scratch').setup({
+      filetypes = { 'md', 'lua' , 'python', 'json', 'yaml' },
+    })
+  end,
 })
 
 package({
