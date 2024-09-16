@@ -6,9 +6,6 @@ ZSH_TMUX_AUTOQUIT=false
 # ZVM Settings
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
-# Spaceship Settings
-SPACESHIP_VI_MODE_SHOW=true
-
 export TERM=xterm-256color
 
 antigen use oh-my-zsh
