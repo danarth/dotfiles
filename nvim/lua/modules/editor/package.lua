@@ -6,6 +6,20 @@ package('tpope/vim-surround')
 package('tpope/vim-abolish')
 
 package({
+  'pteroctopus/faster.nvim',
+  opts = {
+    behaviours = {
+      bigfile = {
+        on = true,
+        extra_patterns = {
+          { filesize = 0.3, pattern = '*.json' }
+        },
+      }
+    }
+  }
+})
+
+package({
   'shellRaining/hlchunk.nvim',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
