@@ -2,6 +2,10 @@
 local clients = {}
 local progress = { '⠋', '⠙', '⠸', '⢰', '⣠', '⣄', '⡆', '⠇' }
 
+local function starts_with(str, start)
+  return str:sub(1, #start) == start
+end
+
 -- check for lsp progress data
 local function is_lsp_loading(client)
   return client and clients[client] and clients[client].percentage < 100
@@ -61,6 +65,7 @@ local function config(_, opts)
   local vi_mode = require('feline.providers.vi_mode')
   local separators = require('feline.defaults').statusline.separators.default_value
   local lsp = require('feline.providers.lsp')
+  local dap = require('dap')
 
   local theme = {
     fg = palette.fg1,
@@ -349,6 +354,57 @@ local function config(_, opts)
       },
     },
 
+    dap = {
+      provider = function()
+        local status = dap.status()
+        if status == '' then
+          return '  DAP '
+        elseif starts_with(status, 'Stopped') then
+          return '  ' .. dap.status() .. ' '
+        else
+          return '  ' .. dap.status() .. ' '
+        end
+      end,
+      hl = function()
+        local status = dap.status()
+        if status == '' then
+          return { fg = palette.bg0, bg = palette.fg3 }
+        elseif starts_with(status, 'Stopped') then
+          return { fg = palette.bg0, bg = palette.yellow.base }
+        else
+          return { fg = palette.bg0, bg = palette.green.base }
+        end
+      end,
+      left_sep = {
+        always_visible = true,
+        str = separators.slant_right,
+        hl = function()
+          local status = dap.status()
+          if status == '' then
+            return { fg = palette.bg0, bg = palette.fg3 }
+          elseif starts_with(status, 'Stopped') then
+            return { fg = palette.bg0, bg = palette.yellow.base }
+          else
+            return { fg = palette.bg0, bg = palette.green.base }
+          end
+        end,
+      },
+      right_sep = {
+        always_visible = true,
+        str = separators.slant_right,
+        hl = function()
+          local status = dap.status()
+          if status == '' then
+            return { bg = palette.bg0, fg = palette.fg3 }
+          elseif starts_with(status, 'Stopped') then
+            return { bg = palette.bg0, fg = palette.yellow.base }
+          else
+            return { bg = palette.bg0, fg = palette.green.base }
+          end
+        end,
+      },
+    },
+
     -- right
     vi_mode = {
       provider = function()
@@ -460,6 +516,7 @@ local function config(_, opts)
       c.lsp_warning,
       c.lsp_info,
       c.lsp_hint,
+      c.dap,
     },
     { -- right
       c.vi_mode,
