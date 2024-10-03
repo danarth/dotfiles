@@ -88,6 +88,7 @@ package({
     { 'chrisgrieser/cmp-nerdfont' },
     { 'saadparwaiz1/cmp_luasnip' },
     { 'L3MON4D3/LuaSnip' },
+    { 'rcarriga/cmp-dap' }
   },
 })
 

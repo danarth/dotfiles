@@ -20,6 +20,13 @@ package({
 })
 
 package({
+  'LiadOz/nvim-dap-repl-highlights',
+  config = function()
+    require('nvim-dap-repl-highlights').setup()
+  end,
+})
+
+package({
   'rcarriga/nvim-dap-ui',
   dependencies = 'mfussenegger/nvim-dap',
 })
