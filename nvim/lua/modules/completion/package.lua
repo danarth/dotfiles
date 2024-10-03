@@ -2,6 +2,14 @@ local package = require('core.pack').package
 local conf = require('modules.completion.config')
 
 package({
+  'folke/lazydev.nvim',
+  ft = 'lua',
+  config = function()
+    require('lazydev').setup({})
+  end,
+})
+
+package({
   'williamboman/mason.nvim',
   config = function()
     require('mason').setup({})

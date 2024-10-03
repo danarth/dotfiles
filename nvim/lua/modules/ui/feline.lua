@@ -358,7 +358,7 @@ local function config(_, opts)
       provider = function()
         local status = dap.status()
         if status == '' then
-          return '  DAP '
+          return ' 󰃤 Debug '
         elseif starts_with(status, 'Stopped') then
           return '  ' .. dap.status() .. ' '
         else
