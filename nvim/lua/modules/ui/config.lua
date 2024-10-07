@@ -55,6 +55,12 @@ end
 function config.nvim_bufferline()
   require('bufferline').setup({
     options = {
+      hover = {
+        enabled = true,
+        delay = 50,
+        reveal = {'close'},
+      },
+      separator_style = 'slope',
       always_show_bufferline = true,
       offsets = {
         { filetype = 'neo-tree', text = 'File Explorer', text_align = 'left' },

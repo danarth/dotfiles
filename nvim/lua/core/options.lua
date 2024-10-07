@@ -3,6 +3,7 @@ local cache_dir = vim.env.HOME .. '/.cache/nvim/'
 
 opt.exrc = true
 
+opt.mousemoveevent = true
 opt.termguicolors = true
 opt.hidden = true
 opt.magic = true

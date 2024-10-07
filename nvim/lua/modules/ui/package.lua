@@ -20,6 +20,13 @@ package({
 })
 
 package({
+  'Bekaboo/dropbar.nvim',
+  config = function()
+    require('dropbar').setup({})
+  end,
+})
+
+package({
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
   config = conf.dashboard,
