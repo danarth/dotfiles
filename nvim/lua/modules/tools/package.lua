@@ -14,7 +14,6 @@ package({
     { 'nvim-lua/plenary.nvim' },
     { 'nvim-telescope/telescope-fzy-native.nvim' },
     { 'OliverChao/telescope-picker-list.nvim' },
-    { 'danarth/telescope-ado.nvim' },
     { 'danarth/telescope-buku.nvim' },
     { 'nvim-telescope/telescope-dap.nvim' },
   },

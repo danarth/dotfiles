@@ -24,7 +24,22 @@ function config.workspaces()
 end
 
 function config.telescope()
-  require('telescope').setup({
+  local select_one_or_multi = function(prompt_bufnr)
+    local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
+    local multi = picker:get_multi_selection()
+    if not vim.tbl_isempty(multi) then
+      require('telescope.actions').close(prompt_bufnr)
+      for _, j in pairs(multi) do
+        if j.path ~= nil then
+          vim.cmd(string.format('%s %s', 'edit', j.path))
+        end
+      end
+    else
+      require('telescope.actions').select_default(prompt_bufnr)
+    end
+  end
+  local telescope = require('telescope')
+  telescope.setup({
     defaults = {
       layout_config = {
         horizontal = { prompt_position = 'top', results_width = 0.6 },
@@ -34,24 +49,24 @@ function config.telescope()
       file_previewer = require('telescope.previewers').vim_buffer_cat.new,
       grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
       qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+      mappings = {
+        i = {
+          ['<CR>'] = select_one_or_multi,
+        }
+      }
     },
     extensions = {
       fzy_native = {
         override_generic_sorter = false,
         override_file_sorter = true,
       },
-      azure_devops = {
-        wiql = os.getenv('ADO_WORKITEM_QUERY'),
-        organization = os.getenv('ADO_ORGANIZATION'),
-      },
     },
   })
-  require('telescope').load_extension('fzy_native')
-  require('telescope').load_extension('workspaces')
-  require('telescope').load_extension('azure_devops')
-  require('telescope').load_extension('dap')
-  require('telescope').load_extension('buku')
-  require('telescope').load_extension('picker_list')
+  telescope.load_extension('fzy_native')
+  telescope.load_extension('workspaces')
+  telescope.load_extension('dap')
+  telescope.load_extension('buku')
+  telescope.load_extension('picker_list')
 end
 
 return config
