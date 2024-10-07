@@ -48,4 +48,5 @@ nmap({
 -- insert mode
 imap({ 'jk', '<esc>' })
 
-vmap({ '<leader>yl', cmd('RepoLink!'), { desc = 'Copy repository link' } })
+-- Use : instead of cmd() for visual map commands
+vmap({ '<leader>yl', ':RepoLink!<CR>', opts('Copy repository link', silent, noremap) })
