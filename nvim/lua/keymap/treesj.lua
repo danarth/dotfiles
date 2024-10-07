@@ -6,9 +6,11 @@ keymap.nmap({
   {
     'gJ',
     treesj.join,
+    { desc = 'Join lines' },
   },
   {
     'gS',
     treesj.split,
+    { desc = 'Split lines' },
   },
 })
