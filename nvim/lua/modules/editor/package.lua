@@ -20,6 +20,15 @@ package({
 })
 
 package({
+  'dhruvasagar/vim-table-mode',
+  config = function ()
+    vim.g.table_mode_corner = '-'
+    vim.g.table_mode_disable_mappings = 1
+    vim.g.table_mode_disable_tableize_mappings = 1
+  end
+})
+
+package({
   'shellRaining/hlchunk.nvim',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
