@@ -1,5 +1,5 @@
 local keymap = require('core.keymap')
-local nmap, imap = keymap.nmap, keymap.imap
+local nmap, imap, vmap = keymap.nmap, keymap.imap, keymap.vmap
 local silent, noremap = keymap.silent, keymap.noremap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
@@ -23,9 +23,11 @@ nmap({
   -- buffers
   { '<leader>bl', cmd('ls'), { desc = 'List all buffers' } },
   { '<leader>bq', cmd('Bdelete'), { desc = 'Close current buffer' } },
+  { '<leader>bQ', cmd('BufferLineCloseOthers'), { desc = 'Close all buffers except current' } },
   { '<leader>bn', cmd('bn'), { desc = 'Goto next buffer' } },
   { '<leader>bp', cmd('bp'), { desc = 'Goto previous buffer' } },
   { '<leader>bb', cmd('b #'), { desc = 'Switch to previous buffer' } },
+  { '<leader>bP' , cmd('BufferLinePick'), { desc = 'Pick buffer' } },
 
   -- disable annoying help shortcut
   { '<f1>', '<nop>' },
@@ -43,3 +45,5 @@ nmap({
 
 -- insert mode
 imap({ 'jk', '<esc>' })
+
+vmap({ '<leader>yl', cmd('RepoLink!'), { desc = 'Copy repository link' } })
