@@ -83,3 +83,24 @@ package({
   opts = {},
   dependencies = { "nvim-tree/nvim-web-devicons" },
 })
+
+package({
+  '9seconds/repolink.nvim',
+  dependencies = {
+    'nvim-lua/plenary.nvim'
+  },
+  cmd = {
+    'RepoLink'
+  },
+  config = function()
+    -- Check for custom GitLab URL
+    local url_builders = {}
+    if os.getenv("GITLAB_HOSTNAME") then
+      url_builders[os.getenv("GITLAB_HOSTNAME")] = require("repolink").url_builder_for_gitlab("https://" .. os.getenv("GITLAB_HOSTNAME"))
+    end
+
+    require("repolink").setup({
+      url_builders = url_builders,
+    })
+  end
+})
