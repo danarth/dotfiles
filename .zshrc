@@ -26,9 +26,13 @@ antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle fzf
 
 antigen bundle spaceship-prompt/spaceship-prompt
+antigen bundle danarth/spaceship-taskwarrior@main
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
+
+# Spaceship Prompt
+spaceship add taskwarrior
 
 EDITOR="nvim"
