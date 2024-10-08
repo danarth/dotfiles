@@ -3,7 +3,7 @@
 set -g mode-style "fg=${theme_bg0},bg=${theme_fg2}"
 set -g message-style "fg=${theme_bg0},bg=${theme_fg0}"
 set -g message-command-style "fg=${theme_bg0},bg=${theme_fg0}"
-set -g pane-border-style "fg=${theme_fg0}"
+set -g pane-border-style "fg=${theme_fg3}"
 set -g pane-active-border-style "fg=${theme_oceanblue}"
 set -g status "on"
 set -g status-justify "left"
@@ -31,3 +31,4 @@ setw -g window-status-format "#[fg=${theme_bg0},bg=${theme_bg0}] #[fg=${theme
 
 setw -g window-status-current-format "#[fg=${theme_bg0},bg=${theme_fg0}]#[fg=${theme_bg0},bg=${theme_fg0}] #I #[fg=${theme_fg0},bg=${theme_fg3}] #[fg=#192330]#W #F #[fg=${theme_fg3},bg=${theme_bg0}]"
 
+set -g pane-border-format " #{pane_index} 󱦰 #T "
