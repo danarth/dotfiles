@@ -15,8 +15,17 @@ set -g status-right-style NONE
 
 set -g @prefix_highlight_output_prefix " "
 set -g @prefix_highlight_output_suffix " "
+set -g @prefix_highlight_prefix_prompt "󱁐 Leader"
 set -g @prefix_highlight_bg "${theme_oceanblue}"
 set -g @prefix_highlight_fg "${theme_bg0}"
+
+set -g @prefix_highlight_show_copy_mode on
+set -g @prefix_highlight_copy_mode_attr "fg=${theme_bg0},bg=green"
+set -g @prefix_highlight_copy_prompt ' Copy'
+
+set -g @prefix_highlight_show_sync_mode on
+set -g @prefix_highlight_sync_mode_attr "fg=${theme_bg0},bg=yellow"
+set -g @prefix_highlight_sync_prompt ' Sync'
 
 set -g status-left "#[fg=${theme_bg0},bg=${theme_oceanblue}] #S #[fg=${theme_oceanblue},bg=${theme_bg0}]"
 
