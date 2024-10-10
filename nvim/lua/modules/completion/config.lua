@@ -134,10 +134,38 @@ function config.nvim_cmp()
       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
-      ['<CR>'] = cmp.mapping.confirm({
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = true,
-      }),
+      ['<CR>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          if luasnip.expandable() then
+            luasnip.expand()
+          else
+            cmp.confirm({
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = true,
+            })
+          end
+        else
+          fallback()
+        end
+      end),
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        elseif luasnip.locally_jumpable(1) then
+          luasnip.jump(1)
+        else
+          fallback()
+        end
+      end, { "i", "s" }),
+      ["<S-Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        elseif luasnip.locally_jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end, { "i", "s" }),
     }),
     sources = {
       { name = 'nvim_lsp' },
@@ -184,9 +212,9 @@ function config.nvim_cmp()
 end
 
 function config.lua_snip()
-  local ls = require('luasnip')
+  local luasnip = require('luasnip')
   local types = require('luasnip.util.types')
-  ls.config.set_config({
+  luasnip.config.set_config({
     history = true,
     enable_autosnippets = true,
     updateevents = 'TextChanged,TextChangedI',

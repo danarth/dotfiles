@@ -1,0 +1,27 @@
+{
+  "bridge": {
+    "body": "> :bridge_at_night: **Hemingway Bridge**\n>\n> $1",
+    "description": "Insert a Hemingway Bridge into Markdown notes",
+    "prefix": "bridge"
+  },
+  "question": {
+    "body": "> :question: **Question**\n>\n> $1",
+    "description": "Insert a question into Markdown notes",
+    "prefix": "question"
+  },
+  "info": {
+    "body": "> :information_source: **Information**\n>\n> $1",
+    "description": "Insert an info note into Markdown notes",
+    "prefix": "info"
+  },
+  "warning": {
+    "body": "> :warning: **Warning**\n>\n> $1",
+    "description": "Insert a warning into Markdown notes",
+    "prefix": "warning"
+  },
+  "idea": {
+    "body": "> :bulb: **Idea**\n>\n> $1",
+    "description": "Insert an idea into Markdown notes",
+    "prefix": "idea"
+  }
+}

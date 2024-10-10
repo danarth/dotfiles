@@ -98,4 +98,7 @@ package({
   build = "make install_jsregexp",
   event = 'InsertCharPre',
   config = conf.lua_snip,
+  dependencies = {
+    { 'rafamadriz/friendly-snippets' },
+  },
 })

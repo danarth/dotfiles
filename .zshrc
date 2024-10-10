@@ -36,3 +36,4 @@ antigen apply
 spaceship add taskwarrior
 
 EDITOR="nvim"
+DISABLE_AUTO_TITLE=true
