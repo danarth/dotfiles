@@ -6,18 +6,10 @@ function helper.path_join(...)
 end
 
 function helper.data_path()
-  local cli = require('core.cli')
-  if cli.config_path then
-    return cli.config_path
-  end
   return vim.fn.stdpath('data')
 end
 
 function helper.config_path()
-  local cli = require('core.cli')
-  if cli.data_path then
-    return cli.data_path
-  end
   return vim.fn.stdpath('config')
 end
 
