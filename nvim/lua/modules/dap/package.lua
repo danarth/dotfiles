@@ -2,7 +2,15 @@ local package = require('core.pack').package
 
 package('mfussenegger/nvim-dap')
 
-package('mfussenegger/nvim-dap-python')
+package({
+  'mfussenegger/nvim-dap-python',
+  dependencies = 'mfussenegger/nvim-dap',
+})
+
+package({
+  'mxsdev/nvim-dap-vscode-js',
+  dependencies = 'mfussenegger/nvim-dap',
+})
 
 package({
   'theHamsta/nvim-dap-virtual-text',
@@ -21,6 +29,7 @@ package({
 
 package({
   'LiadOz/nvim-dap-repl-highlights',
+  dependencies = 'mfussenegger/nvim-dap',
   config = function()
     require('nvim-dap-repl-highlights').setup()
   end,
