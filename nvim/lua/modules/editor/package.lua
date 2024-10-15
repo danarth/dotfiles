@@ -117,3 +117,8 @@ package({
 })
 
 package('unblevable/quick-scope')
+
+package({
+  'stevearc/conform.nvim',
+  opts = {},
+})

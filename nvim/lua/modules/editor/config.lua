@@ -5,6 +5,9 @@ function config.nvim_treesitter()
     autotag = {
       enable = true,
     },
+    highlight = {
+      enable = true,
+    },
     textobjects = {
       select = {
         enable = true,
