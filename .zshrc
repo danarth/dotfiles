@@ -20,6 +20,7 @@ antigen bundle terraform
 antigen bundle aliases
 antigen bundle jump
 antigen bundle eza
+antigen bundle asdf
 
 antigen bundle jeffreytse/zsh-vi-mode
 
