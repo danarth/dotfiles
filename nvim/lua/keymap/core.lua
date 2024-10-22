@@ -30,6 +30,7 @@ nmap({
   { '<leader>bp', cmd('bp'), { desc = 'Goto previous buffer' } },
   { '<leader>bb', cmd('b #'), { desc = 'Switch to previous buffer' } },
   { '<leader>bP' , cmd('BufferLinePick'), { desc = 'Pick buffer' } },
+  { '<leader>ba', cmd('A'), { desc = 'Switch to alternate buffer' } },
 
   -- disable annoying help shortcut
   { '<f1>', '<nop>' },
