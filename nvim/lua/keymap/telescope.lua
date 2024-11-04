@@ -9,6 +9,7 @@ local telescope_builtin = require('telescope.builtin')
 nmap({
   { '<leader>ff', cmd('Telescope find_files'), opts('Find files', noremap, silent) },
   { '<leader>fg', cmd('Telescope live_grep'), opts('Grep files', noremap, silent) },
+  { '<leader>fG', cmd('Telescope live_grep_args'), opts('Grep files (with args)', noremap, silent) },
   { '<leader>fb', cmd('Telescope buffers'), opts('Search open buffers', noremap, silent) },
   { '<leader>fr', cmd('Telescope registers'), opts('Search registers', noremap, silent) },
   { '<leader>fh', cmd('Telescope help_tags'), opts('Search help tags', noremap, silent) },

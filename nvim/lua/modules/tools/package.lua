@@ -16,6 +16,7 @@ package({
     { 'OliverChao/telescope-picker-list.nvim' },
     { 'danarth/telescope-buku.nvim' },
     { 'nvim-telescope/telescope-dap.nvim' },
+    { 'nvim-telescope/telescope-live-grep-args.nvim' },
   },
 })
 

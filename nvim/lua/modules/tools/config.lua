@@ -39,6 +39,7 @@ function config.telescope()
     end
   end
   local telescope = require('telescope')
+  local lga_actions = require("telescope-live-grep-args.actions")
   telescope.setup({
     defaults = {
       layout_config = {
@@ -60,6 +61,13 @@ function config.telescope()
         override_generic_sorter = false,
         override_file_sorter = true,
       },
+      live_grep_args = {
+        mappings = {
+          i = {
+            ['<C-k>'] = lga_actions.quote_prompt()
+          },
+        },
+      },
     },
   })
   telescope.load_extension('fzy_native')
@@ -67,6 +75,7 @@ function config.telescope()
   telescope.load_extension('dap')
   telescope.load_extension('buku')
   telescope.load_extension('picker_list')
+  telescope.load_extension('live_grep_args')
 end
 
 return config
