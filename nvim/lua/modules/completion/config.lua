@@ -60,6 +60,11 @@ function config.nvim_lsp()
     on_attach = on_attach,
   })
 
+  lspconfig.ruff.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
+
   lspconfig.lua_ls.setup({
     capabilities = capabilities,
     on_attach = on_attach,
