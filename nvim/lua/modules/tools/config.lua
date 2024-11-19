@@ -1,4 +1,6 @@
-local is_tmux_session = require('core.helper').is_tmux_session
+local helper = require('core.helper')
+local is_kitty_session = helper.is_kitty_session
+local is_tmux_session = helper.is_tmux_session
 
 local config = {}
 
@@ -16,6 +18,8 @@ function config.workspaces()
           local workspace_name = require('workspaces').name()
           if workspace_name ~= nil and is_tmux_session() then
             vim.fn.system('tmux rename-window ' .. workspace_name)
+          elseif workspace_name ~= nil and is_kitty_session() then
+            vim.fn.system('kitten @ set-tab-title ' .. workspace_name)
           end
         end,
       },

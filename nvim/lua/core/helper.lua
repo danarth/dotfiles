@@ -17,6 +17,10 @@ function helper.is_tmux_session()
   return os.getenv('TMUX') ~= nil
 end
 
+function helper.is_kitty_session()
+  return os.getenv('KITTY_WINDOW_ID') ~= nil
+end
+
 local function get_color(color)
   local tbl = {
     black = '\027[90m',
