@@ -177,6 +177,7 @@ function config.nvim_cmp()
       { name = 'luasnip' },
       { name = 'nerdfont' },
       { name = 'vim-dadbod-completion' },
+      { name = 'lazydev', group_index = 0 }
     },
   })
 
