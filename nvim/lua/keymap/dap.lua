@@ -11,6 +11,7 @@ nmap({
   { '<leader>xb', cmd('DapToggleBreakpoint'), opts('Debug: Toggle Breakpoint', noremap, silent) },
   { '<leader>xl', cmd('DapContinue'), opts('Debug: Continue', noremap, silent) },
   { '<leader>xf', cmd('DapToggleRepl'), opts('Debug: Toggle Console', noremap, silent) },
+  { '<leader>xu', function() require('dapui').toggle() end, opts('Debug: Toggle UI', noremap, silent) }
 })
 
 local dap_python_keymap = api.nvim_create_augroup('dap_python_keymap', { clear = true })

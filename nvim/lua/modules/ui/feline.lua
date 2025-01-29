@@ -534,7 +534,7 @@ local function config(_, opts)
   }
 
   opts.components = { active = active, inactive = inactive }
-  opts.force_inactive = { filetypes = { '^dapui_*', '^help$', '^neotest*', '^neo-tree*$', '^qf$' } }
+  opts.force_inactive = { filetypes = { '^help$', '^neotest*', '^neo-tree*$', '^qf$' } }
   opts.disable = { filetypes = { '^alpha$', '^neo-tree*$' } }
 
   feline.setup(opts)
