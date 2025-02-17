@@ -26,13 +26,6 @@ package({
   end,
 })
 
-package({
-  'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
-  config = conf.dashboard,
-  dependencies = { { 'nvim-tree/nvim-web-devicons' } },
-})
-
 package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
 
 local felineConfig = require('modules.ui.feline')
