@@ -3,20 +3,7 @@ local conf = require('modules.ui.config')
 
 package({
   'nvim-tree/nvim-web-devicons',
-  opts = {
-    override_by_filename = {
-      ["azure-pipelines-ci.yml"] = {
-        icon = "󰿕",
-        color = "#007fff",
-        name = "AzureCli"
-      },
-      ["azure-pipelines-cd.yml"] = {
-        icon = "󰿕",
-        color = "#007fff",
-        name = "AzureCli"
-      }
-    }
-  }
+  opts = {}
 })
 
 package({
