@@ -1,6 +1,14 @@
 local config = {}
 
 function config.nightfox()
+  require('nightfox').setup({
+    options = {
+      styles = {
+        keywords = 'italic',
+        comments = 'italic',
+      }
+    }
+  })
   vim.cmd('colorscheme duskfox')
 end
 

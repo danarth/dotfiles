@@ -1,11 +1,16 @@
 keybind = ctrl+b>c=new_tab
-keybind = ctrl+b>&=close_tab
-# keybind = ctrl+b>, set_tab_title
 
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+l=goto_split:right
+# TODO Having to use "q" instead of "&"
+keybind = ctrl+b>q=close_tab
+
+# TODO No way yet of setting tab title
+
+# TODO No way yet of having keybinds that work across
+# Ghostty and nvim
+# keybind = ctrl+j=goto_split:down
+# keybind = ctrl+k=goto_split:up
+# keybind = ctrl+h=goto_split:left
+# keybind = ctrl+l=goto_split:right
 
 keybind = ctrl+b>1=goto_tab:1
 keybind = ctrl+b>2=goto_tab:2
@@ -18,13 +23,9 @@ keybind = ctrl+b>8=goto_tab:8
 keybind = ctrl+b>9=goto_tab:9
 
 keybind = ctrl+b>x=close_window
-# keybind = ctrl+b>t set_window_title
 keybind = ctrl+b>-=new_split:down
-keybind = ctrl+b>|=new_split:right
-# keybind = ctrl+b>r start_resizing_window
-# keybind = ctrl+b>} move_window_forward
-# keybind = ctrl+b>{ move_window_backward
-# keybind = ctrl+b>space next_layout
-# keybind = ctrl+b>! detach_window ask
+
+# TODO Having to use "/" instead of "|"
+keybind = ctrl+b>/=new_split:right
 
 keybind = ctrl+b>ctrl+b=clear_screen
