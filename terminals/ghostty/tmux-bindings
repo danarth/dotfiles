@@ -1,0 +1,30 @@
+keybind = ctrl+b>c=new_tab
+keybind = ctrl+b>&=close_tab
+# keybind = ctrl+b>, set_tab_title
+
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+
+keybind = ctrl+b>1=goto_tab:1
+keybind = ctrl+b>2=goto_tab:2
+keybind = ctrl+b>3=goto_tab:3
+keybind = ctrl+b>4=goto_tab:4
+keybind = ctrl+b>5=goto_tab:5
+keybind = ctrl+b>6=goto_tab:6
+keybind = ctrl+b>7=goto_tab:7
+keybind = ctrl+b>8=goto_tab:8
+keybind = ctrl+b>9=goto_tab:9
+
+keybind = ctrl+b>x=close_window
+# keybind = ctrl+b>t set_window_title
+keybind = ctrl+b>-=new_split:down
+keybind = ctrl+b>|=new_split:right
+# keybind = ctrl+b>r start_resizing_window
+# keybind = ctrl+b>} move_window_forward
+# keybind = ctrl+b>{ move_window_backward
+# keybind = ctrl+b>space next_layout
+# keybind = ctrl+b>! detach_window ask
+
+keybind = ctrl+b>ctrl+b=clear_screen
