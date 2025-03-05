@@ -7,8 +7,6 @@ ZSH_TMUX_AUTOQUIT=false
 # ZVM Settings
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
-export TERM=xterm-256color
-
 antigen use oh-my-zsh
 
 antigen bundle git

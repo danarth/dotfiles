@@ -6,6 +6,7 @@ function config.nightfox()
       styles = {
         keywords = 'italic',
         comments = 'italic',
+        conditionals = 'italic'
       }
     }
   })

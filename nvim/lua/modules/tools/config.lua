@@ -114,6 +114,15 @@ function config.snacks()
     image = {
       enabled = true,
     },
+    bigfile = {
+      enabled = true,
+    },
+    quickfile = {
+      enabled = true,
+    },
+    statuscolumn = {
+      enabled = true,
+    }
   }
   snacks.setup(opts)
 end

@@ -7,10 +7,15 @@ keybind = ctrl+b>q=close_tab
 
 # TODO No way yet of having keybinds that work across
 # Ghostty and nvim
-# keybind = ctrl+j=goto_split:down
-# keybind = ctrl+k=goto_split:up
-# keybind = ctrl+h=goto_split:left
-# keybind = ctrl+l=goto_split:right
+keybind = ctrl+j=unbind
+keybind = ctrl+k=unbind
+keybind = ctrl+h=unbind
+keybind = ctrl+l=unbind
+
+keybind = ctrl+b>j=goto_split:down
+keybind = ctrl+b>k=goto_split:up
+keybind = ctrl+b>h=goto_split:left
+keybind = ctrl+b>l=goto_split:right
 
 keybind = ctrl+b>1=goto_tab:1
 keybind = ctrl+b>2=goto_tab:2
