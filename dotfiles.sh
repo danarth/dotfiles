@@ -12,17 +12,30 @@ function is_symlink_to {
   return 1  
 }  
 
+#######################################
+# Link a config dir from dotfiles to the user's home directory
+# Arguments:
+#   $1: The path of the config directory in the dotfiles directory
+#   $2: The path of the config directory in the user's home directory
+#######################################
 function link_config {
-  if ! is_symlink_to "$THISDIR/$1" "$CONFIG_HOME/$1"; then
-    ln -s "$THISDIR/$1" "$CONFIG_HOME/$1"
-    echo -e "Linked $1 config ($THISDIR/$1 -> $CONFIG_HOME/$1)"
-  else
+  if is_symlink_to "$THISDIR/$1" "$CONFIG_HOME/$2"; then
     echo -e "Already linked $1 config. Skipping..."
+  elif [[ -d "$CONFIG_HOME/$2" ]]; then
+    echo -e "$CONFIG_HOME/$2 already exists. Remove it before continuing. Skipping for now..."
+    return
+  else
+    ln -s "$THISDIR/$1" "$CONFIG_HOME/$2"
+    echo -e "Linked $1 config ($THISDIR/$1 -> $CONFIG_HOME/$2)"
   fi
 }
 
 function kitty {
-  link_config kitty
+  link_config terminals/kitty kitty
+}
+
+function ghostty {
+  link_config terminals/ghostty ghostty
 }
 
 function nvim {
@@ -53,6 +66,7 @@ function help {
   echo -e ""
   echo -e "Commands:"
   echo -e "  setup kitty    Setup kitty terminal configuration"
+  echo -e "  setup ghostty  Setup ghostty terminal configuration"
   echo -e "  setup nvim     Setup Neovim configuration"
   echo -e "  setup tmux     Setup Tmux configuration with Tmux Plugin Manager (TPM)"
   echo -e "  setup zsh      Setup Zsh configuration with Antigen package manager"
@@ -66,6 +80,9 @@ case "$1" in
     case "$2" in
       kitty)
         kitty
+        ;;
+      ghostty)
+        ghostty
         ;;
       nvim)
         nvim
