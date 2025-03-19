@@ -35,7 +35,7 @@ end
 
 opt.completeopt = 'menu,menuone,noselect'
 opt.showmode = false
-opt.shortmess = 'aoOTIcF'
+opt.shortmess = 'aoOTIcFs'
 opt.scroll = 10
 opt.scrolloff = 2
 opt.sidescrolloff = 5

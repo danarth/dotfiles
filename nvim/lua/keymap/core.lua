@@ -1,5 +1,5 @@
 local keymap = require('core.keymap')
-local nmap, imap, vmap = keymap.nmap, keymap.imap, keymap.vmap
+local nmap, imap, vmap, tmap = keymap.nmap, keymap.imap, keymap.vmap, keymap.tmap
 local silent, noremap = keymap.silent, keymap.noremap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
@@ -44,7 +44,17 @@ nmap({
   { '<leader>rr', vim.lsp.buf.rename, opts('Rename symbol', silent, noremap) },
   { '<leader>ii', vim.lsp.buf.hover, opts('Symbol information', silent, noremap) },
   { '<leader>==', vim.lsp.buf.format, opts('Format buffer', silent, noremap) },
+
+  -- Toggle
+  { '<leader>tt', function() Snacks.terminal() end, opts('Toggle terminal', silent, noremap) },
+  { '<leader>tf', cmd('Neotree toggle'), opts('Toggle file explorer', silent, noremap) },
+
+  -- Other utils
+  { ']]', function() Snacks.words.jump(vim.v.count1) end, opts('Next reference', silent, noremap) },
+  { '[[', function() Snacks.words.jump(-vim.v.count1) end, opts('Prev reference', silent, noremap) },
 })
+
+tmap({ '<leader>tt', function() Snacks.terminal() end, opts('Toggle terminal', silent, noremap) })
 
 -- insert mode
 imap({ 'jk', '<esc>' })

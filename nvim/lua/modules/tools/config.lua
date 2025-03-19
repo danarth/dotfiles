@@ -122,7 +122,10 @@ function config.snacks()
     },
     statuscolumn = {
       enabled = true,
-    }
+    },
+    words = {
+      enabled = true,
+    },
   }
   snacks.setup(opts)
 end

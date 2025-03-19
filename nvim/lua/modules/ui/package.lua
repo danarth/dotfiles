@@ -90,7 +90,18 @@ package('stevearc/dressing.nvim')
 package({
   'folke/noice.nvim',
   event = 'VeryLazy',
-  opts = {},
+  opts = {
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "[w]"
+        },
+        opts = { skip = true }
+      }
+    }
+  },
   dependencies = {
     'MunifTanjim/nui.nvim',
     'rcarriga/nvim-notify',
