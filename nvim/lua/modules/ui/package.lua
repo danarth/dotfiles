@@ -112,9 +112,12 @@ package({
   'folke/edgy.nvim',
   event = 'VeryLazy',
   opts = {
+    options = {
+      right = { size = 70 },
+    },
     left = {
       {
-        title = "File Explorer",
+        title = "󰙅 File Explorer",
         ft = 'neo-tree',
         filter = function(buf)
           return vim.b[buf].neo_tree_source == 'filesystem'
@@ -124,17 +127,17 @@ package({
         open = 'Neotree position=left filesystem'
       },
       {
-        title = 'Git Changes',
+        title = ' Git Changes',
         ft = 'neo-tree',
         filter = function(buf)
           return vim.b[buf].neo_tree_source == 'git_status'
         end,
         pinned = true,
-        collapsed = true,
+        collapsed = false,
         open = "Neotree position=right git_status"
       },
       {
-        title = 'Buffers',
+        title = ' Buffers',
         ft = 'neo-tree',
         filter = function(buf)
           return vim.b[buf].neo_tree_source == 'buffers'
@@ -146,7 +149,7 @@ package({
       {
         title = function()
           local buf_name = vim.api.nvim_buf_get_name(0) or "[No Name]"
-          return vim.fn.fnamemodify(buf_name, ':t')
+          return ' ' .. vim.fn.fnamemodify(buf_name, ':t')
         end,
         ft = 'Outline',
         pinned = true,
@@ -155,11 +158,18 @@ package({
       -- any other neo-tree windows
       'neo-tree'
     },
+    right = {
+      {
+        title = ' Copilot',
+        ft = 'copilot-chat',
+        open = "CopilotChat"
+      }
+    },
     bottom = {
       {
         ft = 'snacks_terminal',
         size = { height = 0.4 },
-        title = "%{b:snacks_terminal.id}: %{b:term_title}",
+        title = " %{b:snacks_terminal.id}: %{b:term_title}",
         filter = function(_buf, win)
           return vim.w[win].snacks_win
             and vim.w[win].snacks_win.position == 'bottom'

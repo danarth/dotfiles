@@ -8,7 +8,9 @@ function config.workspaces()
   require('workspaces').setup({
     hooks = {
       open = {
-        'Neotree',
+        function()
+          require('edgy').toggle()
+        end,
         function()
           if is_tmux_session() then
             vim.cmd('VimuxOpenRunner')
