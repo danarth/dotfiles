@@ -47,6 +47,7 @@ opt.showcmd = false
 
 opt.cmdheight = 0
 opt.laststatus = 3
+opt.splitkeep = 'screen'
 opt.list = true
 opt.listchars = 'tab:»·,nbsp:+,trail:·,extends:→,precedes:←'
 opt.pumblend = 10

@@ -107,3 +107,66 @@ package({
     'rcarriga/nvim-notify',
   },
 })
+
+package({
+  'folke/edgy.nvim',
+  event = 'VeryLazy',
+  opts = {
+    left = {
+      {
+        title = "File Explorer",
+        ft = 'neo-tree',
+        filter = function(buf)
+          return vim.b[buf].neo_tree_source == 'filesystem'
+        end,
+        pinned = true,
+        size = { height = 0.5 },
+        open = 'Neotree position=left filesystem'
+      },
+      {
+        title = 'Git Changes',
+        ft = 'neo-tree',
+        filter = function(buf)
+          return vim.b[buf].neo_tree_source == 'git_status'
+        end,
+        pinned = true,
+        collapsed = true,
+        open = "Neotree position=right git_status"
+      },
+      {
+        title = 'Buffers',
+        ft = 'neo-tree',
+        filter = function(buf)
+          return vim.b[buf].neo_tree_source == 'buffers'
+        end,
+        pinned = true,
+        collapsed = true,
+        open = "Neotree position=top buffers"
+      },
+      {
+        title = function()
+          local buf_name = vim.api.nvim_buf_get_name(0) or "[No Name]"
+          return vim.fn.fnamemodify(buf_name, ':t')
+        end,
+        ft = 'Outline',
+        pinned = true,
+        open = "SymbolsOutlineOpen"
+      },
+      -- any other neo-tree windows
+      'neo-tree'
+    },
+    bottom = {
+      {
+        ft = 'snacks_terminal',
+        size = { height = 0.4 },
+        title = "%{b:snacks_terminal.id}: %{b:term_title}",
+        filter = function(_buf, win)
+          return vim.w[win].snacks_win
+            and vim.w[win].snacks_win.position == 'bottom'
+            and vim.w[win].snacks_win.relative == 'editor'
+            and not vim.w[win].trouble_preview
+        end
+      }
+    }
+  }
+})
