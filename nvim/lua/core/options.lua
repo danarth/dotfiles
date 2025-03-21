@@ -4,6 +4,8 @@ local cache_dir = vim.env.HOME .. '/.cache/nvim/'
 opt.exrc = true
 opt.shell = '/bin/zsh'
 
+opt.title = true
+
 opt.mousemoveevent = true
 opt.termguicolors = true
 opt.hidden = true

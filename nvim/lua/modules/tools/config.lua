@@ -18,6 +18,7 @@ function config.workspaces()
         end,
         function()
           local workspace_name = require('workspaces').name()
+          vim.o.titlestring = workspace_name
           if workspace_name ~= nil and is_tmux_session() then
             vim.fn.system('tmux rename-window ' .. workspace_name)
           elseif workspace_name ~= nil and is_kitty_session() then
