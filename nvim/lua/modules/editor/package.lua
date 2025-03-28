@@ -93,13 +93,6 @@ package({
   end,
 })
 
-package({
-  'simrat39/symbols-outline.nvim',
-  config = function()
-    require('symbols-outline').setup({})
-  end,
-})
-
 package('monaqa/dial.nvim')
 
 package({

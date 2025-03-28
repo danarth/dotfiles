@@ -146,15 +146,6 @@ package({
         collapsed = true,
         open = "Neotree position=top buffers"
       },
-      {
-        title = function()
-          local buf_name = vim.api.nvim_buf_get_name(0) or "[No Name]"
-          return ' ' .. vim.fn.fnamemodify(buf_name, ':t')
-        end,
-        ft = 'Outline',
-        pinned = true,
-        open = "SymbolsOutlineOpen"
-      },
       -- any other neo-tree windows
       'neo-tree'
     },
