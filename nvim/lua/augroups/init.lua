@@ -20,3 +20,12 @@ api.nvim_create_autocmd('DirChanged', {
     end
   end,
 })
+
+local git_msg = api.nvim_create_augroup('git_msg', { clear = true })
+api.nvim_create_autocmd('FileType', {
+  group = git_msg,
+  pattern = { 'gitcommit', 'gitrebase', 'gitconfig' },
+  callback = function()
+    vim.opt_local.bufhidden = 'delete'
+  end,
+})

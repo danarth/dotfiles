@@ -25,6 +25,7 @@ antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle fzf
 
 antigen bundle spaceship-prompt/spaceship-prompt
+antigen bundle spaceship-prompt/spaceship-vi-mode@main
 antigen bundle danarth/spaceship-taskwarrior@main
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -32,7 +33,18 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 # Spaceship Prompt
+spaceship remove taskwarrior
 spaceship add taskwarrior
 
+spaceship remove vi_mode
+spaceship add --before char vi_mode
+eval spaceship_vi_mode_enable
+
 EDITOR="nvim"
+
+# If we're in an integrated nvim terminal, use it for git messages
+if [[ -n "$NVIM" && -x "$(command -v nvr)" ]]; then
+  export GIT_EDITOR="nvr -cc split --remote-wait"
+fi
+
 DISABLE_AUTO_TITLE=true

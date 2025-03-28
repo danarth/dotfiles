@@ -408,7 +408,11 @@ local function config(_, opts)
     -- right
     vi_mode = {
       provider = function()
-        return string.format(' %s ', vi_mode.get_vim_mode())
+        local mode = vi_mode.get_vim_mode()
+        if vim.api.nvim_get_mode().mode == 'nt' then
+          mode = 'NORMAL'
+        end
+        return string.format(' %s ', mode)
       end,
       hl = function()
         return { fg = palette.bg0, bg = vi_mode.get_mode_color() }
