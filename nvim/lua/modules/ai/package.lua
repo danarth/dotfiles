@@ -1,6 +1,13 @@
 local package = require('core.pack').package
 
-package('github/copilot.vim')
+package({
+  'github/copilot.vim',
+  config = function()
+    vim.g.copilot_filetypes = {
+      ['copilot-chat'] = false
+    }
+  end
+})
 
 package({
   'CopilotC-Nvim/CopilotChat.nvim',
