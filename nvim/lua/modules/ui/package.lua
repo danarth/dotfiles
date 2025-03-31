@@ -15,18 +15,17 @@ package({
 
 package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
 
-local felineConfig = require('modules.ui.feline')
-
+-- Feline repo has gone - this is a first pass at recreating
+-- the functionality with lualine
+local lualineConfig = require('modules.ui.lualine')
 package({
-  'freddiehaddad/feline.nvim',
+  'nvim-lualine/lualine.nvim',
   dependencies = {
     'EdenEast/nightfox.nvim',
     'lewis6991/gitsigns.nvim',
     'nvim-tree/nvim-web-devicons',
   },
-  config = felineConfig.config,
-  init = felineConfig.init,
-  opts = felineConfig.opts,
+  config = lualineConfig
 })
 
 package({
@@ -55,7 +54,22 @@ package({
       { event = events.FILE_MOVED, handler = on_move },
       { event = events.FILE_RENAMED, handler = on_move },
     })
-  end
+  end,
+  init = function()
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "VeryLazy",
+      callback = function()
+        -- Setup some globals for debugging (lazy-loaded)
+        _G.dd = function(...)
+          Snacks.debug.inspect(...)
+        end
+        _G.bt = function()
+          Snacks.debug.backtrace()
+        end
+        vim.print = _G.dd
+      end
+    })
+    end
 })
 
 package({
