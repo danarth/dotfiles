@@ -62,3 +62,4 @@ imap({ 'jk', '<esc>' })
 
 -- Use : instead of cmd() for visual map commands
 vmap({ '<leader>yl', ':RepoLink!<CR>', opts('Copy repository link', silent, noremap) })
+vmap({ '<leader>tc', ':CopilotChat<CR>', opts('Copilot: Chat with selection', silent, noremap) })
