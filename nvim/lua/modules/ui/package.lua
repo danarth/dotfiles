@@ -181,6 +181,11 @@ package({
             and vim.w[win].snacks_win.relative == 'editor'
             and not vim.w[win].trouble_preview
         end
+      },
+      {
+        ft = 'dap-repl',
+        size = { height = 0.4 },
+        title = " Debug Console",
       }
     }
   }
