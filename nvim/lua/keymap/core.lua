@@ -48,6 +48,7 @@ nmap({
   -- Toggle
   { '<leader>tt', function() Snacks.terminal() end, opts('Toggle terminal', silent, noremap) },
   { '<leader>tf', cmd('Neotree toggle'), opts('Toggle file explorer', silent, noremap) },
+  { '<leader>tc', cmd('CopilotChatToggle'), opts('Toggle Copilot chat', silent, noremap) },
 
   -- Other utils
   { ']]', function() Snacks.words.jump(vim.v.count1) end, opts('Next reference', silent, noremap) },
