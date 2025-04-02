@@ -94,6 +94,11 @@ function config.nvim_lsp()
       },
     },
   })
+
+  lspconfig.stylua3p_ls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
 end
 
 -- function config.sonarqube()
