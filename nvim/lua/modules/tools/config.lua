@@ -9,6 +9,7 @@ function config.workspaces()
     hooks = {
       open = {
         function()
+          vim.o.laststatus = 3 -- global statusline
           require('edgy').toggle()
         end,
         function()
