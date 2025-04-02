@@ -208,7 +208,7 @@ function config.nvim_cmp()
 
   cmp.setup({
     enabled = function()
-      return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt' or require('cmp_dap').is_dap_buffer()
+      return vim.bo.buftype ~= 'prompt' or require('cmp_dap').is_dap_buffer()
     end,
   })
 
