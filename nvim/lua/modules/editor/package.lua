@@ -12,20 +12,20 @@ package({
       bigfile = {
         on = true,
         extra_patterns = {
-          { filesize = 0.3, pattern = '*.json' }
+          { filesize = 0.3, pattern = '*.json' },
         },
-      }
-    }
-  }
+      },
+    },
+  },
 })
 
 package({
   'dhruvasagar/vim-table-mode',
-  config = function ()
+  config = function()
     vim.g.table_mode_corner = '-'
     vim.g.table_mode_disable_mappings = 1
     vim.g.table_mode_disable_tableize_mappings = 1
-  end
+  end,
 })
 
 package({
@@ -37,7 +37,7 @@ package({
         enable = true,
       },
       line_num = {
-        enable = true
+        enable = true,
       },
     })
   end,
@@ -45,8 +45,8 @@ package({
 
 package({
   'yamatsum/nvim-cursorline',
-  config = function ()
-    require('nvim-cursorline').setup {
+  config = function()
+    require('nvim-cursorline').setup({
       cursorline = {
         enable = true,
         timeout = 1000,
@@ -56,9 +56,9 @@ package({
         enable = true,
         min_length = 3,
         hl = { underline = true },
-      }
-    }
-  end
+      },
+    })
+  end,
 })
 
 package({

@@ -12,29 +12,29 @@ nmap({
     function()
       hop.hint_char1({ direction = directions.AFTER_CURSOR })
     end,
-    opts(remap)
+    opts(remap),
   },
   {
     '<leader><leader>F',
     function()
       hop.hint_char1({ direction = directions.BEFORE_CURSOR })
     end,
-    opts(remap)
+    opts(remap),
   },
   {
     '<leader><leader>t',
     function()
       hop.hint_char1({ direction = directions.AFTER_CURSOR, hint_offset = -1 })
     end,
-    opts(remap)
+    opts(remap),
   },
   {
     '<leader><leader>T',
     function()
       hop.hint_char1({ direction = directions.BEFORE_CURSOR, hint_offset = 1 })
     end,
-    opts(remap)
-  }
+    opts(remap),
+  },
 })
 
 vmap({
@@ -43,27 +43,27 @@ vmap({
     function()
       hop.hint_char1({ direction = directions.AFTER_CURSOR })
     end,
-    opts(remap)
+    opts(remap),
   },
   {
     '<leader><leader>F',
     function()
       hop.hint_char1({ direction = directions.BEFORE_CURSOR })
     end,
-    opts(remap)
+    opts(remap),
   },
   {
     '<leader><leader>t',
     function()
       hop.hint_char1({ direction = directions.AFTER_CURSOR, hint_offset = -1 })
     end,
-    opts(remap)
+    opts(remap),
   },
   {
     '<leader><leader>T',
     function()
       hop.hint_char1({ direction = directions.BEFORE_CURSOR, hint_offset = 1 })
     end,
-    opts(remap)
-  }
+    opts(remap),
+  },
 })

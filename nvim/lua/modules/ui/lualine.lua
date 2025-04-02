@@ -8,7 +8,7 @@ local function git_diff(type)
   if gsd and gsd[type] and gsd[type] > 0 then
     return tostring(gsd[type])
   end
-  return ""
+  return ''
 end
 
 return function()
@@ -36,7 +36,7 @@ return function()
     },
     terminal = {
       x = { fg = palette.bg1, bg = palette.orange.base },
-    }
+    },
   }
 
   require('lualine').setup({
@@ -53,7 +53,7 @@ return function()
         statusline = 100,
         tabline = 100,
         winbar = 100,
-      }
+      },
     },
     sections = {
       lualine_a = {
@@ -67,10 +67,12 @@ return function()
           },
           separator = {
             right = '',
-          }
+          },
         },
         {
-          function() return '' end,
+          function()
+            return ''
+          end,
           draw_empty = true,
           color = {
             fg = palette.blue.bright,
@@ -78,14 +80,14 @@ return function()
           },
           separator = {
             right = '',
-          }
+          },
         },
         {
           'filetype',
           icon_only = true,
           color = {
             bg = palette.white.base,
-            fg = palette.bg1
+            fg = palette.bg1,
           },
           padding = {
             left = 1,
@@ -94,13 +96,13 @@ return function()
           separator = {
             left = '',
             right = '',
-          }
+          },
         },
         {
           'filename',
           color = {
             bg = palette.white.base,
-            fg = palette.bg1
+            fg = palette.bg1,
           },
           padding = {
             left = 0,
@@ -109,21 +111,23 @@ return function()
           separator = {
             left = '',
             right = '',
-          }
+          },
         },
         {
           'branch',
           icon = '',
           color = {
             fg = palette.bg0,
-            bg = palette.fg3
+            bg = palette.fg3,
           },
           separator = {
             right = '',
-          }
+          },
         },
         {
-          function() return '' end,
+          function()
+            return ''
+          end,
           draw_empty = true,
           color = {
             fg = palette.fg3,
@@ -134,43 +138,51 @@ return function()
           },
         },
         {
-          function() return git_diff('added') end,
+          function()
+            return git_diff('added')
+          end,
           icon = '',
           draw_empty = true,
           color = {
             fg = palette.bg0,
-            bg = palette.green.base
+            bg = palette.green.base,
           },
           separator = {
             right = '',
-          }
+          },
         },
         {
-          function() return git_diff('modified') end,
+          function()
+            return git_diff('modified')
+          end,
           icon = '',
           draw_empty = true,
           color = {
             fg = palette.bg0,
-            bg = palette.yellow.base
+            bg = palette.yellow.base,
           },
           separator = {
             right = '',
-          }
+          },
         },
         {
-          function() return git_diff('removed') end,
+          function()
+            return git_diff('removed')
+          end,
           icon = '',
           draw_empty = true,
           color = {
             fg = palette.bg0,
-            bg = palette.red.base
+            bg = palette.red.base,
           },
           separator = {
             right = '',
-          }
+          },
         },
         {
-          function() return '' end,
+          function()
+            return ''
+          end,
           draw_empty = true,
           color = {
             fg = palette.red.base,
@@ -197,8 +209,8 @@ return function()
           },
           color = {
             bg = palette.red.base,
-            fg = palette.bg1
-          }
+            fg = palette.bg1,
+          },
         },
         {
           'diagnostics',
@@ -214,8 +226,8 @@ return function()
           },
           color = {
             bg = palette.magenta.base,
-            fg = palette.bg1
-          }
+            fg = palette.bg1,
+          },
         },
         {
           'diagnostics',
@@ -231,8 +243,8 @@ return function()
           },
           color = {
             bg = palette.blue.base,
-            fg = palette.bg1
-          }
+            fg = palette.bg1,
+          },
         },
         {
           'diagnostics',
@@ -248,11 +260,13 @@ return function()
           },
           color = {
             bg = palette.orange.base,
-            fg = palette.bg1
-          }
+            fg = palette.bg1,
+          },
         },
         {
-          function() return '' end,
+          function()
+            return ''
+          end,
           draw_empty = true,
           color = {
             fg = palette.orange.base,
@@ -290,20 +304,22 @@ return function()
           },
           on_click = function()
             require('telescope').extensions.dap.configurations()
-          end
-        }
+          end,
+        },
       },
       lualine_x = {
         {
           'mode',
           separator = {
             left = '',
-          }
-        }
+          },
+        },
       },
       lualine_y = {
         {
-          function() return '' end,
+          function()
+            return ''
+          end,
           draw_empty = true,
           color = {
             fg = palette.fg3,
@@ -311,7 +327,7 @@ return function()
           },
           separator = {
             left = '',
-          }
+          },
         },
         {
           function()
@@ -327,27 +343,29 @@ return function()
           draw_empty = true,
           color = {
             fg = palette.bg0,
-            bg = palette.fg3
+            bg = palette.fg3,
           },
           separator = {
             left = '',
-          }
+          },
         },
         {
           'searchcount',
           draw_empty = true,
           color = {
             bg = palette.white.base,
-            fg = palette.bg1
+            fg = palette.bg1,
           },
           separator = {
             left = '',
-          }
-        }
+          },
+        },
       },
       lualine_z = {
         {
-          function() return '' end,
+          function()
+            return ''
+          end,
           draw_empty = true,
           color = {
             fg = palette.blue.bright,
@@ -355,7 +373,7 @@ return function()
           },
           separator = {
             left = '',
-          }
+          },
         },
         {
           'location',
@@ -365,9 +383,9 @@ return function()
           },
           separator = {
             left = '',
-          }
-        }
-      }
+          },
+        },
+      },
     },
     inactive_sections = {
       lualine_a = {},
@@ -375,11 +393,11 @@ return function()
       lualine_c = { 'filename' },
       lualine_x = { 'location' },
       lualine_y = {},
-      lualine_z = {}
+      lualine_z = {},
     },
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = {}
+    extensions = {},
   })
 end

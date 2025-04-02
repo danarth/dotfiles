@@ -29,7 +29,7 @@ nmap({
   { '<leader>bn', cmd('bn'), { desc = 'Goto next buffer' } },
   { '<leader>bp', cmd('bp'), { desc = 'Goto previous buffer' } },
   { '<leader>bb', cmd('b #'), { desc = 'Switch to previous buffer' } },
-  { '<leader>bP' , cmd('BufferLinePick'), { desc = 'Pick buffer' } },
+  { '<leader>bP', cmd('BufferLinePick'), { desc = 'Pick buffer' } },
   { '<leader>ba', cmd('A'), { desc = 'Switch to alternate buffer' } },
 
   -- disable annoying help shortcut
@@ -46,16 +46,40 @@ nmap({
   { '<leader>==', vim.lsp.buf.format, opts('Format buffer', silent, noremap) },
 
   -- Toggle
-  { '<leader>tt', function() Snacks.terminal() end, opts('Toggle terminal', silent, noremap) },
+  {
+    '<leader>tt',
+    function()
+      Snacks.terminal()
+    end,
+    opts('Toggle terminal', silent, noremap),
+  },
   { '<leader>tf', cmd('Neotree toggle'), opts('Toggle file explorer', silent, noremap) },
   { '<leader>tc', cmd('CopilotChatToggle'), opts('Toggle Copilot chat', silent, noremap) },
 
   -- Other utils
-  { ']]', function() Snacks.words.jump(vim.v.count1) end, opts('Next reference', silent, noremap) },
-  { '[[', function() Snacks.words.jump(-vim.v.count1) end, opts('Prev reference', silent, noremap) },
+  {
+    ']]',
+    function()
+      Snacks.words.jump(vim.v.count1)
+    end,
+    opts('Next reference', silent, noremap),
+  },
+  {
+    '[[',
+    function()
+      Snacks.words.jump(-vim.v.count1)
+    end,
+    opts('Prev reference', silent, noremap),
+  },
 })
 
-tmap({ '<leader>tt', function() Snacks.terminal() end, opts('Toggle terminal', silent, noremap) })
+tmap({
+  '<leader>tt',
+  function()
+    Snacks.terminal()
+  end,
+  opts('Toggle terminal', silent, noremap),
+})
 
 -- insert mode
 imap({ 'jk', '<esc>' })

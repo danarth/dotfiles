@@ -33,7 +33,7 @@ package({
   event = 'VimEnter',
   config = function()
     require('scratch').setup({
-      filetypes = { 'md', 'lua' , 'python', 'json', 'yaml' },
+      filetypes = { 'md', 'lua', 'python', 'json', 'yaml' },
     })
   end,
 })
@@ -81,28 +81,29 @@ package('tpope/vim-projectionist')
 package({
   'stevearc/oil.nvim',
   opts = {},
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
 })
 
 package({
   '9seconds/repolink.nvim',
   dependencies = {
-    'nvim-lua/plenary.nvim'
+    'nvim-lua/plenary.nvim',
   },
   cmd = {
-    'RepoLink'
+    'RepoLink',
   },
   config = function()
     -- Check for custom GitLab URL
     local url_builders = {}
-    if os.getenv("GITLAB_HOSTNAME") then
-      url_builders[os.getenv("GITLAB_HOSTNAME")] = require("repolink").url_builder_for_gitlab("https://" .. os.getenv("GITLAB_HOSTNAME"))
+    if os.getenv('GITLAB_HOSTNAME') then
+      url_builders[os.getenv('GITLAB_HOSTNAME')] =
+        require('repolink').url_builder_for_gitlab('https://' .. os.getenv('GITLAB_HOSTNAME'))
     end
 
-    require("repolink").setup({
+    require('repolink').setup({
       url_builders = url_builders,
     })
-  end
+  end,
 })
 
 package({
@@ -111,8 +112,8 @@ package({
   lazy = false,
   config = conf.snacks,
   init = function()
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "VeryLazy",
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'VeryLazy',
       callback = function()
         -- Setup some globals for debugging (lazy-loaded)
         _G.dd = function(...)
@@ -122,7 +123,7 @@ package({
           Snacks.debug.backtrace()
         end
         vim.print = _G.dd
-      end
+      end,
     })
-    end
+  end,
 })

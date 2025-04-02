@@ -63,7 +63,7 @@ function config.nvim_lsp()
   lspconfig.ruff.setup({
     capabilities = capabilities,
     on_attach = on_attach,
-    cmd = { vim.fn.expand('$MASON/bin/ruff'), 'server'},
+    cmd = { vim.fn.expand('$MASON/bin/ruff'), 'server' },
   })
 
   lspconfig.lua_ls.setup({
@@ -159,14 +159,14 @@ function config.nvim_cmp()
           fallback()
         end
       end),
-      ["<Tab>"] = cmp.mapping(function(fallback)
+      ['<Tab>'] = cmp.mapping(function(fallback)
         if luasnip.locally_jumpable(1) then
           luasnip.jump(1)
         else
           fallback()
         end
-      end, { "i", "s" }),
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
+      end, { 'i', 's' }),
+      ['<S-Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
         elseif luasnip.locally_jumpable(-1) then
@@ -174,14 +174,14 @@ function config.nvim_cmp()
         else
           fallback()
         end
-      end, { "i", "s" }),
+      end, { 'i', 's' }),
     }),
     sources = {
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
       { name = 'nerdfont' },
       { name = 'vim-dadbod-completion' },
-      { name = 'lazydev', group_index = 0 }
+      { name = 'lazydev', group_index = 0 },
     },
   })
 
@@ -208,17 +208,15 @@ function config.nvim_cmp()
 
   cmp.setup({
     enabled = function()
-      return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
-          or require("cmp_dap").is_dap_buffer()
-    end
+      return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt' or require('cmp_dap').is_dap_buffer()
+    end,
   })
 
-  cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+  cmp.setup.filetype({ 'dap-repl', 'dapui_watches', 'dapui_hover' }, {
     sources = {
-      { name = "dap" },
+      { name = 'dap' },
     },
   })
-
 end
 
 function config.lua_snip()

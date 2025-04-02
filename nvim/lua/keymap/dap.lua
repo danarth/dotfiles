@@ -6,14 +6,14 @@ local opts = keymap.new_opts
 local api = vim.api
 
 local function ts_highlight(ft)
-  return function (input)
+  return function(input)
     local parser = vim.treesitter.get_string_parser(input, ft)
     local tree = parser:parse()[1]
     local query = vim.treesitter.query.get(ft, 'highlights')
     local highlights = {}
     for id, node, _ in query:iter_captures(tree:root(), input) do
-      local _, cstart, _ , cend = node:range()
-      table.insert(highlights, { cstart, cend, "@" .. query.captures[id] })
+      local _, cstart, _, cend = node:range()
+      table.insert(highlights, { cstart, cend, '@' .. query.captures[id] })
     end
     return highlights
   end
@@ -51,12 +51,24 @@ nmap({
   { '<leader>xe', evaluate_expression, opts('Debug: Evaluate Expression', noremap, silent) },
   { '<leader>xl', cmd('DapContinue'), opts('Debug: Continue', noremap, silent) },
   { '<leader>xf', cmd('DapToggleRepl'), opts('Debug: Toggle Console', noremap, silent) },
-  { '<leader>xu', function() require('dapui').toggle() end, opts('Debug: Toggle UI', noremap, silent) },
+  {
+    '<leader>xu',
+    function()
+      require('dapui').toggle()
+    end,
+    opts('Debug: Toggle UI', noremap, silent),
+  },
 })
 
-tmap({ '<leader>xf', cmd('DapToggleRepl'), opts('Debug: Toggle Console', noremap, silent)})
+tmap({ '<leader>xf', cmd('DapToggleRepl'), opts('Debug: Toggle Console', noremap, silent) })
 
-vmap({ '<leader>xe', function() require('dapui').eval() end, opts('Debug: Evaluate Selection', noremap, silent) })
+vmap({
+  '<leader>xe',
+  function()
+    require('dapui').eval()
+  end,
+  opts('Debug: Evaluate Selection', noremap, silent),
+})
 
 local dap_python_keymap = api.nvim_create_augroup('dap_python_keymap', { clear = true })
 api.nvim_create_autocmd('FileType', {

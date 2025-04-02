@@ -3,7 +3,7 @@ local conf = require('modules.ui.config')
 
 package({
   'nvim-tree/nvim-web-devicons',
-  opts = {}
+  opts = {},
 })
 
 package({
@@ -25,7 +25,7 @@ package({
     'lewis6991/gitsigns.nvim',
     'nvim-tree/nvim-web-devicons',
   },
-  config = lualineConfig
+  config = lualineConfig,
 })
 
 package({
@@ -42,7 +42,7 @@ package({
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
     'MunifTanjim/nui.nvim',
-    'folke/snacks.nvim'
+    'folke/snacks.nvim',
   },
   opts = function(_, opts)
     local function on_move(data)
@@ -91,13 +91,13 @@ package({
     routes = {
       {
         filter = {
-          event = "msg_show",
-          kind = "",
-          find = "[w]"
+          event = 'msg_show',
+          kind = '',
+          find = '[w]',
         },
-        opts = { skip = true }
-      }
-    }
+        opts = { skip = true },
+      },
+    },
   },
   dependencies = {
     'MunifTanjim/nui.nvim',
@@ -114,14 +114,14 @@ package({
     },
     left = {
       {
-        title = "󰙅 File Explorer",
+        title = '󰙅 File Explorer',
         ft = 'neo-tree',
         filter = function(buf)
           return vim.b[buf].neo_tree_source == 'filesystem'
         end,
         pinned = true,
         size = { height = 0.5 },
-        open = 'Neotree position=left filesystem'
+        open = 'Neotree position=left filesystem',
       },
       {
         title = ' Git Changes',
@@ -131,7 +131,7 @@ package({
         end,
         pinned = true,
         collapsed = false,
-        open = "Neotree position=right git_status"
+        open = 'Neotree position=right git_status',
       },
       {
         title = ' Buffers',
@@ -141,35 +141,35 @@ package({
         end,
         pinned = true,
         collapsed = true,
-        open = "Neotree position=top buffers"
+        open = 'Neotree position=top buffers',
       },
       -- any other neo-tree windows
-      'neo-tree'
+      'neo-tree',
     },
     right = {
       {
         title = ' Copilot',
         ft = 'copilot-chat',
-        open = "CopilotChat"
-      }
+        open = 'CopilotChat',
+      },
     },
     bottom = {
       {
         ft = 'snacks_terminal',
         size = { height = 0.4 },
-        title = " %{b:snacks_terminal.id}: %{b:term_title}",
+        title = ' %{b:snacks_terminal.id}: %{b:term_title}',
         filter = function(_buf, win)
           return vim.w[win].snacks_win
             and vim.w[win].snacks_win.position == 'bottom'
             and vim.w[win].snacks_win.relative == 'editor'
             and not vim.w[win].trouble_preview
-        end
+        end,
       },
       {
         ft = 'dap-repl',
         size = { height = 0.4 },
-        title = " Debug Console",
-      }
-    }
-  }
+        title = ' Debug Console',
+      },
+    },
+  },
 })

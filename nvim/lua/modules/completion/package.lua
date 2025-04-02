@@ -89,14 +89,14 @@ package({
     { 'chrisgrieser/cmp-nerdfont' },
     { 'saadparwaiz1/cmp_luasnip' },
     { 'L3MON4D3/LuaSnip' },
-    { 'rcarriga/cmp-dap' }
+    { 'rcarriga/cmp-dap' },
   },
 })
 
 package({
   'L3MON4D3/LuaSnip',
-  version = "v2.*",
-  build = "make install_jsregexp",
+  version = 'v2.*',
+  build = 'make install_jsregexp',
   event = 'InsertCharPre',
   config = conf.lua_snip,
   dependencies = {

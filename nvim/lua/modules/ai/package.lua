@@ -4,29 +4,28 @@ package({
   'github/copilot.vim',
   config = function()
     vim.g.copilot_filetypes = {
-      ['copilot-chat'] = false
+      ['copilot-chat'] = false,
     }
-  end
+  end,
 })
 
 package({
   'CopilotC-Nvim/CopilotChat.nvim',
   dependencies = {
     'github/copilot.vim',
-    { 'nvim-lua/plenary.nvim', branch = 'master' }
+    { 'nvim-lua/plenary.nvim', branch = 'master' },
   },
   build = 'make tiktoken',
   opts = {
     model = 'gpt-4',
-    question_header = " Me ",
-    answer_header = " Copilot ",
-    error_header = " Error ",
+    question_header = ' Me ',
+    answer_header = ' Copilot ',
+    error_header = ' Error ',
     providers = {
-      copilot = {
-      },
+      copilot = {},
       github_models = {
-        get_models = false
-      }
-    }
-  }
+        get_models = false,
+      },
+    },
+  },
 })
