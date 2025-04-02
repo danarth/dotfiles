@@ -18,10 +18,6 @@ local function ts_highlight(ft)
     return highlights
   end
 end
-local function test_input()
-  local ft = vim.bo.filetype
-  vim.ui.input({prompt = "Enter the thing: ", highlight = ts_highlight(ft)}, function(_) end)
-end
 
 local function set_conditional_breakpoint()
   vim.ui.input({
@@ -56,7 +52,6 @@ nmap({
   { '<leader>xl', cmd('DapContinue'), opts('Debug: Continue', noremap, silent) },
   { '<leader>xf', cmd('DapToggleRepl'), opts('Debug: Toggle Console', noremap, silent) },
   { '<leader>xu', function() require('dapui').toggle() end, opts('Debug: Toggle UI', noremap, silent) },
-  { '<leader>oo', test_input, opts('OOO', noremap, silent) },
 })
 
 tmap({ '<leader>xf', cmd('DapToggleRepl'), opts('Debug: Toggle Console', noremap, silent)})
