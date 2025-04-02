@@ -29,16 +29,6 @@ package({
 })
 
 package({
-  'LintaoAmons/scratch.nvim',
-  event = 'VimEnter',
-  config = function()
-    require('scratch').setup({
-      filetypes = { 'md', 'lua', 'python', 'json', 'yaml' },
-    })
-  end,
-})
-
-package({
   'kristijanhusak/vim-dadbod-ui',
   dependencies = {
     { 'tpope/vim-dadbod', lazy = true },
