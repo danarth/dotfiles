@@ -55,21 +55,6 @@ package({
       { event = events.FILE_RENAMED, handler = on_move },
     })
   end,
-  init = function()
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "VeryLazy",
-      callback = function()
-        -- Setup some globals for debugging (lazy-loaded)
-        _G.dd = function(...)
-          Snacks.debug.inspect(...)
-        end
-        _G.bt = function()
-          Snacks.debug.backtrace()
-        end
-        vim.print = _G.dd
-      end
-    })
-    end
 })
 
 package({
@@ -98,8 +83,6 @@ package({
 })
 
 package({ 'famiu/bufdelete.nvim' })
-
-package('stevearc/dressing.nvim')
 
 package({
   'folke/noice.nvim',

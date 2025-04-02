@@ -117,6 +117,9 @@ function config.snacks()
     image = {
       enabled = true,
     },
+    input = {
+      enabled = true
+    },
     bigfile = {
       enabled = true,
     },
