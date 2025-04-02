@@ -144,6 +144,9 @@ function config.snacks()
     bigfile = {
       enabled = true,
     },
+    picker = {
+      enabled = true,
+    },
     quickfile = {
       enabled = true,
     },
