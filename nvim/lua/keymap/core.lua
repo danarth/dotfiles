@@ -43,6 +43,7 @@ nmap({
   { '<leader>ca', vim.lsp.buf.code_action, opts('Code actions', silent, noremap) },
   { '<leader>rr', vim.lsp.buf.rename, opts('Rename symbol', silent, noremap) },
   { '<leader>ii', vim.lsp.buf.hover, opts('Symbol information', silent, noremap) },
+  { '<leader>II', vim.diagnostic.open_float, opts('Open diagnostic', silent, noremap) },
   { '<leader>==', vim.lsp.buf.format, opts('Format buffer', silent, noremap) },
 
   -- Toggle
@@ -54,6 +55,7 @@ nmap({
     opts('Toggle terminal', silent, noremap),
   },
   { '<leader>tf', cmd('Neotree toggle'), opts('Toggle file explorer', silent, noremap) },
+  { '<leader>tF', cmd('Neotree reveal'), opts('Reveal file in explorer', silent, noremap) },
   { '<leader>tc', cmd('CopilotChatToggle'), opts('Toggle Copilot chat', silent, noremap) },
 
   -- Other utils
