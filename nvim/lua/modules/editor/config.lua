@@ -19,6 +19,7 @@ function config.nvim_treesitter()
           ['ic'] = '@class.inner',
           ['aa'] = '@parameter.outer',
           ['ia'] = '@parameter.inner',
+          ['as'] = '@statement.outer',
         },
       },
       swap = {

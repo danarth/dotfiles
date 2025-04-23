@@ -57,6 +57,7 @@ nmap({
   { '<leader>tf', cmd('Neotree toggle'), opts('Toggle file explorer', silent, noremap) },
   { '<leader>tF', cmd('Neotree reveal'), opts('Reveal file in explorer', silent, noremap) },
   { '<leader>tc', cmd('CopilotChatToggle'), opts('Toggle Copilot chat', silent, noremap) },
+  { '<leader>td', cmd('DBUIToggle'), opts('Toggle database explorer', silent, noremap) },
 
   -- Other utils
   {
