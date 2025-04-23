@@ -19,6 +19,17 @@ I have tested this on Ubuntu, MacOS and WSL (Ubuntu). The following are required
 ./dotfiles.sh --help
 ```
 
+## Neovim
+
+On top of the config and plugins provided by this repo, the config will also load user and project
+specific configuration.
+
+* Load nvim config from this repo
+
+When the directory is changed (i.e. a project is opened):
+* If ~/.nvim.lua exists, it will be loaded (user-wide)
+* If ./.nvim.lua exists, it will be loaded (project-specific)
+
 ## Zsh
 
 In your ~/.zshrc, add the following

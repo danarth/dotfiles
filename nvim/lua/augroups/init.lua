@@ -13,10 +13,17 @@ local exrc = api.nvim_create_augroup('exrc', { clear = true })
 api.nvim_create_autocmd('DirChanged', {
   group = exrc,
   callback = function()
-    local config_file = helper.path_join(vim.fn.getcwd(), '.nvim.lua')
-    local is_secure = vim.secure.read(config_file)
-    if is_secure then
-      vim.cmd.source(config_file)
+    local config_files = {
+      helper.path_join(vim.fn.expand('~'), '.nvim.lua'),
+      helper.path_join(vim.fn.getcwd(), '.nvim.lua'),
+    }
+    for _, config_file in ipairs(config_files) do
+      if vim.fn.filereadable(config_file) == 1 then
+        local is_secure = vim.secure.read(config_file)
+        if is_secure then
+          vim.cmd.source(config_file)
+        end
+      end
     end
   end,
 })
