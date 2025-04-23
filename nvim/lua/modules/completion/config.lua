@@ -147,14 +147,10 @@ function config.nvim_cmp()
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<CR>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
-          if luasnip.expandable() then
-            luasnip.expand()
-          else
-            cmp.confirm({
-              behavior = cmp.ConfirmBehavior.Insert,
-              select = true,
-            })
-          end
+          cmp.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+          })
         else
           fallback()
         end
