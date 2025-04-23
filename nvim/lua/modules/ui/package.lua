@@ -124,24 +124,9 @@ package({
         open = 'Neotree position=left filesystem',
       },
       {
-        title = ' Git Changes',
-        ft = 'neo-tree',
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == 'git_status'
-        end,
-        pinned = true,
-        collapsed = false,
-        open = 'Neotree position=right git_status',
-      },
-      {
-        title = ' Buffers',
-        ft = 'neo-tree',
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == 'buffers'
-        end,
-        pinned = true,
-        collapsed = true,
-        open = 'Neotree position=top buffers',
+        title = ' Databases',
+        ft = 'dbui',
+        open = 'DBUI',
       },
       -- any other neo-tree windows
       'neo-tree',
@@ -169,6 +154,11 @@ package({
         ft = 'dap-repl',
         size = { height = 0.4 },
         title = ' Debug Console',
+      },
+      {
+        ft = 'dbout',
+        size = { height = 0.4 },
+        title = ' Database Output',
       },
     },
   },
