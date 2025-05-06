@@ -13,7 +13,6 @@ antigen bundle git
 antigen bundle taskwarrior
 antigen bundle kubectl
 antigen bundle docker
-antigen bundle tmux
 antigen bundle terraform
 antigen bundle aliases
 antigen bundle jump

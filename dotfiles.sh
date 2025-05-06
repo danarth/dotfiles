@@ -39,7 +39,7 @@ function ghostty {
 }
 
 function nvim {
-  link_config nvim
+  link_config nvim nvim
 }
 
 function tmux {
@@ -48,7 +48,7 @@ function tmux {
     mkdir -p "$HOME/.tmux/plugins"
     git clone --depth=1 "https://github.com/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm" &> /dev/null
   fi
-  link_config tmux
+  link_config tmux tmux
 }
 
 function zsh {
