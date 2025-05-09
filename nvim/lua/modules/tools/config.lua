@@ -10,7 +10,7 @@ function config.workspaces()
       open = {
         function()
           vim.o.laststatus = 3 -- global statusline
-          require('edgy').toggle()
+          require('edgy').open()
         end,
         function()
           if is_tmux_session() then
