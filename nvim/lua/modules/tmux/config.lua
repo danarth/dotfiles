@@ -1,5 +1,5 @@
 local keymap = require('core.keymap')
-local nmap, cmd = keymap.nmap, keymap.cmd
+local nmap, tmap, cmd = keymap.nmap, keymap.tmap, keymap.cmd
 
 local config = {}
 
@@ -15,6 +15,12 @@ end
 
 function config.tmux_navigator()
   nmap({
+    { '<c-j>', cmd('TmuxNavigateDown') },
+    { '<c-h>', cmd('TmuxNavigateLeft') },
+    { '<c-l>', cmd('TmuxNavigateRight') },
+    { '<c-k>', cmd('TmuxNavigateUp') },
+  })
+  tmap({
     { '<c-j>', cmd('TmuxNavigateDown') },
     { '<c-h>', cmd('TmuxNavigateLeft') },
     { '<c-l>', cmd('TmuxNavigateRight') },

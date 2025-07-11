@@ -1,6 +1,6 @@
 # Oh My ZSH Settings
 ZSH_TMUX_FIXTERM_WITH_256_COLOR=xterm-256color
-ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_AUTOQUIT=false
 
@@ -18,6 +18,9 @@ antigen bundle aliases
 antigen bundle jump
 antigen bundle eza
 antigen bundle asdf
+
+# disable this if using kitty/ghostty for multiplexing
+antigen bundle tmux
 
 antigen bundle jeffreytse/zsh-vi-mode
 

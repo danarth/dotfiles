@@ -9,4 +9,5 @@ theme = "duskfox"
 # Linux-only settings
 gtk-tabs-location = bottom
 
-config-file = tmux-bindings
+# Disabled the following line and using tmux again
+# config-file = tmux-bindings

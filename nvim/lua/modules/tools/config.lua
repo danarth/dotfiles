@@ -13,11 +13,6 @@ function config.workspaces()
           require('edgy').open()
         end,
         function()
-          if is_tmux_session() then
-            vim.cmd('VimuxOpenRunner')
-          end
-        end,
-        function()
           local workspace_name = require('workspaces').name()
           vim.o.titlestring = workspace_name
           if workspace_name ~= nil and is_tmux_session() then
