@@ -105,61 +105,61 @@ package({
   },
 })
 
-package({
-  'folke/edgy.nvim',
-  event = 'VeryLazy',
-  opts = {
-    options = {
-      right = { size = 70 },
-    },
-    left = {
-      {
-        title = '󰙅 File Explorer',
-        ft = 'neo-tree',
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == 'filesystem'
-        end,
-        pinned = true,
-        size = { height = 0.5 },
-        open = 'Neotree position=left filesystem',
-      },
-      {
-        title = ' Databases',
-        ft = 'dbui',
-        open = 'DBUI',
-      },
-      -- any other neo-tree windows
-      'neo-tree',
-    },
-    right = {
-      {
-        title = ' Copilot',
-        ft = 'copilot-chat',
-        open = 'CopilotChat',
-      },
-    },
-    bottom = {
-      {
-        ft = 'snacks_terminal',
-        size = { height = 0.4 },
-        title = ' %{b:snacks_terminal.id}: %{b:term_title}',
-        filter = function(_buf, win)
-          return vim.w[win].snacks_win
-            and vim.w[win].snacks_win.position == 'bottom'
-            and vim.w[win].snacks_win.relative == 'editor'
-            and not vim.w[win].trouble_preview
-        end,
-      },
-      {
-        ft = 'dap-repl',
-        size = { height = 0.4 },
-        title = ' Debug Console',
-      },
-      {
-        ft = 'dbout',
-        size = { height = 0.4 },
-        title = ' Database Output',
-      },
-    },
-  },
-})
+-- package({
+--   'folke/edgy.nvim',
+--   event = 'VeryLazy',
+--   opts = {
+--     options = {
+--       right = { size = 70 },
+--     },
+--     left = {
+--       {
+--         title = '󰙅 File Explorer',
+--         ft = 'neo-tree',
+--         filter = function(buf)
+--           return vim.b[buf].neo_tree_source == 'filesystem'
+--         end,
+--         pinned = true,
+--         size = { height = 0.5 },
+--         open = 'Neotree position=left filesystem',
+--       },
+--       {
+--         title = ' Databases',
+--         ft = 'dbui',
+--         open = 'DBUI',
+--       },
+--       -- any other neo-tree windows
+--       'neo-tree',
+--     },
+--     right = {
+--       {
+--         title = ' Copilot',
+--         ft = 'copilot-chat',
+--         open = 'CopilotChat',
+--       },
+--     },
+--     bottom = {
+--       {
+--         ft = 'snacks_terminal',
+--         size = { height = 0.4 },
+--         title = ' %{b:snacks_terminal.id}: %{b:term_title}',
+--         filter = function(_buf, win)
+--           return vim.w[win].snacks_win
+--             and vim.w[win].snacks_win.position == 'bottom'
+--             and vim.w[win].snacks_win.relative == 'editor'
+--             and not vim.w[win].trouble_preview
+--         end,
+--       },
+--       {
+--         ft = 'dap-repl',
+--         size = { height = 0.4 },
+--         title = ' Debug Console',
+--       },
+--       {
+--         ft = 'dbout',
+--         size = { height = 0.4 },
+--         title = ' Database Output',
+--       },
+--     },
+--   },
+-- })

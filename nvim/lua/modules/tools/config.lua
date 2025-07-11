@@ -10,7 +10,8 @@ function config.workspaces()
       open = {
         function()
           vim.o.laststatus = 3 -- global statusline
-          require('edgy').open()
+          -- require('edgy').open()
+          vim.cmd('Neotree')
         end,
         function()
           local workspace_name = require('workspaces').name()
