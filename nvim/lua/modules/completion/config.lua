@@ -63,7 +63,7 @@ function config.nvim_lsp()
   lspconfig.ruff.setup({
     capabilities = capabilities,
     on_attach = on_attach,
-    cmd = { vim.fn.expand('$MASON/bin/ruff'), 'server' },
+    cmd = { 'ruff', 'server' },
   })
 
   lspconfig.lua_ls.setup({
