@@ -63,7 +63,7 @@ return function()
           end,
           color = {
             fg = palette.bg1,
-            bg = palette.blue.bright,
+            bg = palette.blue.base,
           },
           separator = {
             right = '',
@@ -75,7 +75,7 @@ return function()
           end,
           draw_empty = true,
           color = {
-            fg = palette.blue.bright,
+            fg = palette.blue.base,
             bg = palette.bg1,
           },
           separator = {
@@ -368,7 +368,7 @@ return function()
           end,
           draw_empty = true,
           color = {
-            fg = palette.blue.bright,
+            fg = palette.blue.base,
             bg = palette.bg1,
           },
           separator = {
@@ -379,7 +379,7 @@ return function()
           'location',
           color = {
             fg = palette.bg1,
-            bg = palette.blue.bright,
+            bg = palette.blue.base,
           },
           separator = {
             left = '',
