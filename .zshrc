@@ -10,7 +10,6 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 antigen use oh-my-zsh
 
 antigen bundle git
-antigen bundle taskwarrior
 antigen bundle kubectl
 antigen bundle docker
 antigen bundle terraform
@@ -28,16 +27,12 @@ antigen bundle fzf
 
 antigen bundle spaceship-prompt/spaceship-prompt
 antigen bundle spaceship-prompt/spaceship-vi-mode@main
-antigen bundle danarth/spaceship-taskwarrior@main
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
 # Spaceship Prompt
-spaceship remove taskwarrior
-spaceship add taskwarrior
-
 spaceship remove vi_mode
 spaceship add --before char vi_mode
 eval spaceship_vi_mode_enable
