@@ -1,0 +1,5 @@
+--prompt=" "
+--margin=1
+--color=info:#6e6a86,prompt:BLUE,pointer:BLUE
+--color=marker:GREEN
+--color=bg+:#232136,

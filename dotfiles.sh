@@ -34,6 +34,15 @@ function kitty {
   link_config terminals/kitty kitty
 }
 
+function fzf {
+  if ! grep -q "export FZF_DEFAULT_OPTS_FILE" "$HOME/.zshrc"; then
+    echo -e "Adding FZF_DEFAULT_OPTS_FILE to .zshrc..."
+    echo -e "\n# FZF Configuration\nexport FZF_DEFAULT_OPTS_FILE=\"$THISDIR/fzfrc\"\n" >> "$HOME/.zshrc"
+  else
+    echo -e "FZF_DEFAULT_OPTS_FILE already set in .zshrc. Skipping..."
+  fi
+}
+
 function ghostty {
   link_config terminals/ghostty ghostty
 }
@@ -66,6 +75,7 @@ function help {
   echo -e ""
   echo -e "Commands:"
   echo -e "  setup kitty    Setup kitty terminal configuration"
+  echo -e "  setup fzf      Setup fzf by appending env var to .zshrc"
   echo -e "  setup ghostty  Setup ghostty terminal configuration"
   echo -e "  setup nvim     Setup Neovim configuration"
   echo -e "  setup tmux     Setup Tmux configuration with Tmux Plugin Manager (TPM)"
@@ -80,6 +90,9 @@ case "$1" in
     case "$2" in
       kitty)
         kitty
+        ;;
+      fzf)
+        fzf
         ;;
       ghostty)
         ghostty
