@@ -4,6 +4,8 @@ local silent, noremap = keymap.silent, keymap.noremap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
 
+local smart_splits = require('smart-splits')
+
 nmap({
   -- disable arrow keys
   { '<up>', '<nop>' },
@@ -23,7 +25,10 @@ nmap({
   { '<space>', 'i<space><esc>' },
 
   -- buffers
-  { '<leader>bl', cmd('ls'), { desc = 'List all buffers' } },
+  { '<leader>bh', smart_splits.swap_buf_left, { desc = 'Swap buffer left' } },
+  { '<leader>bj', smart_splits.swap_buf_down, { desc = 'Swap buffer down' } },
+  { '<leader>bk', smart_splits.swap_buf_up, { desc = 'Swap buffer up' } },
+  { '<leader>bl', smart_splits.swap_buf_right, { desc = 'Swap buffer right' } },
   { '<leader>bq', cmd('Bdelete'), { desc = 'Close current buffer' } },
   { '<leader>bQ', cmd('BufferLineCloseOthers'), { desc = 'Close all buffers except current' } },
   { '<leader>bn', cmd('bn'), { desc = 'Goto next buffer' } },

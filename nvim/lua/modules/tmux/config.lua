@@ -3,28 +3,32 @@ local nmap, tmap, cmd = keymap.nmap, keymap.tmap, keymap.cmd
 
 local config = {}
 
-function config.kitty_navigator()
-  vim.g.kitty_navigator_no_mappings = 1
-  nmap({
-    { '<c-j>', cmd('KittyNavigateDown') },
-    { '<c-h>', cmd('KittyNavigateLeft') },
-    { '<c-l>', cmd('KittyNavigateRight') },
-    { '<c-k>', cmd('KittyNavigateUp') },
+function config.smart_splits()
+  local smart_splits = require('smart-splits')
+  smart_splits.setup({
+    ignored_filetypes = {
+      'neo-tree',
+    },
   })
-end
 
-function config.tmux_navigator()
   nmap({
-    { '<c-j>', cmd('TmuxNavigateDown') },
-    { '<c-h>', cmd('TmuxNavigateLeft') },
-    { '<c-l>', cmd('TmuxNavigateRight') },
-    { '<c-k>', cmd('TmuxNavigateUp') },
+    { '<c-h>', smart_splits.move_cursor_left },
+    { '<c-j>', smart_splits.move_cursor_down },
+    { '<c-k>', smart_splits.move_cursor_up },
+    { '<c-l>', smart_splits.move_cursor_right },
   })
   tmap({
-    { '<c-j>', cmd('TmuxNavigateDown') },
-    { '<c-h>', cmd('TmuxNavigateLeft') },
-    { '<c-l>', cmd('TmuxNavigateRight') },
-    { '<c-k>', cmd('TmuxNavigateUp') },
+    { '<c-h>', smart_splits.move_cursor_left },
+    { '<c-j>', smart_splits.move_cursor_down },
+    { '<c-k>', smart_splits.move_cursor_up },
+    { '<c-l>', smart_splits.move_cursor_right },
+  })
+
+  nmap({
+    { '<m-h>', smart_splits.resize_left },
+    { '<m-j>', smart_splits.resize_down },
+    { '<m-k>', smart_splits.resize_up },
+    { '<m-l>', smart_splits.resize_right },
   })
 end
 
