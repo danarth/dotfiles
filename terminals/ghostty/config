@@ -9,5 +9,8 @@ theme = "duskfox"
 # Linux-only settings
 gtk-tabs-location = bottom
 
+# MacOS-only settings
+macos-option-as-alt = left
+
 # Disabled the following line and using tmux again
 # config-file = tmux-bindings
