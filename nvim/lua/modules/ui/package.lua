@@ -44,6 +44,29 @@ package({
     'MunifTanjim/nui.nvim',
     'folke/snacks.nvim',
   },
+  config = function()
+    ---@diagnostic disable-next-line: missing-fields
+    require('neo-tree').setup({
+      filesystem = {
+        window = {
+          mappings = {
+            ['O'] = 'system_open',
+          },
+        },
+      },
+      commands = {
+        system_open = function(state)
+          local node = state.tree:get_node()
+          local path = node:get_id()
+          if vim.loop.os_uname().sysname == 'Darwin' then
+            vim.fn.jobstart({ 'open', path }, { detach = true })
+          else
+            vim.fn.jobstart({ 'xdg-open', path }, { detach = true })
+          end
+        end,
+      },
+    })
+  end,
   opts = function(_, opts)
     local function on_move(data)
       Snacks.rename.on_rename_file(data.source, data.destination)
