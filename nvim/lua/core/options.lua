@@ -2,7 +2,7 @@ local opt = vim.opt
 local cache_dir = vim.env.HOME .. '/.cache/nvim/'
 
 opt.exrc = true
-opt.shell = '/bin/zsh'
+opt.shell = 'zsh'
 
 opt.title = true
 
