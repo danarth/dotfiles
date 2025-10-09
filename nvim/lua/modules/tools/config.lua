@@ -61,10 +61,6 @@ function config.telescope()
       },
     },
     extensions = {
-      fzy_native = {
-        override_generic_sorter = false,
-        override_file_sorter = true,
-      },
       live_grep_args = {
         mappings = {
           i = {
@@ -74,7 +70,6 @@ function config.telescope()
       },
     },
   })
-  telescope.load_extension('fzy_native')
   telescope.load_extension('workspaces')
   telescope.load_extension('dap')
   telescope.load_extension('buku')
