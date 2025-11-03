@@ -4,7 +4,7 @@ font-family = "FiraCode Nerd Font"
 font-family-bold-italic = "Cascadia Code NF"
 font-family-italic = "Cascadia Code NF"
 
-theme = "duskfox"
+theme = Duskfox
 
 # Linux-only settings
 gtk-tabs-location = bottom
