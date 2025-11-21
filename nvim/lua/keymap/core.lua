@@ -64,6 +64,29 @@ nmap({
   { '<leader>tc', cmd('CopilotChatToggle'), opts('Toggle Copilot chat', silent, noremap) },
   { '<leader>td', cmd('DBUIToggle'), opts('Toggle database explorer', silent, noremap) },
 
+  -- Yanking
+  {
+    '<leader>yp',
+    function()
+      vim.fn.setreg('+', vim.fn.expand('%:p:.'))
+    end,
+    { desc = 'Copy file path' },
+  },
+  {
+    '<leader>yd',
+    function()
+      vim.fn.setreg('+', vim.fn.expand('%:h'))
+    end,
+    { desc = 'Copy directory path' },
+  },
+  {
+    '<leader>yf',
+    function()
+      vim.fn.setreg('+', vim.fn.expand('%:t:r'))
+    end,
+    { desc = 'Copy file name' },
+  },
+
   -- Other utils
   {
     ']]',
