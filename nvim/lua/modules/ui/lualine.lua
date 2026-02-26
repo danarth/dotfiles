@@ -39,6 +39,24 @@ return function()
     },
   }
 
+  local left_separator = ''
+  local right_separator = ''
+
+  local section_separator = {
+    function()
+      return ' '
+    end,
+    draw_empty = true,
+    padding = {
+      left = 0,
+      right = 0,
+    },
+    separator = {
+      left = '',
+      right = '',
+    },
+  }
+
   require('lualine').setup({
     options = {
       theme = theme,
@@ -66,22 +84,10 @@ return function()
             bg = palette.blue.base,
           },
           separator = {
-            right = '',
+            right = right_separator,
           },
         },
-        {
-          function()
-            return ''
-          end,
-          draw_empty = true,
-          color = {
-            fg = palette.blue.base,
-            bg = palette.bg1,
-          },
-          separator = {
-            right = '',
-          },
-        },
+        section_separator,
         {
           'filetype',
           icon_only = true,
@@ -90,11 +96,11 @@ return function()
             fg = palette.bg1,
           },
           padding = {
-            left = 1,
+            left = 0,
             right = 0,
           },
           separator = {
-            left = '',
+            left = left_separator,
             right = '',
           },
         },
@@ -106,11 +112,11 @@ return function()
           },
           padding = {
             left = 0,
-            right = 1,
+            right = 0,
           },
           separator = {
             left = '',
-            right = '',
+            right = right_separator,
           },
         },
         {
@@ -121,22 +127,10 @@ return function()
             bg = palette.fg3,
           },
           separator = {
-            right = '',
+            right = right_separator,
           },
         },
-        {
-          function()
-            return ''
-          end,
-          draw_empty = true,
-          color = {
-            fg = palette.fg3,
-            bg = palette.bg1,
-          },
-          separator = {
-            right = '',
-          },
-        },
+        section_separator,
         {
           function()
             return git_diff('added')
@@ -148,7 +142,8 @@ return function()
             bg = palette.green.base,
           },
           separator = {
-            right = '',
+            left = left_separator,
+            right = right_separator,
           },
         },
         {
@@ -162,7 +157,7 @@ return function()
             bg = palette.yellow.base,
           },
           separator = {
-            right = '',
+            right = right_separator,
           },
         },
         {
@@ -176,22 +171,10 @@ return function()
             bg = palette.red.base,
           },
           separator = {
-            right = '',
+            right = right_separator,
           },
         },
-        {
-          function()
-            return ''
-          end,
-          draw_empty = true,
-          color = {
-            fg = palette.red.base,
-            bg = palette.bg1,
-          },
-          separator = {
-            right = '',
-          },
-        },
+        section_separator,
       },
       lualine_b = {
         -- TODO: LSP Indicator
@@ -205,7 +188,8 @@ return function()
           always_visible = false,
           draw_empty = true,
           separator = {
-            right = '',
+            left = left_separator,
+            right = right_separator,
           },
           color = {
             bg = palette.red.base,
@@ -222,7 +206,7 @@ return function()
           always_visible = false,
           draw_empty = true,
           separator = {
-            right = '',
+            right = right_separator,
           },
           color = {
             bg = palette.magenta.base,
@@ -239,7 +223,7 @@ return function()
           always_visible = false,
           draw_empty = true,
           separator = {
-            right = '',
+            right = right_separator,
           },
           color = {
             bg = palette.blue.base,
@@ -256,26 +240,14 @@ return function()
           always_visible = false,
           draw_empty = true,
           separator = {
-            right = '',
+            right = right_separator,
           },
           color = {
             bg = palette.orange.base,
             fg = palette.bg1,
           },
         },
-        {
-          function()
-            return ''
-          end,
-          draw_empty = true,
-          color = {
-            fg = palette.orange.base,
-            bg = palette.bg1,
-          },
-          separator = {
-            right = '',
-          },
-        },
+        section_separator,
       },
       lualine_c = {
         {
@@ -300,7 +272,8 @@ return function()
             end
           end,
           separator = {
-            right = '',
+            left = left_separator,
+            right = right_separator,
           },
           on_click = function()
             require('telescope').extensions.dap.configurations()
@@ -311,24 +284,13 @@ return function()
         {
           'mode',
           separator = {
-            left = '',
+            left = left_separator,
+            right = right_separator,
           },
         },
       },
       lualine_y = {
-        {
-          function()
-            return ''
-          end,
-          draw_empty = true,
-          color = {
-            fg = palette.fg3,
-            bg = palette.bg1,
-          },
-          separator = {
-            left = '',
-          },
-        },
+        section_separator,
         {
           function()
             local s
@@ -346,7 +308,7 @@ return function()
             bg = palette.fg3,
           },
           separator = {
-            left = '',
+            left = left_separator,
           },
         },
         {
@@ -357,32 +319,24 @@ return function()
             fg = palette.bg1,
           },
           separator = {
-            left = '',
+            left = left_separator,
+            right = right_separator,
           },
         },
       },
       lualine_z = {
-        {
-          function()
-            return ''
-          end,
-          draw_empty = true,
-          color = {
-            fg = palette.blue.base,
-            bg = palette.bg1,
-          },
-          separator = {
-            left = '',
-          },
-        },
+        section_separator,
         {
           'location',
           color = {
             fg = palette.bg1,
             bg = palette.blue.base,
           },
+          padding = {
+            left = 0,
+          },
           separator = {
-            left = '',
+            left = left_separator,
           },
         },
       },
