@@ -77,17 +77,17 @@ return function()
       lualine_a = {
         {
           function()
-            return ''
+            return ' '
           end,
           color = {
-            fg = palette.bg1,
-            bg = palette.blue.base,
+            fg = palette.blue.base,
+            bg = palette.bg1,
           },
           separator = {
-            right = right_separator,
+            left = '',
+            right = '',
           },
         },
-        section_separator,
         {
           'filetype',
           icon_only = true,
@@ -337,6 +337,7 @@ return function()
           },
           separator = {
             left = left_separator,
+            right = right_separator,
           },
         },
       },
