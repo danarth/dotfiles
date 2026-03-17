@@ -22,17 +22,12 @@ antigen bundle jeffreytse/zsh-vi-mode
 
 antigen bundle fzf
 
-antigen bundle spaceship-prompt/spaceship-prompt
-antigen bundle spaceship-prompt/spaceship-vi-mode@main
-
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
 antigen apply
 
-# Spaceship Prompt
-spaceship remove vi_mode
-spaceship add --before char vi_mode
-eval spaceship_vi_mode_enable
+eval "$(starship init zsh)"
 
 EDITOR="nvim"
 

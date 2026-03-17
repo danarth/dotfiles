@@ -51,6 +51,10 @@ function nvim {
   link_config nvim nvim
 }
 
+function starship {
+  link_config starship.toml starship.toml
+}
+
 function tmux {
   if [[ ! -d "$HOME/.tmux/plugins/tpm" ]]; then
     echo -e "Installing Tmux Plugin Manager (tpm)..."
@@ -74,14 +78,15 @@ function help {
   echo -e "This script runs any setup steps required for dotfiles in this repository"
   echo -e ""
   echo -e "Commands:"
-  echo -e "  setup kitty    Setup kitty terminal configuration"
-  echo -e "  setup fzf      Setup fzf by appending env var to .zshrc"
-  echo -e "  setup ghostty  Setup ghostty terminal configuration"
-  echo -e "  setup nvim     Setup Neovim configuration"
-  echo -e "  setup tmux     Setup Tmux configuration with Tmux Plugin Manager (TPM)"
-  echo -e "  setup zsh      Setup Zsh configuration with Antigen package manager"
-  echo -e ""
-  echo -e "Options:"
+  echo -e "  setup kitty     Setup kitty terminal configuration"
+  echo -e "  setup fzf       Setup fzf by appending env var to .zshrc"
+  echo -e "  setup ghostty   Setup ghostty terminal configuration"
+  echo -e "  setup nvim      Setup Neovim configuration"
+  echo -e "  setup starship  Setup Starship prompt configuration"
+  echo -e "  setup tmux      Setup Tmux configuration with Tmux Plugin Manager (TPM)"
+  echo -e "  setup zsh       Setup Zsh configuration with Antigen package manager"
+  echo -e ""                 
+  echo -e "Options:"         
   echo -e "  -h, --help     Show this help message and exit"
 }
 
@@ -99,6 +104,9 @@ case "$1" in
         ;;
       nvim)
         nvim
+        ;;
+      starship)
+        starship
         ;;
       tmux)
         tmux
