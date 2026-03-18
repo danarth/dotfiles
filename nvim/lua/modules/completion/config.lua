@@ -5,68 +5,55 @@ local on_attach = function()
 end
 
 function config.nvim_lsp()
-  local lspconfig = require('lspconfig')
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-  lspconfig.jsonls.setup({
+  vim.lsp.config('jsonls', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.terraformls.setup({
+  vim.lsp.config('terraformls', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.bashls.setup({
+  vim.lsp.config('bashls', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.vimls.setup({
+  vim.lsp.config('vimls', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.basedpyright.setup({
+  vim.lsp.config('basedpyright', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.ts_ls.setup({
+  vim.lsp.config('ts_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.eslint.setup({
+  vim.lsp.config('eslint', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.powershell_es.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    bundle_path = vim.fn.expand('$MASON/packages/powershell-editor-services'),
-  })
-
-  lspconfig.omnisharp.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    cmd = { vim.fn.expand('$MASON/packages/omnisharp/omnisharp') },
-  })
-
-  lspconfig.yamlls.setup({
+  vim.lsp.config('yamlls', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
 
-  lspconfig.ruff.setup({
+  vim.lsp.config('ruff', {
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = { 'ruff', 'server' },
   })
 
-  lspconfig.lua_ls.setup({
+  vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -95,7 +82,7 @@ function config.nvim_lsp()
     },
   })
 
-  lspconfig.stylua3p_ls.setup({
+  vim.lsp.config('stylua3p_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
   })
