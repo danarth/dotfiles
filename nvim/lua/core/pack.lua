@@ -42,7 +42,7 @@ function pack:boot_strap()
   vim.opt.runtimepath:prepend(lazy_path)
   local lazy = require('lazy')
   local opts = {
-    lockfile = self.helper.path_join(self.data_path, 'lazy-lock.json'),
+    lockfile = self.helper.path_join(self.config_path, 'lazy-lock.json'),
   }
   self:load_modules_packages()
   lazy.setup(self.repos, opts)
