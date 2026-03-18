@@ -1,5 +1,4 @@
 local package = require('core.pack').package
-local conf = require('modules.ui.config')
 
 package({
   'nvim-tree/nvim-web-devicons',
@@ -13,19 +12,20 @@ package({
   end,
 })
 
-package({ 'EdenEast/nightfox.nvim', config = conf.nightfox })
-
--- Feline repo has gone - this is a first pass at recreating
--- the functionality with lualine
-local lualineConfig = require('modules.ui.lualine')
 package({
-  'nvim-lualine/lualine.nvim',
-  dependencies = {
-    'EdenEast/nightfox.nvim',
-    'lewis6991/gitsigns.nvim',
-    'nvim-tree/nvim-web-devicons',
-  },
-  config = lualineConfig,
+  'EdenEast/nightfox.nvim',
+  config = function()
+    require('nightfox').setup({
+      options = {
+        styles = {
+          keywords = 'italic',
+          comments = 'italic',
+          conditionals = 'italic',
+        },
+      },
+    })
+    vim.cmd('colorscheme duskfox')
+  end,
 })
 
 package({
@@ -101,7 +101,39 @@ package({
 
 package({
   'akinsho/nvim-bufferline.lua',
-  config = conf.nvim_bufferline,
+  config = function()
+    require('bufferline').setup({
+      options = {
+        hover = {
+          enabled = true,
+          delay = 50,
+          reveal = { 'close' },
+        },
+        always_show_bufferline = true,
+        offsets = {
+          {
+            filetype = 'neo-tree',
+            text = 'File Explorer',
+            highlight = 'Directory',
+            text_align = 'center',
+          },
+        },
+        get_element_icon = function(element)
+          local icon, hl = require('nvim-web-devicons').get_icon_by_filetype(element.filetype, { default = false })
+          local custom_map = {
+            dap_repl = {
+              icon = '',
+              hl = 'MiniIconsGreen',
+            },
+          }
+          if custom_map[element.filetype] then
+            return custom_map[element.filetype].icon, custom_map[element.filetype].hl
+          end
+          return icon, hl
+        end,
+      },
+    })
+  end,
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 })
 

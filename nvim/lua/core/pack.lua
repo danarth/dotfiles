@@ -7,7 +7,9 @@ function pack:load_modules_packages()
   local modules_dir = self.helper.path_join(self.config_path, 'lua', 'modules')
   self.repos = {}
 
-  local list = vim.fs.find('package.lua', { path = modules_dir, type = 'file', limit = 10 })
+  local list = vim.fs.find(function(name, _)
+    return name:match('.*%.lua$')
+  end, { path = modules_dir, type = 'file', limit = math.huge })
   if #list == 0 then
     return
   end
