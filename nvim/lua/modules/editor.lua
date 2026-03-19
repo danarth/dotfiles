@@ -145,6 +145,12 @@ package({
 })
 
 package({
+  'windwp/nvim-ts-autotag',
+  opts = {},
+  lazy = false
+})
+
+package({
   'm-demare/hlargs.nvim',
   config = function()
     require('hlargs').setup({})
