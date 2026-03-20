@@ -77,7 +77,6 @@ opt.signcolumn = 'yes'
 opt.spelloptions = 'camel'
 
 opt.textwidth = 100
-opt.colorcolumn = '100'
 
 opt.encoding = 'utf-8'
 opt.splitright = true
