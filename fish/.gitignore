@@ -1,0 +1,13 @@
+functions/*
+!functions/.gitkeep
+conf.d/*
+!conf.d/00-init.fish
+completions/*
+!completions/.gitkeep
+
+*.local
+*.local.*
+*.local/
+fish_variables
+local/
+.custom/

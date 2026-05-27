@@ -34,6 +34,10 @@ function kitty {
   link_config terminals/kitty kitty
 }
 
+function fish {
+  link_config fish fish
+}
+
 function fzf {
   if ! grep -q "export FZF_DEFAULT_OPTS_FILE" "$HOME/.zshrc"; then
     echo -e "Adding FZF_DEFAULT_OPTS_FILE to .zshrc..."
@@ -76,6 +80,7 @@ function help {
   echo -e "  setup nvim      Setup Neovim configuration"
   echo -e "  setup starship  Setup Starship prompt configuration"
   echo -e "  setup tmux      Setup Tmux configuration with Tmux Plugin Manager (TPM)"
+  echo -e "  setup fish      Setup fish shell configuration"
   echo -e ""                 
   echo -e "Options:"         
   echo -e "  -h, --help     Show this help message and exit"
@@ -102,8 +107,8 @@ case "$1" in
       tmux)
         tmux
         ;;
-      zsh)
-        zsh
+      fish)
+        fish
         ;;
       *)
         echo -e "Invalid setup command: $2"
