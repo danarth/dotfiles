@@ -4,28 +4,29 @@ ZSH_TMUX_FIXTERM_WITH_256_COLOR=xterm-256color
 # ZVM Settings
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
-antigen use oh-my-zsh
+function is-macos() {
+  [[ $OSTYPE == darwin* ]]
+}
 
-antigen bundle git
-antigen bundle kubectl
-antigen bundle docker
-antigen bundle terraform
-antigen bundle aliases
-antigen bundle jump
-antigen bundle eza
-antigen bundle asdf
+antidote bundle getantidote/use-omz
+antidote bundle ohmyzsh/ohmyzsh path:lib
+antidote bundle ohmyzsh/ohmyzsh path:plugins/git
+antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
+antidote bundle ohmyzsh/ohmyzsh path:plugins/aliases
+antidote bundle ohmyzsh/ohmyzsh path:plugins/jump
+antidote bundle ohmyzsh/ohmyzsh path:plugins/eza
+antidote bundle ohmyzsh/ohmyzsh path:plugins/asdf
 
-# disable this if using kitty/ghostty for multiplexing
-antigen bundle tmux
+antidote bundle jeffreytse/zsh-vi-mode
 
-antigen bundle jeffreytse/zsh-vi-mode
+antidote bundle ohmyzsh/ohmyzsh path:plugins/fzf
 
-antigen bundle fzf
+antidote bundle zsh-users/zsh-syntax-highlighting
+antidote bundle zsh-users/zsh-autosuggestions
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-
-antigen apply
+# MacOS Specific
+antidote bundle ohmyzsh/ohmyzsh path:plugins/brew conditional:is-macos
+antidote bundle ohmyzsh/ohmyzsh path:plugins/macos conditional:is-macos
 
 eval "$(starship init zsh)"
 

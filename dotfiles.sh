@@ -64,14 +64,6 @@ function tmux {
   link_config tmux tmux
 }
 
-function zsh {
-  if [[ ! -d "$HOME/antigen" ]]; then
-    echo -e "Installing Antigen package manager..."
-    mkdir -p "$HOME/antigen"
-    curl -L git.io/antigen > "$HOME/antigen/antigen.zsh"
-  fi
-}
-
 function help {
   echo -e "Usage: $0 [command] [options]"
   echo -e ""
@@ -84,7 +76,6 @@ function help {
   echo -e "  setup nvim      Setup Neovim configuration"
   echo -e "  setup starship  Setup Starship prompt configuration"
   echo -e "  setup tmux      Setup Tmux configuration with Tmux Plugin Manager (TPM)"
-  echo -e "  setup zsh       Setup Zsh configuration with Antigen package manager"
   echo -e ""                 
   echo -e "Options:"         
   echo -e "  -h, --help     Show this help message and exit"

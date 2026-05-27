@@ -11,6 +11,8 @@ gtk-tabs-location = bottom
 
 # MacOS-only settings
 macos-option-as-alt = left
+background-opacity = 0.75
+background-blur = macos-glass-regular
 
 # Disabled the following line and using tmux again
 # config-file = tmux-bindings

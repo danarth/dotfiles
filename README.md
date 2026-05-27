@@ -11,6 +11,7 @@ My configuration files for Neovim, Tmux and Zsh
 I have tested this on Ubuntu, MacOS and WSL (Ubuntu). The following are required:
 - Starship
 - ZSH
+- Antidote package manager
 - A patched NerdFont - I use **FiraCode Nerd Font**. It doesn't support italics though so I use
   **Cascadia Code NF** as an italic font.
 
