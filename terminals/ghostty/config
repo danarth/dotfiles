@@ -1,5 +1,3 @@
-command = /bin/zsh
-
 font-family = "FiraCode Nerd Font"
 font-family-bold-italic = "Cascadia Code NF"
 font-family-italic = "Cascadia Code NF"
@@ -13,6 +11,8 @@ gtk-tabs-location = bottom
 macos-option-as-alt = left
 background-opacity = 0.75
 background-blur = macos-glass-regular
+
+config-file = ?local
 
 # Disabled the following line and using tmux again
 # config-file = tmux-bindings
