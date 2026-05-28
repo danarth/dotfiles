@@ -2,6 +2,7 @@ functions/*
 !functions/.gitkeep
 conf.d/*
 !conf.d/00-init.fish
+!conf.d/zzz-post.fish
 completions/*
 !completions/.gitkeep
 
