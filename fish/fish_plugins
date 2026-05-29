@@ -3,6 +3,7 @@ jhillyerd/plugin-git
 oh-my-fish/plugin-jump
 givensuman/fish-eza
 $__fish_config_dir/plugins/asdf
+$__fish_config_dir/plugins/bat
 $__fish_config_dir/plugins/direnv
 $__fish_config_dir/plugins/fzf
 $__fish_config_dir/plugins/poetry
