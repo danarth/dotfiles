@@ -12,6 +12,11 @@ macos-option-as-alt = left
 background-opacity = 0.75
 background-blur = macos-glass-regular
 
+keybind = performable:ctrl+h=goto_split:left
+keybind = performable:ctrl+j=goto_split:down
+keybind = performable:ctrl+k=goto_split:up
+keybind = performable:ctrl+l=goto_split:right
+
 config-file = ?local
 
 # Disabled the following line and using tmux again
