@@ -49,7 +49,7 @@ nmap({
   { '<leader>rr', vim.lsp.buf.rename, opts('Rename symbol', silent, noremap) },
   { '<leader>ii', vim.lsp.buf.hover, opts('Symbol information', silent, noremap) },
   { '<leader>II', vim.diagnostic.open_float, opts('Open diagnostic', silent, noremap) },
-  { '<leader>==', vim.lsp.buf.format, opts('Format buffer', silent, noremap) },
+  { '<leader>==', require('conform').format, opts('Format buffer', silent, noremap) },
 
   -- Toggle
   {
