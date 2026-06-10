@@ -1,37 +1,62 @@
 {
-  "bridge": {
-    "body": "> :bridge_at_night: **Hemingway Bridge**\n> \n> $1",
-    "description": "Insert a Hemingway Bridge into Markdown notes",
-    "prefix": "bridge"
-  },
-  "question": {
-    "body": "> :question: **Question**\n> \n> $1",
-    "description": "Insert a question into Markdown notes",
-    "prefix": "question"
-  },
-  "answer": {
-    "body": "> :speech_balloon: **Answer**\n> \n> $1",
-    "description": "Insert an answer into Markdown notes",
-    "prefix": "answer"
-  },
-  "question_answer": {
-    "body": "> :question: **Question**\n> \n> $1\n> \n> :speech_balloon: **Answer**\n> \n> $2",
-    "description": "Insert a question and answer into Markdown notes",
-    "prefix": "qna"
+  "summary": {
+    "body": "> [!summary] ${1:Summary}\n> \n> $2",
+    "description": "Insert a summary note into Markdown notes",
+    "prefix": "summary"
   },
   "info": {
-    "body": "> :information_source: **Information**\n> \n> $1",
+    "body": "> [!info] ${1:Info}\n> \n> $2",
     "description": "Insert an info note into Markdown notes",
     "prefix": "info"
   },
+  "todo": {
+    "body": "> [!todo] ${1:Todo}\n> \n> $2",
+    "description": "Insert a todo note into Markdown notes",
+    "prefix": "todo"
+  },
+  "hint": {
+    "body": "> [!hint] ${1:Hint}\n> \n> $2",
+    "description": "Insert a hint note into Markdown notes",
+    "prefix": "hint"
+  },
+  "success": {
+    "body": "> [!success] ${1:Success}\n> \n> $2",
+    "description": "Insert a success note into Markdown notes",
+    "prefix": "success"
+  },
+  "question": {
+    "body": "> [!question] ${1:Question}\n> \n> $2",
+    "description": "Insert a question note into Markdown notes",
+    "prefix": "question"
+  },
   "warning": {
-    "body": "> :warning: **Warning**\n> \n> $1",
-    "description": "Insert a warning into Markdown notes",
+    "body": "> [!warning] ${1:Warning}\n> \n> $2",
+    "description": "Insert a warning note into Markdown notes",
     "prefix": "warning"
   },
-  "idea": {
-    "body": "> :bulb: **Idea**\n> \n> $1",
-    "description": "Insert an idea into Markdown notes",
-    "prefix": "idea"
+  "failure": {
+    "body": "> [!failure] ${1:Failure}\n> \n> $2",
+    "description": "Insert a failure note into Markdown notes",
+    "prefix": "failure"
+  },
+  "danger": {
+    "body": "> [!danger] ${1:Danger}\n> \n> $2",
+    "description": "Insert a danger note into Markdown notes",
+    "prefix": "danger"
+  },
+  "bug": {
+    "body": "> [!bug] ${1:Bug}\n> \n> $2",
+    "description": "Insert a bug note into Markdown notes",
+    "prefix": "bug"
+  },
+  "example": {
+    "body": "> [!example] ${1:Example}\n> \n> $2",
+    "description": "Insert an example note into Markdown notes",
+    "prefix": "example"
+  },
+  "quote": {
+    "body": "> [!quote] ${1:Quote}\n> \n> $2",
+    "description": "Insert a quote note into Markdown notes",
+    "prefix": "quote"
   }
 }
