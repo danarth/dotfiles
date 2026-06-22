@@ -1,5 +1,6 @@
 if set -q NVIM; and command -q nvr
   set -gx GIT_EDITOR "nvr -cc split --remote-wait"
+  set -gx EDITOR "nvr --remote-wait"
 end
 
 function multicd

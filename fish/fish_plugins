@@ -6,5 +6,6 @@ $__fish_config_dir/plugins/asdf
 $__fish_config_dir/plugins/bat
 $__fish_config_dir/plugins/direnv
 $__fish_config_dir/plugins/fzf
+$__fish_config_dir/plugins/gitignore
 $__fish_config_dir/plugins/poetry
 $__fish_config_dir/plugins/prompt
