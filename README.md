@@ -1,5 +1,6 @@
 # My dotfiles 
-My configuration files for Neovim, Tmux and Zsh
+
+My config files for Neovim, Fish and more!
 
 ![Dotfiles Screenshot](./screenshot.png)
 
@@ -8,12 +9,8 @@ My configuration files for Neovim, Tmux and Zsh
 > configuration files for my commonly used tools.
 
 ## Pre-requisites
-I have tested this on Ubuntu, MacOS and WSL (Ubuntu). The following are required:
-- Starship
-- ZSH
-- Antidote package manager
-- A patched NerdFont - I use **FiraCode Nerd Font**. It doesn't support italics though so I use
-  **Cascadia Code NF** as an italic font.
+- Ghostty
+- Homebrew: in this repo, run `brew bundle`
 
 ## Usage
 
@@ -21,26 +18,29 @@ I have tested this on Ubuntu, MacOS and WSL (Ubuntu). The following are required
 ./dotfiles.sh --help
 ```
 
-## Neovim
+## Local Configs
 
-On top of the config and plugins provided by this repo, the config will also load user and project
-specific configuration.
+There will often be config that is specific to a local machine and shouldn't be committed to version
+control. These dotfiles support a couple of different forms of local config.
 
-* Load nvim config from this repo
+## Fish 
 
-When the directory is changed (i.e. a project is opened):
-* If ~/.nvim.lua exists, it will be loaded (user-wide)
-* If ./.nvim.lua exists, it will be loaded (project-specific)
+After loading all of the fish config in this repo, the following path will be checked, and if it
+exists, it will be sourced:
 
-## Zsh
-
-In your ~/.zshrc, add the following
-
-```zsh
-source ~/dotfiles/.zshrc
+```
+$__fish_config_dir/config.local.fish
 ```
 
-## Themes
-Currently supported themese are:
-- Nightfox
-- Duskfox (shown in screenshot)
+## Neovim
+
+Local config files will be loaded from both user and project-specific directories. Config loading
+happens in the following order:
+
+1. Load nvim config from this repo
+
+When the directory is changed (i.e. a project is opened):
+
+2. If ~/.nvim.lua exists, it will be loaded (user-wide)
+3. If ./.nvim.lua exists, it will be loaded (project-specific)
+

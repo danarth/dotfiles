@@ -30,10 +30,6 @@ function link_config {
   fi
 }
 
-function kitty {
-  link_config terminals/kitty kitty
-}
-
 function fish {
   link_config fish fish
 }
@@ -74,7 +70,6 @@ function help {
   echo -e "This script runs any setup steps required for dotfiles in this repository"
   echo -e ""
   echo -e "Commands:"
-  echo -e "  setup kitty     Setup kitty terminal configuration"
   echo -e "  setup fzf       Setup fzf by appending env var to .zshrc"
   echo -e "  setup ghostty   Setup ghostty terminal configuration"
   echo -e "  setup nvim      Setup Neovim configuration"
@@ -89,9 +84,6 @@ function help {
 case "$1" in
   setup)
     case "$2" in
-      kitty)
-        kitty
-        ;;
       fzf)
         fzf
         ;;

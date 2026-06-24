@@ -1,4 +1,3 @@
-brew "antidote"
 brew "asdf"
 brew "bat"
 brew "direnv"
